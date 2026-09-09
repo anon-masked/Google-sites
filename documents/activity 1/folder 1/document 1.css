@@ -14,14 +14,10 @@
 
 
 body {
-
     margin: 0;
-
     background-color: #111;
-
     color: rgb(190, 190, 190);
 }
-
 
 
 /* =========================
@@ -29,24 +25,17 @@ body {
    ========================= */
 
 body::before {
-
     content: "";
-
     position: fixed;
-
     inset: 0;
 
     background-image:
-        url("../Main/images/scp.jpg");
+        url("../../../images/scp.jpg");
 
     background-size: 90%;
-
     background-position: center;
-
     background-repeat: no-repeat;
-
     background-attachment: fixed;
-
     background-color: #191919;
 
     z-index: -1;
@@ -59,7 +48,6 @@ body::before {
 
 
 @keyframes backgroundEntrance {
-
     from {
         opacity: 0;
     }
@@ -67,9 +55,7 @@ body::before {
     to {
         opacity: 1;
     }
-
 }
-
 
 
 /* =========================
@@ -77,15 +63,12 @@ body::before {
    ========================= */
 
 .binary {
-
     position: fixed;
 
     color: red;
 
     font-family: monospace !important;
-
     font-size: 12px;
-
     line-height: 1.25;
 
     white-space: pre;
@@ -108,31 +91,22 @@ body::before {
 
 
 .binary-top-left {
-
     top: 0;
-
     left: 0;
-
     width: 350px;
-
     text-align: left;
 }
 
 
 .binary-top-right {
-
     top: 0;
-
     right: 0;
-
     width: 350px;
-
     text-align: right;
 }
 
 
 @keyframes binaryEntrance {
-
     from {
         opacity: 0;
     }
@@ -140,9 +114,7 @@ body::before {
     to {
         opacity: 0.65;
     }
-
 }
-
 
 
 /* =========================
@@ -150,20 +122,16 @@ body::before {
    ========================= */
 
 .document-page {
-
     position: relative;
 
     width: 900px;
-
     max-width: 90%;
 
     margin: 0 auto;
 
     padding-top: 100px;
-
     padding-bottom: 100px;
 }
-
 
 
 /* =========================
@@ -171,7 +139,6 @@ body::before {
    ========================= */
 
 .scp-panel {
-
     background:
         rgba(17, 17, 17, 0.88);
 
@@ -186,27 +153,22 @@ body::before {
 }
 
 
-
 /* =========================
    DOCUMENT HEADER
    ========================= */
 
 .document-header {
-
     padding: 20px 25px;
-
     margin-bottom: 20px;
 }
 
 
 .archive-label {
-
     color: rgb(150, 0, 0);
 
     font-family: monospace !important;
 
     font-size: 12px;
-
     letter-spacing: 3px;
 
     margin-bottom: 8px;
@@ -214,11 +176,9 @@ body::before {
 
 
 .document-header h1 {
-
     color: rgb(210, 210, 210);
 
     font-size: 28px;
-
     letter-spacing: 3px;
 
     margin: 0 0 8px 0;
@@ -226,7 +186,6 @@ body::before {
 
 
 .document-header p {
-
     color: rgb(140, 140, 140);
 
     font-family: monospace !important;
@@ -237,27 +196,22 @@ body::before {
 }
 
 
-
 /* =========================
    DOCUMENT BODY
    ========================= */
 
 .document-body {
-
     padding: 25px;
-
     min-height: 400px;
 }
 
 
 .document-body h2 {
-
     color: rgb(190, 190, 190);
 
     font-family: monospace !important;
 
     font-size: 20px;
-
     letter-spacing: 2px;
 
     border-bottom:
@@ -270,18 +224,15 @@ body::before {
 
 
 .document-body p {
-
     color: rgb(160, 160, 160);
 
     font-family: monospace !important;
 
     font-size: 13px;
-
     line-height: 1.7;
 
     margin-bottom: 15px;
 }
-
 
 
 /* =========================
@@ -289,25 +240,19 @@ body::before {
    ========================= */
 
 @media (max-width: 700px) {
-
     .document-page {
-
         max-width: 94%;
-
         padding-top: 80px;
-
     }
-
 }
+
 
 /* =========================
    FLOWCHART ENTRIES
    ========================= */
 
 .flowchart-entry {
-
     margin-bottom: 40px;
-
     padding: 20px;
 
     background:
@@ -322,9 +267,7 @@ body::before {
 
 
 .flowchart-entry h2 {
-
     margin-top: 0;
-
     margin-bottom: 12px;
 
     color: rgb(190, 190, 190);
@@ -332,7 +275,6 @@ body::before {
     font-family: monospace !important;
 
     font-size: 17px;
-
     letter-spacing: 2px;
 
     border-bottom:
@@ -343,13 +285,11 @@ body::before {
 
 
 .assignment-text {
-
     color: rgb(145, 145, 145);
 
     font-family: monospace !important;
 
     font-size: 13px;
-
     line-height: 1.6;
 
     margin-bottom: 20px;
@@ -357,19 +297,19 @@ body::before {
 
 
 .flowchart-image {
-    display: block !important;
+    display: block;
 
-    width: 50% !important;
-    max-width: 50% !important;
+    width: 50%;
+    max-width: 50%;
 
-    height: auto !important;
+    height: auto;
 
-    margin: 0 auto !important;
+    margin: 0 auto;
 
     border: 1px solid rgb(65, 65, 65);
 
     background: rgb(20, 20, 20);
 
-    box-shadow: 0 0 12px rgba(0, 0, 0, 0.6);
+    box-shadow:
+        0 0 12px rgba(0, 0, 0, 0.6);
 }
-
