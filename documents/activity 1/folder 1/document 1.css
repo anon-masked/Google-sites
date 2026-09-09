@@ -357,23 +357,18 @@ body::before {
 
 
 .flowchart-image {
+    display: block !important;
 
-    display: block;
+    width: 30% !important;
+    max-width: 30% !important;
 
-    width: 35%;
+    height: auto !important;
 
-    max-width: 35%;
+    margin: 0 auto !important;
 
-    height: auto;
+    border: 1px solid rgb(65, 65, 65);
 
-    margin: 0 auto;
+    background: rgb(20, 20, 20);
 
-    border:
-        1px solid rgb(65, 65, 65);
-
-    background:
-        rgb(20, 20, 20);
-
-    box-shadow:
-        0 0 12px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.6);
 }
