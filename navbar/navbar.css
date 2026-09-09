@@ -1,0 +1,620 @@
+/* =========================
+   NAVIGATION BAR
+   ========================= */
+
+* { font-family: Verdana, Geneva, Tahoma, sans-serif !important; }
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+
+    display: flex;
+    align-items: center;
+
+    background: rgb(94, 92, 92);
+    box-sizing: border-box;
+    padding: 0 25px;
+
+    z-index: 100;
+
+    
+
+}
+
+
+/* =========================
+   LOGO
+   ========================= */
+
+.logo-button {
+    width: 50px;
+    height: 50px;
+
+    padding: 0;
+    border: none;
+    background: none;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-button img {
+    width: 45px;
+    height: 45px;
+
+    object-fit: contain;
+    display: block;
+}
+
+
+/* =========================
+   LOGO SPIN
+   ========================= */
+
+/* =========================
+   LOGO TRANSFORMATION
+   ========================= */
+
+.logo-button {
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-stage {
+    position: relative;
+    width: 45px;
+    height: 45px;
+    display: block;
+}
+
+.logo-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 45px;
+    height: 45px;
+
+    object-fit: contain;
+
+    opacity: 0;
+    transform: rotate(0deg);
+    filter: blur(0px);
+
+    pointer-events: none;
+}
+
+/* Initial logo */
+
+.logo-image.logo-active {
+    opacity: 1;
+}
+
+
+/* =========================
+   MTF → RRH
+   ========================= */
+
+.logo-button.transforming-forward
+.logo-image.logo-active {
+    animation: mtfDisappear 1.8s ease-in forwards;
+}
+
+.logo-button.transforming-forward
+.logo-image:not(.logo-active) {
+    animation: rrhAppear 1.8s ease-out forwards;
+}
+
+
+/* MTF slows down → accelerates → blurs → disappears */
+
+@keyframes mtfDisappear {
+
+    0% {
+        opacity: 1;
+        transform: rotate(0deg);
+        filter: blur(0px);
+    }
+
+    25% {
+        opacity: 1;
+        transform: rotate(90deg);
+        filter: blur(0px);
+    }
+
+    50% {
+        opacity: 0.95;
+        transform: rotate(300deg);
+        filter: blur(1px);
+    }
+
+    70% {
+        opacity: 0.7;
+        transform: rotate(650deg);
+        filter: blur(3px);
+    }
+
+    85% {
+        opacity: 0.35;
+        transform: rotate(950deg);
+        filter: blur(6px);
+    }
+
+    100% {
+        opacity: 0;
+        transform: rotate(1200deg);
+        filter: blur(10px);
+    }
+}
+
+
+/* RRH spins in while fading into view */
+
+@keyframes rrhAppear {
+
+    0% {
+        opacity: 0;
+        transform: rotate(-300deg);
+        filter: blur(10px);
+    }
+
+    25% {
+        opacity: 0.15;
+        transform: rotate(-200deg);
+        filter: blur(7px);
+    }
+
+    50% {
+        opacity: 0.45;
+        transform: rotate(-100deg);
+        filter: blur(4px);
+    }
+
+    75% {
+        opacity: 0.8;
+        transform: rotate(-35deg);
+        filter: blur(1px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: rotate(0deg);
+        filter: blur(0px);
+    }
+}
+
+
+/* =========================
+   RRH → MTF
+   ========================= */
+
+.logo-button.transforming-back
+.logo-image.logo-active {
+    animation: rrhDisappear 1.8s ease-in forwards;
+}
+
+.logo-button.transforming-back
+.logo-image:not(.logo-active) {
+    animation: mtfAppear 1.8s ease-out forwards;
+}
+
+
+@keyframes rrhDisappear {
+
+    0% {
+        opacity: 1;
+        transform: rotate(0deg);
+        filter: blur(0px);
+    }
+
+    25% {
+        opacity: 1;
+        transform: rotate(-90deg);
+        filter: blur(0px);
+    }
+
+    50% {
+        opacity: 0.95;
+        transform: rotate(-300deg);
+        filter: blur(1px);
+    }
+
+    70% {
+        opacity: 0.7;
+        transform: rotate(-650deg);
+        filter: blur(3px);
+    }
+
+    85% {
+        opacity: 0.35;
+        transform: rotate(-950deg);
+        filter: blur(6px);
+    }
+
+    100% {
+        opacity: 0;
+        transform: rotate(-1200deg);
+        filter: blur(10px);
+    }
+}
+
+
+@keyframes mtfAppear {
+
+    0% {
+        opacity: 0;
+        transform: rotate(300deg);
+        filter: blur(10px);
+    }
+
+    25% {
+        opacity: 0.15;
+        transform: rotate(200deg);
+        filter: blur(7px);
+    }
+
+    50% {
+        opacity: 0.45;
+        transform: rotate(100deg);
+        filter: blur(4px);
+    }
+
+    75% {
+        opacity: 0.8;
+        transform: rotate(35deg);
+        filter: blur(1px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: rotate(0deg);
+        filter: blur(0px);
+    }
+}
+
+
+/* =========================
+   NAVIGATION LINKS
+   ========================= */
+
+.nav-links {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: flex;
+    gap: 40px;
+}
+
+.nav-links a,
+.help-button {
+    color: black;
+    text-decoration: none;
+
+    font-family: monospace;
+    font-size: 20px;
+    letter-spacing: 2px;
+
+    transition:
+        color 0.3s ease,
+        text-shadow 0.3s ease;
+}
+
+
+/* =========================
+   LINK HOVER
+   ========================= */
+
+.nav-links a:hover,
+.help-button:hover {
+    color: rgba(212, 1, 1, 0.753);
+
+    text-shadow:
+        0 0 2px rgb(238, 0, 0), 
+        0 0 5px rgb(119, 0, 0);
+}
+
+
+/* =========================
+   HELP BUTTON
+   ========================= */
+
+.help-button {
+    margin-left: auto;
+
+    padding: 8px 14px;
+
+    border: 1px solid black;
+
+    transition:
+        color 0.3s ease,
+        background 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.help-button:hover {
+    color: white;
+    background: rgb(156, 0, 0);
+
+    border: 1px solid rgb(153, 0, 0);
+    border-color: rgb(83, 0, 0);
+
+    text-shadow: none;
+
+    box-shadow:
+        0 0 8px rgb(61, 0, 0),
+        0 0 8px rgb(61, 0, 0);
+}
+
+/* =========================
+   BINARY TRICKLE
+   ========================= */
+
+.nav-links a {
+    position: relative;
+}
+
+.binary-stream {
+    position: absolute;
+
+    color: red;
+    font-family: monospace;
+    font-size: 11px;
+
+    pointer-events: none;
+    user-select: none;
+
+    text-shadow:
+        0 0 3px red,
+        0 0 6px red;
+
+    opacity: 0;
+
+    animation: binaryTrickle 2s ease-out forwards;
+}
+
+@keyframes binaryTrickle {
+
+    0% {
+        opacity: 0;
+        transform: translate(0, 0);
+    }
+
+    15% {
+        opacity: 0.9;
+    }
+
+    60% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(var(--stream-x), var(--stream-y));
+    }
+}
+
+/* =========================
+   HELP DROPDOWN
+   ========================= */
+
+.help-container {
+    position: relative;
+    margin-left: auto;
+}
+
+.help-button {
+    cursor: pointer;
+}
+
+
+/* =========================
+   DROPDOWN PANEL
+   ========================= */
+
+.help-dropdown {
+    position: absolute;
+
+    top: 58px;
+    right: 0;
+
+    width: 230px;
+
+    padding: 16px;
+
+    background: rgb(45, 45, 45);
+
+    border: 1px solid rgb(110, 0, 0);
+
+    box-shadow:
+        0 0 8px rgba(100, 0, 0, 0.7),
+        inset 0 0 10px rgba(0, 0, 0, 0.6);
+
+    box-sizing: border-box;
+
+    opacity: 0;
+    transform: translateY(-8px);
+
+    pointer-events: none;
+
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+/* OPEN */
+
+.help-container.open .help-dropdown {
+    opacity: 1;
+    transform: translateY(0);
+
+    pointer-events: auto;
+}
+
+
+/* =========================
+   AUDIO TITLE
+   ========================= */
+
+.audio-title {
+    color: rgb(180, 0, 0);
+
+    font-family: monospace !important;
+
+    font-size: 13px;
+
+    letter-spacing: 2px;
+
+    border-bottom: 1px solid rgb(90, 0, 0);
+
+    padding-bottom: 8px;
+
+    margin-bottom: 12px;
+}
+
+
+/* =========================
+   MUSIC CONTROL
+   ========================= */
+
+.audio-controls {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 14px;
+}
+
+.music-toggle {
+    width: 32px;
+    height: 32px;
+
+    border: 1px solid rgb(120, 0, 0);
+
+    background: rgb(25, 25, 25);
+
+    color: rgb(190, 0, 0);
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.music-toggle:hover {
+    background: rgb(120, 0, 0);
+
+    color: white;
+
+    box-shadow:
+        0 0 8px rgba(150, 0, 0, 0.8);
+}
+
+
+#musicStatus {
+    color: rgb(190, 190, 190);
+
+    font-family: monospace !important;
+
+    font-size: 12px;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================
+   VOLUME
+   ========================= */
+
+.volume-container {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+.volume-label {
+    color: rgb(150, 150, 150);
+
+    font-family: monospace !important;
+
+    font-size: 11px;
+}
+
+
+/* =========================
+   SCP VOLUME SLIDER
+   ========================= */
+
+#volumeSlider {
+    width: 150px;
+
+    appearance: none;
+
+    height: 4px;
+
+    background: rgb(80, 80, 80);
+
+    outline: none;
+
+    cursor: pointer;
+}
+
+
+/* Slider knob */
+
+#volumeSlider::-webkit-slider-thumb {
+    appearance: none;
+
+    width: 12px;
+    height: 12px;
+
+    border-radius: 0;
+
+    background: rgb(150, 0, 0);
+
+    border: 1px solid rgb(220, 0, 0);
+
+    box-shadow:
+        0 0 5px rgba(180, 0, 0, 0.8);
+
+    cursor: pointer;
+}
+
+
+/* Firefox */
+
+#volumeSlider::-moz-range-thumb {
+    width: 12px;
+    height: 12px;
+
+    border-radius: 0;
+
+    background: rgb(150, 0, 0);
+
+    border: 1px solid rgb(220, 0, 0);
+
+    cursor: pointer;
+}
