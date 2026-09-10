@@ -1,1 +1,642 @@
+/* =========================================================
+   DATABASE
+   PAGE CSS
+   ========================================================= */
 
+
+/* =========================
+   GLOBAL
+   ========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    margin: 0;
+
+    background-color: #111;
+
+    color: rgb(190, 190, 190);
+}
+
+
+/* =========================
+   BACKGROUND
+   ========================= */
+
+body::before {
+    content: "";
+
+    position: fixed;
+
+    inset: 0;
+
+    background-image:
+        url("images/scp.jpg");
+
+    background-size: 90%;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+    background-attachment: fixed;
+
+    background-color: #191919;
+
+    z-index: -1;
+
+    animation:
+        backgroundEntrance
+        4s ease-out
+        forwards;
+}
+
+
+@keyframes backgroundEntrance {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+
+}
+
+
+/* =========================
+   CORNER BINARY
+   ========================= */
+
+.binary {
+    position: fixed;
+
+    color: red;
+
+    font-family: monospace !important;
+
+    font-size: 12px;
+
+    line-height: 1.25;
+
+    white-space: pre;
+
+    pointer-events: none;
+
+    text-shadow:
+        0 0 4px red;
+
+    z-index: 10;
+
+    opacity: 0;
+
+    animation:
+        binaryEntrance
+        2s ease-out
+        0.5s
+        forwards;
+}
+
+
+.binary-top-left {
+    top: 0;
+
+    left: 0;
+
+    width: 350px;
+
+    text-align: left;
+}
+
+
+.binary-top-right {
+    top: 0;
+
+    right: 0;
+
+    width: 350px;
+
+    text-align: right;
+}
+
+
+@keyframes binaryEntrance {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 0.65;
+    }
+
+}
+
+
+/* =========================
+   DATABASE PAGE
+   ========================= */
+
+.database-page {
+    position: relative;
+
+    width: 900px;
+
+    max-width: 90%;
+
+    margin: 0 auto;
+
+    padding-top: 100px;
+
+    padding-bottom: 100px;
+}
+
+
+/* =========================
+   SCP PANEL
+   ========================= */
+
+.scp-panel {
+    background:
+        rgba(17, 17, 17, 0.88);
+
+    border:
+        1px solid rgb(70, 70, 70);
+
+    border-left:
+        3px solid rgb(150, 0, 0);
+
+    box-shadow:
+        0 0 15px rgba(0, 0, 0, 0.7);
+}
+
+
+/* =========================
+   DATABASE HEADER
+   ========================= */
+
+.database-header {
+    padding: 20px 25px;
+
+    margin-bottom: 25px;
+}
+
+
+.database-label {
+    color: rgb(150, 0, 0);
+
+    font-family: monospace !important;
+
+    font-size: 12px;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 8px;
+}
+
+
+.database-header h1 {
+    color: rgb(210, 210, 210);
+
+    font-size: 28px;
+
+    letter-spacing: 3px;
+
+    margin: 0 0 8px 0;
+}
+
+
+.database-header p {
+    color: rgb(140, 140, 140);
+
+    font-family: monospace !important;
+
+    font-size: 13px;
+
+    margin: 0;
+}
+
+
+/* =========================
+   DATABASE FOLDER
+   ========================= */
+
+.database-folder {
+    position: relative;
+
+    width: 100%;
+}
+
+
+/* =========================
+   DATABASE TABS
+   ========================= */
+
+.database-tabs {
+    display: flex;
+
+    align-items: flex-end;
+
+    gap: 5px;
+
+    padding-left: 12px;
+}
+
+
+.database-tab {
+    position: relative;
+
+    padding: 12px 18px;
+
+    background:
+        rgb(35, 35, 35);
+
+    color:
+        rgb(130, 130, 130);
+
+    border:
+        1px solid rgb(65, 65, 65);
+
+    border-bottom:
+        none;
+
+    font-family:
+        monospace !important;
+
+    font-size:
+        12px;
+
+    letter-spacing:
+        1px;
+
+    cursor:
+        pointer;
+
+    transition:
+        color 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+.database-tab:hover {
+    color:
+        rgb(210, 210, 210);
+
+    background:
+        rgb(45, 45, 45);
+
+    border-color:
+        rgb(100, 0, 0);
+}
+
+
+.database-tab.active {
+    color:
+        rgb(220, 220, 220);
+
+    background:
+        rgb(17, 17, 17);
+
+    border-color:
+        rgb(120, 0, 0);
+
+    border-top:
+        2px solid rgb(160, 0, 0);
+
+    transform:
+        translateY(1px);
+
+    z-index:
+        2;
+}
+
+
+/* =========================
+   DATABASE PANEL
+   ========================= */
+
+.database-panel {
+    position: relative;
+
+    background:
+        rgba(17, 17, 17, 0.92);
+
+    border:
+        1px solid rgb(65, 65, 65);
+
+    border-left:
+        3px solid rgb(150, 0, 0);
+
+    box-shadow:
+        0 0 15px rgba(0, 0, 0, 0.75);
+
+    overflow:
+        hidden;
+
+    transition:
+        height 0.45s ease;
+}
+
+
+/* =========================
+   DATABASE SECTIONS
+   ========================= */
+
+.database-section {
+    display: none;
+
+    padding: 30px;
+
+    opacity: 0;
+}
+
+
+.database-section.active {
+    display: block;
+
+    animation:
+        sectionEntrance
+        0.45s ease
+        forwards;
+}
+
+
+@keyframes sectionEntrance {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+
+}
+
+
+/* =========================
+   SECTION HEADER
+   ========================= */
+
+.section-label {
+    color:
+        rgb(150, 0, 0);
+
+    font-family:
+        monospace !important;
+
+    font-size:
+        11px;
+
+    letter-spacing:
+        3px;
+
+    margin-bottom:
+        8px;
+}
+
+
+.database-section h2 {
+    color:
+        rgb(210, 210, 210);
+
+    font-family:
+        monospace !important;
+
+    font-size:
+        21px;
+
+    letter-spacing:
+        2px;
+
+    border-bottom:
+        1px solid rgb(80, 0, 0);
+
+    padding-bottom:
+        10px;
+
+    margin:
+        0 0 12px 0;
+}
+
+
+.classified-line {
+    color:
+        rgb(130, 130, 130);
+
+    font-family:
+        monospace !important;
+
+    font-size:
+        11px;
+
+    letter-spacing:
+        1px;
+
+    margin-bottom:
+        25px;
+}
+
+
+/* =========================
+   INFORMATION GRID
+   ========================= */
+
+.information-grid {
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap:
+        12px;
+
+    margin-bottom:
+        25px;
+}
+
+
+.information-box {
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        8px;
+
+    min-height:
+        80px;
+
+    padding:
+        15px;
+
+    background:
+        rgba(10, 10, 10, 0.7);
+
+    border:
+        1px solid rgb(55, 55, 55);
+
+    border-left:
+        2px solid rgb(100, 0, 0);
+
+    transition:
+        border-color 0.25s ease,
+        background 0.25s ease;
+}
+
+
+.information-box:hover {
+    background:
+        rgba(25, 25, 25, 0.8);
+
+    border-left-color:
+        rgb(160, 0, 0);
+}
+
+
+.information-label {
+    color:
+        rgb(120, 120, 120);
+
+    font-family:
+        monospace !important;
+
+    font-size:
+        10px;
+
+    letter-spacing:
+        2px;
+}
+
+
+.information-value {
+    color:
+        rgb(190, 190, 190);
+
+    font-family:
+        monospace !important;
+
+    font-size:
+        12px;
+
+    line-height:
+        1.5;
+}
+
+
+/* =========================
+   DATABASE TEXT
+   ========================= */
+
+.database-text {
+    padding-top:
+        5px;
+}
+
+
+.database-text h3 {
+    color:
+        rgb(160, 0, 0);
+
+    font-family:
+        monospace !important;
+
+    font-size:
+        13px;
+
+    letter-spacing:
+        2px;
+
+    margin:
+        0 0 10px 0;
+}
+
+
+.database-text p {
+    color:
+        rgb(145, 145, 145);
+
+    font-family:
+        monospace !important;
+
+    font-size:
+        13px;
+
+    line-height:
+        1.7;
+
+    margin:
+        0;
+}
+
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 700px) {
+
+    .database-page {
+        max-width: 94%;
+
+        padding-top: 80px;
+    }
+
+
+    .database-tabs {
+        display:
+            flex;
+
+        flex-wrap:
+            wrap;
+
+        gap:
+            3px;
+
+        padding-left:
+            5px;
+    }
+
+
+    .database-tab {
+        padding:
+            10px 11px;
+
+        font-size:
+            10px;
+    }
+
+
+    .database-section {
+        padding:
+            20px;
+    }
+
+
+    .information-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .database-header h1 {
+        font-size:
+            22px;
+    }
+
+}
