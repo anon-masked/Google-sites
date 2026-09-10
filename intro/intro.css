@@ -46,7 +46,7 @@
     position: absolute;
 
     left: 50%;
-    top: 43%;
+    top: 36%;
 
     transform: translate(-50%, -50%);
 
@@ -139,13 +139,11 @@
     left: 0;
 
     /*
-       Circle center = 43%
+       Circle center = 36%
        Circle radius = 110px
-       Gap = 35px
-
-       This places the terminal underneath the circle.
+       Gap = 30px
     */
-    top: calc(43% + 145px);
+    top: calc(36% + 140px);
 
     text-align: left;
 
@@ -213,16 +211,16 @@
     left: 50%;
 
     /*
-       Positioned below the terminal area.
+       JavaScript will calculate the exact vertical
+       position based on the terminal's actual height.
     */
-    top: calc(43% + 300px);
+    top: 0;
 
     transform: translateX(-50%);
 
     padding: 13px 30px;
 
     background: rgb(100, 0, 0);
-
     border: 1px solid rgb(170, 0, 0);
 
     color: rgb(220, 220, 220);
@@ -232,6 +230,8 @@
     letter-spacing: 3px;
 
     cursor: pointer;
+
+    z-index: 20;
 
     box-shadow:
         0 0 8px rgba(120, 0, 0, 0.5),
@@ -293,19 +293,17 @@
         width: 190px;
         height: 190px;
 
-        top: 40%;
+        top: 34%;
     }
 
     .intro-terminal {
-        top: calc(40% + 125px);
+        top: calc(34% + 125px);
 
         font-size: 11px;
         line-height: 1.6;
     }
 
     #secureButton {
-        top: calc(40% + 270px);
-
         font-size: 11px;
         padding: 12px 20px;
     }
