@@ -166,7 +166,7 @@
     color: rgb(170, 0, 0);
 }
 
-..intro-line.warning .light-word {
+.intro-line.warning .light-word {
     color: rgb(255, 220, 0) !important;
     text-shadow:
         0 0 4px rgba(255, 220, 0, 0.6),
