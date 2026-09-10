@@ -16,10 +16,6 @@ body {
     color: rgb(190, 190, 190);
 }
 
-.database-page {
-    position: relative;
-    z-index: 1;
-}
 
 /* =========================
    BACKGROUND
@@ -143,6 +139,8 @@ body::before {
 .database-page {
     position: relative;
 
+    z-index: 1;
+
     width: 900px;
 
     max-width: 90%;
@@ -228,6 +226,79 @@ body::before {
     position: relative;
 
     width: 100%;
+
+    z-index: 2;
+}
+
+
+/* =========================
+   REDACTED OVERLAY
+   ========================= */
+
+.redacted-overlay {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 55px;
+
+    background: rgb(0, 0, 0);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    z-index: 20;
+
+    transition:
+        opacity 0.45s ease,
+        transform 0.45s ease;
+}
+
+
+.redacted-overlay.hidden {
+    opacity: 0;
+
+    transform:
+        translateY(-15px);
+
+    pointer-events: none;
+}
+
+
+#redactedButton {
+    background: none;
+
+    border: none;
+
+    color: white;
+
+    font-family: monospace !important;
+
+    font-size: 14px;
+
+    letter-spacing: 3px;
+
+    cursor: pointer;
+
+    padding: 10px 20px;
+
+    transition:
+        color 0.25s ease,
+        text-shadow 0.25s ease;
+}
+
+
+#redactedButton:hover {
+    color: rgb(220, 0, 0);
+
+    text-shadow:
+        0 0 5px rgb(150, 0, 0),
+        0 0 10px rgb(100, 0, 0);
 }
 
 
@@ -243,6 +314,10 @@ body::before {
     gap: 5px;
 
     padding-left: 12px;
+
+    position: relative;
+
+    z-index: 3;
 }
 
 
@@ -308,11 +383,8 @@ body::before {
     border-top:
         2px solid rgb(160, 0, 0);
 
-    transform:
-        translateY(1px);
-
     z-index:
-        2;
+        4;
 }
 
 
@@ -322,6 +394,8 @@ body::before {
 
 .database-panel {
     position: relative;
+
+    z-index: 2;
 
     background:
         rgba(17, 17, 17, 0.92);
@@ -337,9 +411,6 @@ body::before {
 
     overflow:
         hidden;
-
-    transition:
-        height 0.45s ease;
 }
 
 
@@ -348,15 +419,43 @@ body::before {
    ========================= */
 
 .database-section {
-    display: none;
+    display: block;
+
     padding: 30px;
-    color: rgb(190, 190, 190);
+
+    max-height: 0;
+
+    opacity: 0;
+
+    overflow: hidden;
+
+    padding-top: 0;
+    padding-bottom: 0;
+
+    transform:
+        translateY(-20px);
+
+    transition:
+        max-height 0.55s ease,
+        opacity 0.35s ease,
+        transform 0.55s ease,
+        padding 0.55s ease;
 }
 
+
 .database-section.active {
-    display: block;
-    color: rgb(190, 190, 190);
+    max-height: 1500px;
+
+    opacity: 1;
+
+    padding-top: 30px;
+
+    padding-bottom: 30px;
+
+    transform:
+        translateY(0);
 }
+
 
 /* =========================
    SECTION HEADER
@@ -596,6 +695,21 @@ body::before {
 
     .database-section {
         padding:
+            20px;
+
+        padding-top:
+            0;
+
+        padding-bottom:
+            0;
+    }
+
+
+    .database-section.active {
+        padding-top:
+            20px;
+
+        padding-bottom:
             20px;
     }
 
