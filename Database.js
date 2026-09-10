@@ -21,30 +21,24 @@ const databaseSections =
 
 function openDatabaseSection(sectionId) {
 
-    /* =========================
-       UPDATE TABS
-       ========================= */
-
     databaseTabs.forEach(tab => {
 
-        tab.classList.toggle(
-            "active",
-            tab.dataset.section === sectionId
-        );
+        if (tab.dataset.section === sectionId) {
+            tab.classList.add("active");
+        } else {
+            tab.classList.remove("active");
+        }
 
     });
 
 
-    /* =========================
-       UPDATE SECTIONS
-       ========================= */
-
     databaseSections.forEach(section => {
 
-        section.classList.toggle(
-            "active",
-            section.id === sectionId
-        );
+        if (section.id === sectionId) {
+            section.classList.add("active");
+        } else {
+            section.classList.remove("active");
+        }
 
     });
 
