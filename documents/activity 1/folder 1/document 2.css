@@ -316,9 +316,9 @@ body::before {
 .flowchart-image {
     display: block;
 
-    width: 60%;
+    width: auto;
 
-    max-width: 60%;
+    max-width: 100%;
 
     height: auto;
 
