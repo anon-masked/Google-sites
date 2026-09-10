@@ -166,18 +166,37 @@
     color: rgb(170, 0, 0);
 }
 
-.intro-line.warning .light-word {
+..intro-line.warning .light-word {
     color: rgb(255, 220, 0) !important;
-
     text-shadow:
         0 0 4px rgba(255, 220, 0, 0.6),
         0 0 8px rgba(255, 200, 0, 0.3);
+
+    animation: lightReveal 1.5s ease forwards;
 }
 
-.intro-line.final {
-    color: rgb(190, 190, 190);
-}
+@keyframes lightReveal {
+    0% {
+        color: rgb(170, 0, 0);
+        text-shadow: none;
+        opacity: 0;
+    }
 
+    50% {
+        color: rgb(255, 120, 0);
+        text-shadow:
+            0 0 5px rgba(255, 120, 0, 0.6);
+        opacity: 0.7;
+    }
+
+    100% {
+        color: rgb(255, 220, 0);
+        text-shadow:
+            0 0 4px rgba(255, 220, 0, 0.6),
+            0 0 8px rgba(255, 200, 0, 0.3);
+        opacity: 1;
+    }
+}
 
 /* =========================================================
    CURSOR
