@@ -167,26 +167,21 @@
 }
 
 .intro-line.warning .light-word {
-    color: rgb(255, 220, 0) !important;
-    text-shadow:
-        0 0 4px rgba(255, 220, 0, 0.6),
-        0 0 8px rgba(255, 200, 0, 0.3);
+    color: rgb(170, 0, 0);
 
-    animation: lightReveal 1.5s ease forwards;
+    animation: lightColorChange 2s ease forwards;
 }
 
-@keyframes lightReveal {
+@keyframes lightColorChange {
     0% {
         color: rgb(170, 0, 0);
         text-shadow: none;
-        opacity: 0;
     }
 
     50% {
         color: rgb(255, 120, 0);
         text-shadow:
-            0 0 5px rgba(255, 120, 0, 0.6);
-        opacity: 0.7;
+            0 0 5px rgba(255, 120, 0, 0.5);
     }
 
     100% {
@@ -194,7 +189,6 @@
         text-shadow:
             0 0 4px rgba(255, 220, 0, 0.6),
             0 0 8px rgba(255, 200, 0, 0.3);
-        opacity: 1;
     }
 }
 
