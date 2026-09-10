@@ -14,33 +14,99 @@ const databaseTabs =
 const databaseSections =
     document.querySelectorAll(".database-section");
 
+const redactedOverlay =
+    document.getElementById("redactedOverlay");
+
+const redactedButton =
+    document.getElementById("redactedButton");
+
 
 /* =========================
-   OPEN SECTION
+   REDACTED OVERLAY
+   ========================= */
+
+if (redactedButton && redactedOverlay) {
+
+    redactedButton.addEventListener("click", () => {
+
+        redactedOverlay.classList.add("hidden");
+
+    });
+
+}
+
+
+/* =========================
+   OPEN / CLOSE SECTION
    ========================= */
 
 function openDatabaseSection(sectionId) {
 
-    databaseTabs.forEach(tab => {
+    const selectedSection =
+        document.getElementById(sectionId);
 
-        if (tab.dataset.section === sectionId) {
-            tab.classList.add("active");
-        } else {
-            tab.classList.remove("active");
+    const selectedTab =
+        document.querySelector(
+            `.database-tab[data-section="${sectionId}"]`
+        );
+
+
+    /* =========================
+       IF ALREADY OPEN
+       CLOSE IT
+       ========================= */
+
+    if (
+        selectedSection &&
+        selectedSection.classList.contains("active")
+    ) {
+
+        selectedSection.classList.remove("active");
+
+        if (selectedTab) {
+
+            selectedTab.classList.remove("active");
+
         }
 
-    });
+        return;
+    }
 
+
+    /* =========================
+       CLOSE ALL SECTIONS
+       ========================= */
 
     databaseSections.forEach(section => {
 
-        if (section.id === sectionId) {
-            section.classList.add("active");
-        } else {
-            section.classList.remove("active");
-        }
+        section.classList.remove("active");
 
     });
+
+
+    databaseTabs.forEach(tab => {
+
+        tab.classList.remove("active");
+
+    });
+
+
+    /* =========================
+       OPEN SELECTED SECTION
+       ========================= */
+
+    if (selectedSection) {
+
+        selectedSection.classList.add("active");
+
+    }
+
+
+    if (selectedTab) {
+
+        selectedTab.classList.add("active");
+
+    }
 
 }
 
@@ -60,10 +126,3 @@ databaseTabs.forEach(tab => {
     });
 
 });
-
-
-/* =========================
-   INITIAL SECTION
-   ========================= */
-
-openDatabaseSection("personnel");
