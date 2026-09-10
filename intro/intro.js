@@ -356,40 +356,29 @@ function beginTerminalText() {
    ========================================================= */
 
 function showSecureButton() {
+    const button = document.getElementById("secureButton");
+    const terminal = document.getElementById("introTerminal");
 
-    const button =
-        document.getElementById("secureButton");
+    if (!button || !terminal) return;
 
+    /*
+       Put the button directly underneath the terminal.
+       This automatically adapts to the terminal's height.
+    */
+    button.style.top =
+        `${terminal.offsetTop + terminal.offsetHeight + 25}px`;
 
     button.classList.add("visible");
 
-
     button.addEventListener("click", () => {
+        localStorage.setItem("foundationIntroCompleted", "true");
 
-        /* Remember that this user completed the intro */
-
-        localStorage.setItem(
-            "foundationIntroCompleted",
-            "true"
-        );
-
-
-        /* Exit animation */
-
-        const intro =
-            document.getElementById("foundationIntro");
-
-
+        const intro = document.getElementById("foundationIntro");
         intro.classList.add("intro-exit");
 
-
         setTimeout(() => {
-
             intro.remove();
-
             document.body.style.overflow = "";
-
         }, 850);
-
     });
 }
