@@ -5,7 +5,7 @@
 
 
 /* =========================
-   DATABASE TABS
+   DATABASE ELEMENTS
    ========================= */
 
 const databaseTabs =
@@ -14,9 +14,6 @@ const databaseTabs =
 const databaseSections =
     document.querySelectorAll(".database-section");
 
-const databasePanel =
-    document.querySelector(".database-panel");
-
 
 /* =========================
    OPEN SECTION
@@ -24,80 +21,30 @@ const databasePanel =
 
 function openDatabaseSection(sectionId) {
 
-    const targetSection =
-        document.getElementById(sectionId);
-
-    if (!targetSection) {
-        return;
-    }
-
-
     /* =========================
-       REMOVE ACTIVE TAB
+       UPDATE TABS
        ========================= */
 
     databaseTabs.forEach(tab => {
 
-        tab.classList.remove("active");
+        tab.classList.toggle(
+            "active",
+            tab.dataset.section === sectionId
+        );
 
     });
 
 
     /* =========================
-       HIDE ALL SECTIONS
+       UPDATE SECTIONS
        ========================= */
 
     databaseSections.forEach(section => {
 
-        section.classList.remove("active");
-
-        section.style.display = "none";
-
-    });
-
-
-    /* =========================
-       FIND SELECTED TAB
-       ========================= */
-
-    const selectedTab =
-        document.querySelector(
-            `.database-tab[data-section="${sectionId}"]`
+        section.classList.toggle(
+            "active",
+            section.id === sectionId
         );
-
-
-    if (selectedTab) {
-
-        selectedTab.classList.add("active");
-
-    }
-
-
-    /* =========================
-       OPEN SELECTED SECTION
-       ========================= */
-
-    targetSection.style.display = "block";
-
-    targetSection.classList.add("active");
-
-
-    /* =========================
-       UPDATE PANEL HEIGHT
-       ========================= */
-
-    databasePanel.style.height =
-        targetSection.scrollHeight + "px";
-
-
-    /* =========================
-       WAIT FOR CONTENT TO SETTLE
-       ========================= */
-
-    requestAnimationFrame(() => {
-
-        databasePanel.style.height =
-            targetSection.scrollHeight + "px";
 
     });
 
@@ -112,19 +59,9 @@ databaseTabs.forEach(tab => {
 
     tab.addEventListener("click", () => {
 
-        const sectionId =
-            tab.dataset.section;
-
-
-        /* Don't do anything
-           if already open */
-
-        if (tab.classList.contains("active")) {
-            return;
-        }
-
-
-        openDatabaseSection(sectionId);
+        openDatabaseSection(
+            tab.dataset.section
+        );
 
     });
 
@@ -135,15 +72,4 @@ databaseTabs.forEach(tab => {
    INITIAL SECTION
    ========================= */
 
-const initialSection =
-    document.querySelector(
-        ".database-section.active"
-    );
-
-
-if (initialSection) {
-
-    databasePanel.style.height =
-        initialSection.scrollHeight + "px";
-
-}
+openDatabaseSection("personnel");
