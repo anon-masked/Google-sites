@@ -9,15 +9,6 @@
    ========================= */
 
 body {
-    background: lime !important;
-}
-
-* {
-    box-sizing: border-box;
-}
-
-
-body {
     margin: 0;
     background-color: #111;
     color: rgb(190, 190, 190);
