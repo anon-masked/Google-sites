@@ -162,35 +162,48 @@
     min-height: 22px;
 }
 
+
+/* =========================================================
+   WARNING MESSAGE
+   ========================================================= */
+
 .intro-line.warning {
     color: rgb(170, 0, 0);
+
+    animation: warningColorChange 2s ease forwards;
 }
 
-.intro-line.warning .light-word {
-    color: rgb(170, 0, 0);
 
-    animation: lightColorChange 2s ease forwards;
-}
+/* =========================================================
+   WARNING COLOR TRANSITION
+   RED → ORANGE → YELLOW
+   ========================================================= */
 
-@keyframes lightColorChange {
+@keyframes warningColorChange {
+
     0% {
         color: rgb(170, 0, 0);
-        text-shadow: none;
+
+        text-shadow:
+            0 0 0 rgba(170, 0, 0, 0);
     }
 
     50% {
         color: rgb(255, 120, 0);
+
         text-shadow:
             0 0 5px rgba(255, 120, 0, 0.5);
     }
 
     100% {
         color: rgb(255, 220, 0);
+
         text-shadow:
             0 0 4px rgba(255, 220, 0, 0.6),
             0 0 8px rgba(255, 200, 0, 0.3);
     }
 }
+
 
 /* =========================================================
    CURSOR
@@ -210,6 +223,7 @@
 }
 
 @keyframes cursorBlink {
+
     0%, 45% {
         opacity: 1;
     }
@@ -232,7 +246,7 @@
     left: 50%;
 
     /*
-       JavaScript will calculate the exact vertical
+       JavaScript calculates the exact vertical
        position based on the terminal's actual height.
     */
     top: 0;
@@ -268,7 +282,7 @@
 #secureButton.visible {
     display: block;
 
-    animation: buttonAppear 0.6s ease forwards;
+    animation: buttonAppear 1s ease forwards;
 }
 
 #secureButton:hover {
@@ -288,6 +302,7 @@
 }
 
 @keyframes buttonAppear {
+
     from {
         opacity: 0;
         transform: translateX(-50%) translateY(10px);
