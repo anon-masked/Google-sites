@@ -5,6 +5,9 @@
 const logoButton = document.getElementById("logoButton");
 const logoImage1 = document.getElementById("logoImage1");
 const logoImage2 = document.getElementById("logoImage2");
+const refreshIntroButton =
+    document.getElementById("refreshIntroButton");
+
 
 if (logoButton && logoImage1 && logoImage2) {
 
@@ -404,3 +407,17 @@ document.addEventListener("click", (event) => {
     playRandomClickSound();
 
 });
+
+if (refreshIntroButton) {
+
+    refreshIntroButton.addEventListener("click", () => {
+
+        localStorage.removeItem(
+            "foundationIntroCompleted"
+        );
+
+        window.location.reload();
+
+    });
+
+}
