@@ -16,6 +16,10 @@ body {
     color: rgb(190, 190, 190);
 }
 
+.database-page {
+    position: relative;
+    z-index: 1;
+}
 
 /* =========================
    BACKGROUND
