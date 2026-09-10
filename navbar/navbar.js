@@ -348,3 +348,59 @@ document.addEventListener(
     },
     { once: true }
 );
+
+/* =========================
+   RANDOM CLICK SOUNDS
+   ========================= */
+
+const clickSounds = [
+    "../Sound effects/Sound effects_adriantnt_u_click.mp3",
+    "../Sound effects/adriantnt_u_click.mp3",
+    "../Sound effects/freesound_community-mech-keyboard-02-102918.mp3",
+    "../Sound effects/justsomesounds-click-sound-432501.mp3",
+    "../Sound effects/u_u4pf5h7zip-click-345983.mp3.mp3"
+];
+
+let lastClickSound = -1;
+
+function playRandomClickSound() {
+
+    let randomIndex;
+
+    do {
+        randomIndex =
+            Math.floor(
+                Math.random() * clickSounds.length
+            );
+    } while (
+        clickSounds.length > 1 &&
+        randomIndex === lastClickSound
+    );
+
+    lastClickSound = randomIndex;
+
+    const clickSound =
+        new Audio(clickSounds[randomIndex]);
+
+    clickSound.volume = 0.4;
+
+    clickSound.play().catch(() => {});
+}
+
+
+/* =========================
+   CLICK DETECTION
+   ========================= */
+
+document.addEventListener("click", (event) => {
+
+    const interactiveElement =
+        event.target.closest(
+            "button, a, input, select, textarea, .database-tab"
+        );
+
+    if (!interactiveElement) return;
+
+    playRandomClickSound();
+
+});
