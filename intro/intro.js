@@ -333,21 +333,24 @@ function beginTerminalText() {
 
             } else {
 
-                lineIndex++;
+    /* Highlight the word LIGHT after typing finishes */
 
-                setTimeout(
-                    typeNextLine,
-                    350
-                );
-            }
-        }
+    if (lineData.text.includes("LIGHT")) {
 
+        line.innerHTML =
+            lineData.text.replace(
+                "LIGHT",
+                '<span class="light-word">LIGHT</span>'
+            );
 
-        typeCharacter();
     }
 
+    lineIndex++;
 
-    typeNextLine();
+    setTimeout(
+        typeNextLine,
+        350
+    );
 }
 
 
