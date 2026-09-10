@@ -318,7 +318,7 @@ body::before {
 
     width: auto;
 
-    max-width: 150%;
+    max-width: 100%;
 
     height: auto;
 
@@ -332,4 +332,166 @@ body::before {
 
     box-shadow:
         0 0 12px rgba(0, 0, 0, 0.6);
+
+    cursor: zoom-in;
+
+    transition:
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.flowchart-image:hover {
+    box-shadow:
+        0 0 18px rgba(150, 0, 0, 0.6);
+
+    transform: scale(1.01);
+}
+
+/* =========================
+   IMAGE LIGHTBOX
+   ========================= */
+
+.image-lightbox {
+    position: fixed;
+
+    inset: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 30px;
+
+    background:
+        rgba(0, 0, 0, 0.92);
+
+    z-index: 1000;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition:
+        opacity 0.25s ease;
+
+    box-sizing: border-box;
+}
+
+
+.image-lightbox.open {
+    opacity: 1;
+
+    pointer-events: auto;
+}
+
+
+.image-lightbox img {
+    display: block;
+
+    max-width: 95vw;
+
+    max-height: 90vh;
+
+    width: auto;
+
+    height: auto;
+
+    object-fit: contain;
+
+    border:
+        1px solid rgb(120, 0, 0);
+
+    box-shadow:
+        0 0 20px rgba(150, 0, 0, 0.6),
+        0 0 60px rgba(0, 0, 0, 0.9);
+
+    transform:
+        scale(0.92);
+
+    transition:
+        transform 0.25s ease;
+}
+
+
+.image-lightbox.open img {
+    transform:
+        scale(1);
+}
+
+
+.image-lightbox::before {
+    content: "IMAGE VIEWER // CLICK OUTSIDE TO CLOSE";
+
+    position: absolute;
+
+    top: 15px;
+
+    left: 20px;
+
+    color: rgb(150, 0, 0);
+
+    font-family: monospace !important;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+}
+
+
+.image-lightbox::after {
+    content: "ESC";
+
+    position: absolute;
+
+    top: 15px;
+
+    right: 20px;
+
+    color: rgb(120, 120, 120);
+
+    font-family: monospace !important;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    border:
+        1px solid rgb(70, 70, 70);
+
+    padding: 4px 7px;
+}
+
+
+@media (max-width: 700px) {
+
+    .image-lightbox {
+        padding: 15px;
+    }
+
+
+    .image-lightbox img {
+        max-width: 96vw;
+
+        max-height: 85vh;
+    }
+
+
+    .image-lightbox::before {
+        font-size: 9px;
+
+        left: 10px;
+
+        top: 10px;
+    }
+
+
+    .image-lightbox::after {
+        right: 10px;
+
+        top: 10px;
+    }
+
 }
