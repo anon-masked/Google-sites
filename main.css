@@ -1,0 +1,135 @@
+/* =========================
+   PAGE
+   ========================= */
+
+body {
+    background-color: #111;
+    margin: 0;
+}
+
+
+/* =========================
+   BACKGROUND
+   ========================= */
+   
+* { font-family: Verdana, Geneva, Tahoma, sans-serif !important; }
+
+body::before {
+    content: "";
+
+    position: fixed;
+    inset: 0;
+
+    background-image: url("images/scp.jpg");
+
+    background-size: 90%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: #191919;
+
+    z-index: -1;
+
+    animation:
+        backgroundEntrance 4s ease-out forwards;
+}
+
+
+/* =========================
+   BINARY
+   ========================= */
+
+.binary {
+    position: fixed;
+
+    color: red;
+
+    font-family: monospace;
+    font-size: 12px;
+    line-height: 1.25;
+
+    white-space: pre;
+
+    pointer-events: none;
+
+    text-shadow:
+        0 0 4px red;
+
+    z-index: 10;
+
+    opacity: 0;
+
+    animation:
+        binaryEntrance 2s ease-out 0.5s forwards;
+}
+
+
+/* =========================
+   TOP RIGHT
+   ========================= */
+
+.binary-top-right {
+    top: 0;
+    right: 0;
+
+    width: 350px;
+
+    text-align: right;
+}
+
+
+/* =========================
+   BOTTOM LEFT
+   ========================= */
+
+.binary-bottom-left {
+    bottom: 0;
+    left: 0;
+
+    width: 300px;
+
+    text-align: left;
+}
+
+
+/* =========================
+   PAGE CONTENT
+   ========================= */
+
+.page-content {
+    position: relative;
+
+    z-index: 5;
+
+    padding-top: 120px;
+}
+
+
+/* =========================
+   ANIMATIONS
+   ========================= */
+
+@keyframes backgroundEntrance {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+
+}
+
+
+@keyframes binaryEntrance {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 0.65;
+    }
+
+}
