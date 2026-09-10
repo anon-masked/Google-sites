@@ -8,10 +8,12 @@
 }
 
 html {
+    overflow-y: scroll;
     scrollbar-width: none;
 }
 
 html::-webkit-scrollbar {
+    width: 0;
     display: none;
 }
 
