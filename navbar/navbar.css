@@ -618,3 +618,45 @@
 
     cursor: pointer;
 }
+
+.intro-control {
+    margin-top: 16px;
+    padding-top: 12px;
+    border-top: 1px solid rgb(70, 0, 0);
+}
+
+.refresh-intro-button {
+    width: 100%;
+    padding: 9px 10px;
+
+    background: rgb(25, 25, 25);
+    border: 1px solid rgb(100, 0, 0);
+
+    color: rgb(160, 160, 160);
+
+    font-family: monospace !important;
+    font-size: 11px;
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    transition:
+        color 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.refresh-intro-button:hover {
+    color: white;
+    background: rgb(120, 0, 0);
+    border-color: rgb(170, 0, 0);
+
+    box-shadow:
+        0 0 8px rgba(150, 0, 0, 0.6),
+        inset 0 0 8px rgba(0, 0, 0, 0.5);
+}
+
+.refresh-intro-button:active {
+    transform: scale(0.98);
+}
