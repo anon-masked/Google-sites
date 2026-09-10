@@ -331,26 +331,34 @@ function beginTerminalText() {
                     typingSpeed
                 );
 
-            } else {
+                       } else {
 
-    /* Highlight the word LIGHT after typing finishes */
+                /* Highlight the word LIGHT after typing finishes */
 
-    if (lineData.text.includes("LIGHT")) {
+                if (lineData.text.includes("LIGHT")) {
 
-        line.innerHTML =
-            lineData.text.replace(
-                "LIGHT",
-                '<span class="light-word">LIGHT</span>'
-            );
+                    line.innerHTML =
+                        lineData.text.replace(
+                            "LIGHT",
+                            '<span class="light-word">LIGHT</span>'
+                        );
 
+                }
+
+                lineIndex++;
+
+                setTimeout(
+                    typeNextLine,
+                    350
+                );
+
+            }
+        }
+
+        typeCharacter();
     }
 
-    lineIndex++;
-
-    setTimeout(
-        typeNextLine,
-        350
-    );
+    typeNextLine();
 }
 
 
