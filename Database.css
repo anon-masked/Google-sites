@@ -345,20 +345,12 @@ body::before {
 
 .database-section {
     display: none;
-
     padding: 30px;
-
-    opacity: 0;
 }
-
 
 .database-section.active {
     display: block;
-
-    animation:
-        sectionEntrance
-        0.45s ease
-        forwards;
+    animation: sectionEntrance 0.45s ease forwards;
 }
 
 /* =========================
