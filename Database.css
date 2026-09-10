@@ -350,11 +350,12 @@ body::before {
 .database-section {
     display: none;
     padding: 30px;
+    color: rgb(190, 190, 190);
 }
 
 .database-section.active {
     display: block;
-    animation: sectionEntrance 0.45s ease forwards;
+    color: rgb(190, 190, 190);
 }
 
 /* =========================
