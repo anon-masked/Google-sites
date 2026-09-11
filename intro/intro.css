@@ -51,7 +51,7 @@
     position: absolute;
 
     left: 50%;
-    top: 10%;
+    top: 15%;
 
     transform: translate(-50%, -50%);
 
@@ -358,11 +358,12 @@
     left: 0;
 
     /*
-       This places the authentication terminal
-       in the empty space underneath the circle.
+       Authentication sits in the
+       empty space between the terminal
+       and the Secure Contain Protect button.
     */
 
-    top: 48%;
+    top: 42%;
 
     width: 100%;
 
@@ -382,7 +383,7 @@
 
     pointer-events: none;
 
-    transform: translateY(-25px);
+    transform: translateY(-15px);
 
     transition:
         opacity 0.6s ease,
@@ -399,28 +400,15 @@
 }
 
 /* =========================================================
-   AUTH TERMINAL HEADER
+   AUTH HEADER
    ========================================================= */
 
 .auth-header {
-
-    color: rgb(150, 0, 0);
-
-    font-family: monospace !important;
-
-    font-size: 12px;
-
-    letter-spacing: 2px;
-
-    padding-bottom: 8px;
-
-    margin-bottom: 14px;
-
-    border-bottom: 1px solid rgb(55, 0, 0);
+    display: none;
 }
 
 /* =========================================================
-   AUTH TERMINAL TEXT
+   AUTH PROMPT
    ========================================================= */
 
 .auth-prompt {
@@ -433,7 +421,7 @@
 
     line-height: 1.7;
 
-    margin-bottom: 15px;
+    margin-bottom: 14px;
 }
 
 /* =========================================================
@@ -448,14 +436,14 @@
 
     align-items: flex-start;
 
-    gap: 5px;
+    gap: 4px;
 }
 
 .auth-option {
 
     width: auto;
 
-    padding: 3px 0;
+    padding: 2px 0;
 
     background: none;
 
@@ -484,7 +472,8 @@
 
     color: rgb(90, 0, 0);
 
-    transition: color 0.2s ease;
+    transition:
+        color 0.2s ease;
 }
 
 .auth-option:hover {
@@ -492,7 +481,8 @@
     color: rgb(220, 0, 0);
 
     text-shadow:
-        0 0 5px rgba(150, 0, 0, 0.6);
+        0 0 5px
+        rgba(150, 0, 0, 0.6);
 }
 
 .auth-option:hover::before {
@@ -573,7 +563,8 @@
 
     border: none;
 
-    border-bottom: 1px solid rgb(60, 60, 60);
+    border-bottom:
+        1px solid rgb(60, 60, 60);
 
     outline: none;
 
@@ -617,7 +608,8 @@
 
     background: transparent;
 
-    border: 1px solid rgb(90, 0, 0);
+    border:
+        1px solid rgb(90, 0, 0);
 
     color: rgb(145, 145, 145);
 
@@ -642,7 +634,8 @@
 
     background: rgb(90, 0, 0);
 
-    border-color: rgb(160, 0, 0);
+    border-color:
+        rgb(160, 0, 0);
 
     box-shadow:
         0 0 8px
@@ -650,7 +643,7 @@
 }
 
 /* =========================================================
-   RETURN BUTTON
+   RETURN
    ========================================================= */
 
 .auth-back {
@@ -700,19 +693,15 @@
         height: 190px;
 
         /*
-           Keep the circle high.
+           Not as high as the previous version.
         */
 
-        top: 12%;
+        top: 15%;
     }
 
     .intro-terminal {
 
-        /*
-           Terminal follows the circle.
-        */
-
-        top: calc(12% + 125px);
+        top: calc(15% + 125px);
 
         font-size: 11px;
 
@@ -721,19 +710,9 @@
 
     .auth-console {
 
-        /*
-           Authentication occupies the
-           middle of the screen.
-        */
-
         top: 43%;
 
         width: 100%;
-    }
-
-    .auth-header {
-
-        font-size: 10px;
     }
 
     .auth-prompt {
