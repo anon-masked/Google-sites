@@ -654,63 +654,27 @@ function beginTerminalText() {
    SECURE CONTAIN PROTECT
    ========================================================= */
 
-function button.addEventListener("click", () => {
+function showSecureButton() {
 
-    /*
-       Hide the boot terminal.
-
-       The loading circle remains visible
-       as the terminal's system indicator.
-    */
-
-    terminal.style.display = "none";
-
-    /*
-       Keep the SECURE CONTAIN PROTECT
-       button exactly where it is.
-    */
-
-    button.style.display = "block";
-
-    /*
-       Show authentication console.
-    */
-
-    const authConsole =
-        document.getElementById("authConsole");
-
-    if (authConsole) {
-
-        authConsole.classList.add("visible");
-
-    }
-
-    /*
-       Initialize login/sign-up.
-    */
-
-    initializeAuthentication();
-
-});
-
+    const button =
+        document.getElementById(
+            "secureButton"
+        );
 
     const terminal =
         document.getElementById(
             "introTerminal"
         );
 
-
     if (
         !button ||
         !terminal
     ) {
-
         return;
     }
 
-
     /*
-       Position button directly
+       Position the button directly
        underneath the terminal.
     */
 
@@ -721,28 +685,31 @@ function button.addEventListener("click", () => {
             25
         }px`;
 
-
     button.classList.add(
         "visible"
     );
-
 
     button.addEventListener(
         "click",
         () => {
 
             /*
-               Hide the original intro
-               elements.
+               Hide the boot terminal.
+
+               The loading circle remains
+               visible as the system indicator.
             */
-
-            button.style.display =
-                "none";
-
 
             terminal.style.display =
                 "none";
 
+            /*
+               Keep the SECURE CONTAIN PROTECT
+               button visible in its position.
+            */
+
+            button.style.display =
+                "block";
 
             /*
                Show authentication console.
@@ -753,7 +720,6 @@ function button.addEventListener("click", () => {
                     "authConsole"
                 );
 
-
             if (authConsole) {
 
                 authConsole.classList.add(
@@ -762,10 +728,8 @@ function button.addEventListener("click", () => {
 
             }
 
-
             /*
-               Initialize login/sign-up
-               buttons.
+               Initialize login/sign-up.
             */
 
             initializeAuthentication();
@@ -773,6 +737,7 @@ function button.addEventListener("click", () => {
         }
     );
 }
+
 
 
 /* =========================================================
