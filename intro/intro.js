@@ -885,18 +885,20 @@ function initializeAuthentication() {
 
     if (loginSubmit) {
 
-        loginSubmit.addEventListener(
-            "click",
-            () => {
+    loginSubmit.addEventListener(
+        "click",
+        () => {
 
-                console.log(
-                    "LOGIN REQUEST"
-                );
+            console.log(
+                "LOGIN REQUEST"
+            );
 
-            }
-        );
+            completeFoundationIntro();
 
-    }
+        }
+    );
+
+}
 
 
     /* =====================================================
@@ -905,17 +907,62 @@ function initializeAuthentication() {
 
     if (signupSubmit) {
 
-        signupSubmit.addEventListener(
-            "click",
-            () => {
+    signupSubmit.addEventListener(
+        "click",
+        () => {
 
-                console.log(
-                    "SIGN UP REQUEST"
-                );
+            console.log(
+                "SIGN UP REQUEST"
+            );
 
-            }
-        );
+            completeFoundationIntro();
 
+        }
+    );
+
+}
+
+/* =========================================================
+   COMPLETE INTRO
+   ========================================================= */
+
+function completeFoundationIntro() {
+
+    const intro =
+        document.getElementById("foundationIntro");
+
+    if (!intro) {
+        return;
     }
 
+    /*
+       Remember that this browser has
+       completed the Foundation intro.
+    */
+
+    localStorage.setItem(
+        "foundationIntroCompleted",
+        "true"
+    );
+
+    /*
+       Fade the intro away.
+    */
+
+    intro.classList.add(
+        "intro-exit"
+    );
+
+    /*
+       Restore page scrolling and
+       remove the intro after the fade.
+    */
+
+    setTimeout(() => {
+
+        intro.remove();
+
+        document.body.style.overflow = "";
+
+    }, 800);
 }
