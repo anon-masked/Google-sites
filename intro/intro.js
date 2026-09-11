@@ -7,7 +7,11 @@
    CHECK IF INTRO WAS ALREADY COMPLETED
    ========================================================= */
 
-if (localStorage.getItem("foundationIntroCompleted") !== "true") {
+if (
+    localStorage.getItem(
+        "foundationIntroCompleted"
+    ) !== "true"
+) {
 
     createFoundationIntro();
 
@@ -20,11 +24,18 @@ if (localStorage.getItem("foundationIntroCompleted") !== "true") {
 
 function createFoundationIntro() {
 
-    const intro = document.createElement("div");
+    const intro =
+        document.createElement("div");
+
     intro.id = "foundationIntro";
 
+
     intro.innerHTML = `
+
         <div class="intro-content">
+
+
+            <!-- LOADING CIRCLE -->
 
             <div class="loader-container">
 
@@ -35,6 +46,7 @@ function createFoundationIntro() {
                     ${createLoaderSegments()}
                 </svg>
 
+
                 <div class="loader-center">
 
                     <div
@@ -43,6 +55,7 @@ function createFoundationIntro() {
                     >
                         0%
                     </div>
+
 
                     <div
                         class="loader-status"
@@ -56,11 +69,15 @@ function createFoundationIntro() {
             </div>
 
 
+            <!-- TERMINAL -->
+
             <div
                 class="intro-terminal"
                 id="introTerminal"
             ></div>
 
+
+            <!-- SECURE CONTAIN PROTECT -->
 
             <button
                 id="secureButton"
@@ -68,15 +85,182 @@ function createFoundationIntro() {
                 SECURE CONTAIN PROTECT
             </button>
 
+
+            <!-- AUTHENTICATION CONSOLE -->
+
+            <div
+                class="auth-console"
+                id="authConsole"
+            >
+
+                <div class="auth-header">
+                    FOUNDATION PERSONNEL TERMINAL
+                </div>
+
+
+                <!-- MAIN OPTIONS -->
+
+                <div
+                    class="auth-selection"
+                    id="authSelection"
+                >
+
+                    <div class="auth-prompt">
+                        > SELECT AUTHENTICATION PROTOCOL
+                    </div>
+
+
+                    <div class="auth-options">
+
+                        <button
+                            class="auth-option"
+                            id="loginOption"
+                        >
+                            LOGIN
+                        </button>
+
+
+                        <button
+                            class="auth-option"
+                            id="signupOption"
+                        >
+                            SIGN UP
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- LOGIN FORM -->
+
+                <div
+                    class="auth-form"
+                    id="loginForm"
+                >
+
+                    <div class="auth-prompt">
+                        > PERSONNEL AUTHENTICATION
+                    </div>
+
+
+                    <label for="loginId">
+                        PERSONNEL ID
+                    </label>
+
+                    <input
+                        type="text"
+                        id="loginId"
+                        placeholder="D-001"
+                        autocomplete="off"
+                    >
+
+
+                    <label for="loginPassword">
+                        PASSWORD
+                    </label>
+
+                    <input
+                        type="password"
+                        id="loginPassword"
+                        placeholder="PASSWORD"
+                    >
+
+
+                    <button
+                        class="auth-submit"
+                        id="loginSubmit"
+                    >
+                        AUTHENTICATE
+                    </button>
+
+
+                    <button
+                        class="auth-back"
+                        id="loginBack"
+                    >
+                        ← RETURN
+                    </button>
+
+                </div>
+
+
+                <!-- SIGN UP FORM -->
+
+                <div
+                    class="auth-form"
+                    id="signupForm"
+                >
+
+                    <div class="auth-prompt">
+                        > NEW PERSONNEL REGISTRATION
+                    </div>
+
+
+                    <label for="signupId">
+                        REQUESTED PERSONNEL ID
+                    </label>
+
+                    <input
+                        type="text"
+                        id="signupId"
+                        placeholder="D-005"
+                        autocomplete="off"
+                    >
+
+
+                    <label for="signupPassword">
+                        PASSWORD
+                    </label>
+
+                    <input
+                        type="password"
+                        id="signupPassword"
+                        placeholder="PASSWORD"
+                    >
+
+
+                    <label for="signupConfirm">
+                        CONFIRM PASSWORD
+                    </label>
+
+                    <input
+                        type="password"
+                        id="signupConfirm"
+                        placeholder="CONFIRM PASSWORD"
+                    >
+
+
+                    <button
+                        class="auth-submit"
+                        id="signupSubmit"
+                    >
+                        REGISTER PERSONNEL
+                    </button>
+
+
+                    <button
+                        class="auth-back"
+                        id="signupBack"
+                    >
+                        ← RETURN
+                    </button>
+
+                </div>
+
+            </div>
+
         </div>
     `;
+
 
     document.body.appendChild(intro);
 
 
-    /* Prevent scrolling while intro is active */
+    /* Prevent scrolling */
 
-    document.body.style.overflow = "hidden";
+    document.body.style.overflow =
+        "hidden";
 
 
     startLoadingSequence();
@@ -93,21 +277,32 @@ function createLoaderSegments() {
 
     let output = "";
 
+
     const radius = 68;
-    const circumference = 2 * Math.PI * radius;
+
+    const circumference =
+        2 * Math.PI * radius;
+
 
     const gap = 9;
+
 
     const segmentLength =
         (circumference / segments) - gap;
 
 
-    for (let i = 0; i < segments; i++) {
+    for (
+        let i = 0;
+        i < segments;
+        i++
+    ) {
 
         const offset =
             -(circumference / segments) * i;
 
+
         output += `
+
             <circle
                 class="loader-segment"
                 cx="85"
@@ -117,8 +312,10 @@ function createLoaderSegments() {
                 stroke-dashoffset="${offset}"
                 data-segment="${i}"
             ></circle>
+
         `;
     }
+
 
     return output;
 }
@@ -131,99 +328,150 @@ function createLoaderSegments() {
 function startLoadingSequence() {
 
     const percentage =
-        document.getElementById("loaderPercentage");
+        document.getElementById(
+            "loaderPercentage"
+        );
+
 
     const status =
-        document.getElementById("loaderStatus");
+        document.getElementById(
+            "loaderStatus"
+        );
+
 
     const segments =
-        document.querySelectorAll(".loader-segment");
+        document.querySelectorAll(
+            ".loader-segment"
+        );
 
 
-    const totalSegments = segments.length;
+    const totalSegments =
+        segments.length;
+
 
     let currentSegment = 0;
 
 
     const statuses = [
+
         "INITIALIZING",
+
         "VERIFYING",
+
         "ESTABLISHING CONNECTION",
+
         "AUTHENTICATING",
+
         "ACCESS PROTOCOL",
+
         "FOUNDATION NETWORK",
+
         "SECURE CHANNEL",
+
         "READY"
+
     ];
 
 
-    const loadingInterval = setInterval(() => {
+    const loadingInterval =
+        setInterval(() => {
 
-        currentSegment++;
+            currentSegment++;
 
 
-        const progress =
-            Math.round(
-                (currentSegment / totalSegments) * 100
+            const progress =
+                Math.round(
+                    (
+                        currentSegment /
+                        totalSegments
+                    ) * 100
+                );
+
+
+            percentage.textContent =
+                progress + "%";
+
+
+            /* Light up completed segments */
+
+            segments.forEach(
+                (segment, index) => {
+
+                    segment.classList.remove(
+                        "current"
+                    );
+
+
+                    if (
+                        index <
+                        currentSegment
+                    ) {
+
+                        segment.classList.add(
+                            "active"
+                        );
+
+                    }
+
+                }
             );
 
 
-        percentage.textContent =
-            progress + "%";
+            /* Highlight current segment */
 
+            if (
+                segments[
+                    currentSegment - 1
+                ]
+            ) {
 
-        /* Light up completed segments */
+                segments[
+                    currentSegment - 1
+                ].classList.add(
+                    "current"
+                );
 
-        segments.forEach((segment, index) => {
-
-            segment.classList.remove("current");
-
-            if (index < currentSegment) {
-                segment.classList.add("active");
             }
 
-        });
+
+            /* Change terminal status */
+
+            const statusIndex =
+                Math.min(
+                    Math.floor(
+                        currentSegment /
+                        totalSegments *
+                        statuses.length
+                    ),
+                    statuses.length - 1
+                );
 
 
-        /* Highlight current segment */
-
-        if (segments[currentSegment - 1]) {
-            segments[currentSegment - 1]
-                .classList.add("current");
-        }
+            status.textContent =
+                statuses[statusIndex];
 
 
-        /* Change terminal status */
+            /* Finished */
 
-        const statusIndex =
-            Math.min(
-                Math.floor(
-                    currentSegment /
-                    totalSegments *
-                    statuses.length
-                ),
-                statuses.length - 1
-            );
+            if (
+                currentSegment >=
+                totalSegments
+            ) {
 
-
-        status.textContent =
-            statuses[statusIndex];
+                clearInterval(
+                    loadingInterval
+                );
 
 
-        /* Finished */
+                setTimeout(() => {
 
-        if (currentSegment >= totalSegments) {
+                    beginTerminalText();
 
-            clearInterval(loadingInterval);
+                }, 1000);
 
-            setTimeout(() => {
+            }
 
-                beginTerminalText();
-
-            }, 500);
-        }
-
-    }, 250);
+        }, 500);
 }
 
 
@@ -234,43 +482,63 @@ function startLoadingSequence() {
 function beginTerminalText() {
 
     const terminal =
-        document.getElementById("introTerminal");
+        document.getElementById(
+            "introTerminal"
+        );
 
 
     const lines = [
 
         {
-            text: "> FOUNDATION ACCESS TERMINAL",
+            text:
+                "> FOUNDATION ACCESS TERMINAL",
+
             className: ""
         },
 
+
         {
-            text: "> CONNECTION ESTABLISHED.",
+            text:
+                "> CONNECTION ESTABLISHED.",
+
             className: ""
         },
 
+
         {
-            text: "> ACCESS PROTOCOL VERIFIED.",
+            text:
+                "> ACCESS PROTOCOL VERIFIED.",
+
             className: ""
         },
+
 
         {
             text: "",
+
             className: ""
         },
 
+
         {
-            text: "> BY OPENING THIS SITE YOU AGREE TO THE PROPER USE OF ANY INFORMATION INSIDE.",
+            text:
+                "> BY OPENING THIS SITE YOU AGREE TO THE PROPER USE OF ANY INFORMATION INSIDE.",
+
             className: ""
         },
+
 
         {
             text: "",
+
             className: ""
         },
 
+
         {
-            text: "> WE DIE IN THE DARK SO YOU LIVE IN THE LIGHT.",
+            text:
+                "> WE DIE IN THE DARK SO YOU LIVE IN THE LIGHT.",
+
             className: "warning"
         }
 
@@ -282,7 +550,10 @@ function beginTerminalText() {
 
     function typeNextLine() {
 
-        if (lineIndex >= lines.length) {
+        if (
+            lineIndex >=
+            lines.length
+        ) {
 
             showSecureButton();
 
@@ -295,7 +566,10 @@ function beginTerminalText() {
 
 
         const line =
-            document.createElement("div");
+            document.createElement(
+                "div"
+            );
+
 
         line.className =
             "intro-line " +
@@ -308,10 +582,12 @@ function beginTerminalText() {
         let characterIndex = 0;
 
 
+        /* Typing speed */
+
         const typingSpeed =
             lineData.text === ""
                 ? 0
-                : 25;
+                : 45;
 
 
         function typeCharacter() {
@@ -322,74 +598,325 @@ function beginTerminalText() {
             ) {
 
                 line.textContent +=
-                    lineData.text[characterIndex];
+                    lineData.text[
+                        characterIndex
+                    ];
+
 
                 characterIndex++;
+
 
                 setTimeout(
                     typeCharacter,
                     typingSpeed
                 );
 
-                       } else {
 
-                /* Highlight the word LIGHT after typing finishes */
+            } else {
 
-                if (lineData.text.includes("LIGHT")) {
+                /*
+                   The warning line is NOT
+                   modified here.
 
-                    line.innerHTML =
-                        lineData.text.replace(
-                            "LIGHT",
-                            '<span class="light-word">LIGHT</span>'
-                        );
+                   CSS handles the color
+                   transition automatically.
+                */
 
-                }
 
                 lineIndex++;
 
+
                 setTimeout(
                     typeNextLine,
-                    350
+                    600
                 );
 
             }
+
         }
+
 
         typeCharacter();
     }
+
 
     typeNextLine();
 }
 
 
 /* =========================================================
-   SECURE CONTAIN PROTECT BUTTON
+   SECURE CONTAIN PROTECT
    ========================================================= */
 
 function showSecureButton() {
-    const button = document.getElementById("secureButton");
-    const terminal = document.getElementById("introTerminal");
 
-    if (!button || !terminal) return;
+    const button =
+        document.getElementById(
+            "secureButton"
+        );
+
+
+    const terminal =
+        document.getElementById(
+            "introTerminal"
+        );
+
+
+    if (
+        !button ||
+        !terminal
+    ) {
+
+        return;
+    }
+
 
     /*
-       Put the button directly underneath the terminal.
-       This automatically adapts to the terminal's height.
+       Position button directly
+       underneath the terminal.
     */
+
     button.style.top =
-        `${terminal.offsetTop + terminal.offsetHeight + 25}px`;
+        `${
+            terminal.offsetTop +
+            terminal.offsetHeight +
+            25
+        }px`;
 
-    button.classList.add("visible");
 
-    button.addEventListener("click", () => {
-        localStorage.setItem("foundationIntroCompleted", "true");
+    button.classList.add(
+        "visible"
+    );
 
-        const intro = document.getElementById("foundationIntro");
-        intro.classList.add("intro-exit");
 
-        setTimeout(() => {
-            intro.remove();
-            document.body.style.overflow = "";
-        }, 850);
-    });
+    button.addEventListener(
+        "click",
+        () => {
+
+            /*
+               Hide the original intro
+               elements.
+            */
+
+            button.style.display =
+                "none";
+
+
+            terminal.style.display =
+                "none";
+
+
+            document
+                .querySelector(
+                    ".loader-container"
+                )
+                .style.display =
+                "none";
+
+
+            /*
+               Show authentication console.
+            */
+
+            const authConsole =
+                document.getElementById(
+                    "authConsole"
+                );
+
+
+            if (authConsole) {
+
+                authConsole.classList.add(
+                    "visible"
+                );
+
+            }
+
+
+            /*
+               Initialize login/sign-up
+               buttons.
+            */
+
+            initializeAuthentication();
+
+        }
+    );
+}
+
+
+/* =========================================================
+   AUTHENTICATION FRONTEND
+   ========================================================= */
+
+function initializeAuthentication() {
+
+    const authSelection =
+        document.getElementById(
+            "authSelection"
+        );
+
+
+    const loginForm =
+        document.getElementById(
+            "loginForm"
+        );
+
+
+    const signupForm =
+        document.getElementById(
+            "signupForm"
+        );
+
+
+    const loginOption =
+        document.getElementById(
+            "loginOption"
+        );
+
+
+    const signupOption =
+        document.getElementById(
+            "signupOption"
+        );
+
+
+    const loginBack =
+        document.getElementById(
+            "loginBack"
+        );
+
+
+    const signupBack =
+        document.getElementById(
+            "signupBack"
+        );
+
+
+    if (
+        !authSelection ||
+        !loginForm ||
+        !signupForm
+    ) {
+
+        return;
+    }
+
+
+    /* LOGIN */
+
+    loginOption.addEventListener(
+        "click",
+        () => {
+
+            authSelection.style.display =
+                "none";
+
+
+            signupForm.classList.remove(
+                "visible"
+            );
+
+
+            loginForm.classList.add(
+                "visible"
+            );
+
+        }
+    );
+
+
+    /* SIGN UP */
+
+    signupOption.addEventListener(
+        "click",
+        () => {
+
+            authSelection.style.display =
+                "none";
+
+
+            loginForm.classList.remove(
+                "visible"
+            );
+
+
+            signupForm.classList.add(
+                "visible"
+            );
+
+        }
+    );
+
+
+    /* RETURN FROM LOGIN */
+
+    loginBack.addEventListener(
+        "click",
+        () => {
+
+            loginForm.classList.remove(
+                "visible"
+            );
+
+
+            authSelection.style.display =
+                "block";
+
+        }
+    );
+
+
+    /* RETURN FROM SIGN UP */
+
+    signupBack.addEventListener(
+        "click",
+        () => {
+
+            signupForm.classList.remove(
+                "visible"
+            );
+
+
+            authSelection.style.display =
+                "block";
+
+        }
+    );
+
+
+    /*
+       These are intentionally frontend-only
+       for now.
+
+       Backend authentication will be
+       connected later.
+    */
+
+    document
+        .getElementById("loginSubmit")
+        .addEventListener(
+            "click",
+            () => {
+
+                console.log(
+                    "LOGIN REQUEST"
+                );
+
+            }
+        );
+
+
+    document
+        .getElementById("signupSubmit")
+        .addEventListener(
+            "click",
+            () => {
+
+                console.log(
+                    "SIGN UP REQUEST"
+                );
+
+            }
+        );
 }
