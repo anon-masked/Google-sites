@@ -8,6 +8,17 @@ const logoImage2 = document.getElementById("logoImage2");
 const refreshIntroButton =
     document.getElementById("refreshIntroButton");
 
+if (refreshIntroButton) {
+    refreshIntroButton.addEventListener("click", () => {
+
+        localStorage.removeItem(
+            "foundationIntroCompleted"
+        );
+
+        window.location.reload();
+
+    });
+}
 
 if (logoButton && logoImage1 && logoImage2) {
 
