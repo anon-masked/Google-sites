@@ -51,7 +51,7 @@
     position: absolute;
 
     left: 50%;
-    top: 20%;
+    top: 10%;
 
     transform: translate(-50%, -50%);
 
@@ -161,7 +161,7 @@
        Gap = 30px
     */
 
-    top: calc(20% + 140px);
+    top: calc(10% + 140px);
 
     text-align: left;
 
@@ -355,27 +355,26 @@
 .auth-console {
     position: absolute;
 
-    left: 50%;
+    left: 0;
 
-    top: 50%;
+    /*
+       This places the authentication terminal
+       in the empty space underneath the circle.
+    */
 
-    transform:
-        translate(-50%, -50%)
-        translateY(20px);
+    top: 48%;
 
-    width: min(500px, 90%);
-
-    padding: 25px;
+    width: 100%;
 
     box-sizing: border-box;
 
-    background: rgb(12, 12, 12);
+    padding: 0;
 
-    border: 1px solid rgb(100, 0, 0);
+    background: transparent;
 
-    box-shadow:
-        0 0 15px rgba(100, 0, 0, 0.5),
-        inset 0 0 20px rgba(0, 0, 0, 0.8);
+    border: none;
+
+    box-shadow: none;
 
     text-align: left;
 
@@ -383,28 +382,29 @@
 
     pointer-events: none;
 
+    transform: translateY(-25px);
+
     transition:
         opacity 0.6s ease,
         transform 0.6s ease;
 }
 
 .auth-console.visible {
+
     opacity: 1;
 
     pointer-events: auto;
 
-    transform:
-        translate(-50%, -50%)
-        translateY(0);
+    transform: translateY(0);
 }
 
-
 /* =========================================================
-   AUTH CONSOLE HEADER
+   AUTH TERMINAL HEADER
    ========================================================= */
 
 .auth-header {
-    color: rgb(180, 0, 0);
+
+    color: rgb(150, 0, 0);
 
     font-family: monospace !important;
 
@@ -412,20 +412,20 @@
 
     letter-spacing: 2px;
 
-    border-bottom: 1px solid rgb(70, 0, 0);
+    padding-bottom: 8px;
 
-    padding-bottom: 10px;
+    margin-bottom: 14px;
 
-    margin-bottom: 18px;
+    border-bottom: 1px solid rgb(55, 0, 0);
 }
 
-
 /* =========================================================
-   AUTH CONSOLE TEXT
+   AUTH TERMINAL TEXT
    ========================================================= */
 
 .auth-prompt {
-    color: rgb(130, 130, 130);
+
+    color: rgb(125, 125, 125);
 
     font-family: monospace !important;
 
@@ -433,30 +433,35 @@
 
     line-height: 1.7;
 
-    margin-bottom: 18px;
+    margin-bottom: 15px;
 }
-
 
 /* =========================================================
    AUTH OPTIONS
    ========================================================= */
 
 .auth-options {
+
     display: flex;
 
-    gap: 12px;
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 5px;
 }
 
 .auth-option {
-    flex: 1;
 
-    padding: 12px;
+    width: auto;
 
-    background: rgb(25, 25, 25);
+    padding: 3px 0;
 
-    border: 1px solid rgb(90, 0, 0);
+    background: none;
 
-    color: rgb(170, 170, 170);
+    border: none;
+
+    color: rgb(145, 145, 145);
 
     font-family: monospace !important;
 
@@ -466,43 +471,82 @@
 
     cursor: pointer;
 
+    text-align: left;
+
     transition:
         color 0.2s ease,
-        background 0.2s ease,
-        border-color 0.2s ease,
-        box-shadow 0.2s ease;
+        text-shadow 0.2s ease;
+}
+
+.auth-option::before {
+
+    content: "> ";
+
+    color: rgb(90, 0, 0);
+
+    transition: color 0.2s ease;
 }
 
 .auth-option:hover {
-    color: white;
 
-    background: rgb(110, 0, 0);
+    color: rgb(220, 0, 0);
 
-    border-color: rgb(170, 0, 0);
-
-    box-shadow:
-        0 0 10px rgba(150, 0, 0, 0.5);
+    text-shadow:
+        0 0 5px rgba(150, 0, 0, 0.6);
 }
 
+.auth-option:hover::before {
+
+    color: rgb(220, 0, 0);
+}
 
 /* =========================================================
    AUTH FORMS
    ========================================================= */
 
 .auth-form {
+
     display: none;
+
+    animation:
+        terminalFormAppear 0.4s ease forwards;
 }
 
 .auth-form.visible {
+
     display: block;
 }
 
+@keyframes terminalFormAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(8px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+/* =========================================================
+   FORM LABELS
+   ========================================================= */
+
 .auth-form label {
+
     display: block;
 
-    margin-bottom: 6px;
+    margin-bottom: 5px;
 
-    color: rgb(130, 130, 130);
+    color: rgb(105, 105, 105);
 
     font-family: monospace !important;
 
@@ -511,18 +555,25 @@
     letter-spacing: 1px;
 }
 
+/* =========================================================
+   TERMINAL INPUTS
+   ========================================================= */
+
 .auth-form input {
-    width: 100%;
+
+    width: min(420px, 100%);
 
     box-sizing: border-box;
 
-    padding: 11px;
+    padding: 7px 0;
 
-    margin-bottom: 15px;
+    margin-bottom: 13px;
 
-    background: rgb(5, 5, 5);
+    background: transparent;
 
-    border: 1px solid rgb(70, 70, 70);
+    border: none;
+
+    border-bottom: 1px solid rgb(60, 60, 60);
 
     outline: none;
 
@@ -538,63 +589,98 @@
 }
 
 .auth-form input:focus {
-    border-color: rgb(140, 0, 0);
+
+    border-bottom-color:
+        rgb(140, 0, 0);
 
     box-shadow:
-        0 0 8px rgba(120, 0, 0, 0.4);
+        0 2px 5px
+        rgba(120, 0, 0, 0.3);
 }
 
+.auth-form input::placeholder {
+
+    color: rgb(55, 55, 55);
+}
+
+/* =========================================================
+   AUTH SUBMIT
+   ========================================================= */
+
 .auth-submit {
-    width: 100%;
 
-    padding: 11px;
+    display: block;
 
-    background: rgb(90, 0, 0);
+    margin-top: 4px;
 
-    border: 1px solid rgb(150, 0, 0);
+    padding: 7px 12px;
 
-    color: rgb(210, 210, 210);
+    background: transparent;
+
+    border: 1px solid rgb(90, 0, 0);
+
+    color: rgb(145, 145, 145);
 
     font-family: monospace !important;
 
-    font-size: 11px;
+    font-size: 10px;
 
     letter-spacing: 2px;
 
     cursor: pointer;
 
     transition:
+        color 0.2s ease,
         background 0.2s ease,
+        border-color 0.2s ease,
         box-shadow 0.2s ease;
 }
 
 .auth-submit:hover {
-    background: rgb(140, 0, 0);
+
+    color: white;
+
+    background: rgb(90, 0, 0);
+
+    border-color: rgb(160, 0, 0);
 
     box-shadow:
-        0 0 10px rgba(150, 0, 0, 0.5);
+        0 0 8px
+        rgba(140, 0, 0, 0.5);
 }
 
+/* =========================================================
+   RETURN BUTTON
+   ========================================================= */
+
 .auth-back {
-    margin-top: 12px;
+
+    display: block;
+
+    margin-top: 10px;
+
+    padding: 0;
 
     background: none;
 
     border: none;
 
-    color: rgb(100, 100, 100);
+    color: rgb(75, 75, 75);
 
     font-family: monospace !important;
 
     font-size: 10px;
 
     cursor: pointer;
+
+    transition:
+        color 0.2s ease;
 }
 
 .auth-back:hover {
-    color: rgb(180, 0, 0);
-}
 
+    color: rgb(170, 0, 0);
+}
 
 /* =========================================================
    MOBILE
@@ -603,37 +689,67 @@
 @media (max-width: 700px) {
 
     .intro-content {
+
         width: 88%;
     }
 
     .loader-container {
+
         width: 190px;
+
         height: 190px;
 
-        top: 18%;
+        /*
+           Keep the circle high.
+        */
+
+        top: 12%;
     }
 
     .intro-terminal {
-        top: calc(18% + 125px);
+
+        /*
+           Terminal follows the circle.
+        */
+
+        top: calc(12% + 125px);
 
         font-size: 11px;
 
         line-height: 1.6;
     }
 
+    .auth-console {
+
+        /*
+           Authentication occupies the
+           middle of the screen.
+        */
+
+        top: 43%;
+
+        width: 100%;
+    }
+
+    .auth-header {
+
+        font-size: 10px;
+    }
+
+    .auth-prompt {
+
+        font-size: 11px;
+    }
+
+    .auth-form input {
+
+        width: 100%;
+    }
+
     #secureButton {
+
         font-size: 11px;
 
         padding: 12px 20px;
-    }
-
-    .auth-console {
-        width: 88%;
-
-        padding: 20px;
-    }
-
-    .auth-options {
-        flex-direction: column;
     }
 }
