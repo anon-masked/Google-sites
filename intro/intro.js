@@ -682,7 +682,7 @@ function showSecureButton() {
     `${
         terminal.offsetTop +
         terminal.offsetHeight +
-        45
+        345
     }px`;
 
     button.classList.add(
