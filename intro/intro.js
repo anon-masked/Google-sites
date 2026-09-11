@@ -93,11 +93,6 @@ function createFoundationIntro() {
                 id="authConsole"
             >
 
-                <div class="auth-prompt">
-                > SELECT AUTHENTICATION PROTOCOL
-                
-                </div>
-
                 <!-- MAIN OPTIONS -->
 
                 <div
@@ -747,58 +742,54 @@ function showSecureButton() {
 function initializeAuthentication() {
 
     const authSelection =
-        document.getElementById(
-            "authSelection"
-        );
-
+        document.getElementById("authSelection");
 
     const loginForm =
-        document.getElementById(
-            "loginForm"
-        );
-
+        document.getElementById("loginForm");
 
     const signupForm =
-        document.getElementById(
-            "signupForm"
-        );
-
+        document.getElementById("signupForm");
 
     const loginOption =
-        document.getElementById(
-            "loginOption"
-        );
-
+        document.getElementById("loginOption");
 
     const signupOption =
-        document.getElementById(
-            "signupOption"
-        );
-
+        document.getElementById("signupOption");
 
     const loginBack =
-        document.getElementById(
-            "loginBack"
-        );
-
+        document.getElementById("loginBack");
 
     const signupBack =
-        document.getElementById(
-            "signupBack"
-        );
+        document.getElementById("signupBack");
+
+    const loginSubmit =
+        document.getElementById("loginSubmit");
+
+    const signupSubmit =
+        document.getElementById("signupSubmit");
 
 
     if (
         !authSelection ||
         !loginForm ||
-        !signupForm
+        !signupForm ||
+        !loginOption ||
+        !signupOption ||
+        !loginBack ||
+        !signupBack
     ) {
+
+        console.error(
+            "FOUNDATION AUTHENTICATION: ELEMENT MISSING"
+        );
 
         return;
     }
 
 
-    /* LOGIN */
+    /* =====================================================
+       SHOW LOGIN
+       ===================================================== */
 
     loginOption.addEventListener(
         "click",
@@ -807,11 +798,9 @@ function initializeAuthentication() {
             authSelection.style.display =
                 "none";
 
-
             signupForm.classList.remove(
                 "visible"
             );
-
 
             loginForm.classList.add(
                 "visible"
@@ -821,7 +810,9 @@ function initializeAuthentication() {
     );
 
 
-    /* SIGN UP */
+    /* =====================================================
+       SHOW SIGN UP
+       ===================================================== */
 
     signupOption.addEventListener(
         "click",
@@ -830,11 +821,9 @@ function initializeAuthentication() {
             authSelection.style.display =
                 "none";
 
-
             loginForm.classList.remove(
                 "visible"
             );
-
 
             signupForm.classList.add(
                 "visible"
@@ -844,7 +833,9 @@ function initializeAuthentication() {
     );
 
 
-    /* RETURN FROM LOGIN */
+    /* =====================================================
+       RETURN FROM LOGIN
+       ===================================================== */
 
     loginBack.addEventListener(
         "click",
@@ -854,6 +845,9 @@ function initializeAuthentication() {
                 "visible"
             );
 
+            signupForm.classList.remove(
+                "visible"
+            );
 
             authSelection.style.display =
                 "block";
@@ -862,7 +856,9 @@ function initializeAuthentication() {
     );
 
 
-    /* RETURN FROM SIGN UP */
+    /* =====================================================
+       RETURN FROM SIGN UP
+       ===================================================== */
 
     signupBack.addEventListener(
         "click",
@@ -872,6 +868,9 @@ function initializeAuthentication() {
                 "visible"
             );
 
+            loginForm.classList.remove(
+                "visible"
+            );
 
             authSelection.style.display =
                 "block";
@@ -880,17 +879,13 @@ function initializeAuthentication() {
     );
 
 
-    /*
-       These are intentionally frontend-only
-       for now.
+    /* =====================================================
+       LOGIN SUBMIT
+       ===================================================== */
 
-       Backend authentication will be
-       connected later.
-    */
+    if (loginSubmit) {
 
-    document
-        .getElementById("loginSubmit")
-        .addEventListener(
+        loginSubmit.addEventListener(
             "click",
             () => {
 
@@ -901,10 +896,16 @@ function initializeAuthentication() {
             }
         );
 
+    }
 
-    document
-        .getElementById("signupSubmit")
-        .addEventListener(
+
+    /* =====================================================
+       SIGN UP SUBMIT
+       ===================================================== */
+
+    if (signupSubmit) {
+
+        signupSubmit.addEventListener(
             "click",
             () => {
 
@@ -914,4 +915,7 @@ function initializeAuthentication() {
 
             }
         );
+
+    }
+
 }
