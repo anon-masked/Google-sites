@@ -105,8 +105,14 @@ function createFoundationIntro() {
                     id="authSelection"
                 >
 
+
+
                     <div class="auth-prompt">
-                        > SELECT AUTHENTICATION PROTOCOL
+                    
+                    > FOUNDATION AUTHENTICATION TERMINAL
+                    <br>
+                    > SELECT AUTHENTICATION PROTOCOL:
+                    
                     </div>
 
 
@@ -648,12 +654,44 @@ function beginTerminalText() {
    SECURE CONTAIN PROTECT
    ========================================================= */
 
-function showSecureButton() {
+function button.addEventListener("click", () => {
 
-    const button =
-        document.getElementById(
-            "secureButton"
-        );
+    /*
+       Hide the boot terminal.
+
+       The loading circle remains visible
+       as the terminal's system indicator.
+    */
+
+    terminal.style.display = "none";
+
+    /*
+       Keep the SECURE CONTAIN PROTECT
+       button exactly where it is.
+    */
+
+    button.style.display = "block";
+
+    /*
+       Show authentication console.
+    */
+
+    const authConsole =
+        document.getElementById("authConsole");
+
+    if (authConsole) {
+
+        authConsole.classList.add("visible");
+
+    }
+
+    /*
+       Initialize login/sign-up.
+    */
+
+    initializeAuthentication();
+
+});
 
 
     const terminal =
@@ -703,14 +741,6 @@ function showSecureButton() {
 
 
             terminal.style.display =
-                "none";
-
-
-            document
-                .querySelector(
-                    ".loader-container"
-                )
-                .style.display =
                 "none";
 
 
