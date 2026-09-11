@@ -93,10 +93,10 @@ function createFoundationIntro() {
                 id="authConsole"
             >
 
-                <div class="auth-header">
-                    FOUNDATION PERSONNEL TERMINAL
+                <div class="auth-prompt">
+                > SELECT AUTHENTICATION PROTOCOL
+                
                 </div>
-
 
                 <!-- MAIN OPTIONS -->
 
@@ -678,12 +678,12 @@ function showSecureButton() {
        underneath the terminal.
     */
 
-    button.style.top =
-        `${
-            terminal.offsetTop +
-            terminal.offsetHeight +
-            25
-        }px`;
+   button.style.top =
+    `${
+        terminal.offsetTop +
+        terminal.offsetHeight +
+        45
+    }px`;
 
     button.classList.add(
         "visible"
