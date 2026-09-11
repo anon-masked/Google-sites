@@ -922,6 +922,14 @@ function initializeAuthentication() {
 
 }
 
+
+/* =========================================================
+   END AUTHENTICATION FRONTEND
+   ========================================================= */
+
+}
+
+
 /* =========================================================
    COMPLETE INTRO
    ========================================================= */
@@ -935,28 +943,14 @@ function completeFoundationIntro() {
         return;
     }
 
-    /*
-       Remember that this browser has
-       completed the Foundation intro.
-    */
-
     localStorage.setItem(
         "foundationIntroCompleted",
         "true"
     );
 
-    /*
-       Fade the intro away.
-    */
-
     intro.classList.add(
         "intro-exit"
     );
-
-    /*
-       Restore page scrolling and
-       remove the intro after the fade.
-    */
 
     setTimeout(() => {
 
