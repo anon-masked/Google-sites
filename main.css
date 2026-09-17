@@ -237,6 +237,8 @@ body::before {
 
     z-index: 5;
 
+    background: transparent;
+
 }
 
 
@@ -244,17 +246,15 @@ body::before {
    DATABASE BACKGROUND SLAB
    =========================================================
 
-   THIS IS THE IMPORTANT PART.
+   THIS IS THE ONLY DATABASE BACKGROUND.
 
-   The slab is NOT attached to the database content.
+   The slab is separate from the database content.
 
-   It is fixed directly underneath the navbar.
+   It starts directly underneath the navbar
+   and drops downward when DATABASE opens.
 
    Navbar = 60px
    Slab begins = 60px
-
-   It starts collapsed and drops downward
-   when DATABASE is opened.
    ========================================================= */
 
 .database-background {
