@@ -3,18 +3,25 @@
    ========================= */
 
 html {
-    overflow-y: scroll;
     scrollbar-width: none;
 }
 
 html::-webkit-scrollbar {
     width: 0;
+    height: 0;
     display: none;
 }
 
 body {
     background-color: #111;
     margin: 0;
+    scrollbar-width: none;
+}
+
+body::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    display: none;
 }
 
 
@@ -611,15 +618,6 @@ body::before {
     padding-top: 0;
 }
 
-/* =========================
-   DATABASE PAGE SIZING
-   ========================= */
-
-#database.site-page {
-    width: 100%;
-    padding-top: 0;
-}
-
 #database .database-page {
     position: relative;
     z-index: 1;
@@ -630,6 +628,6 @@ body::before {
     margin-left: auto !important;
     margin-right: auto !important;
 
-    padding-top: 50px;
+    padding-top: 0;
     padding-bottom: 100px;
 }
