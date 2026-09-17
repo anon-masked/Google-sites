@@ -4,26 +4,43 @@
 
 html,
 body {
+
     margin: 0;
     padding: 0;
 
     scrollbar-width: none;
+
     -ms-overflow-style: none;
+
 }
+
 
 html::-webkit-scrollbar,
 body::-webkit-scrollbar {
+
     width: 0 !important;
     height: 0 !important;
+
     display: none !important;
+
 }
+
 
 * {
-    font-family: Verdana, Geneva, Tahoma, sans-serif !important;
+
+    font-family:
+        Verdana,
+        Geneva,
+        Tahoma,
+        sans-serif !important;
+
 }
 
+
 body {
+
     background-color: #111;
+
 }
 
 
@@ -32,22 +49,31 @@ body {
    ========================================================= */
 
 body::before {
+
     content: "";
 
     position: fixed;
+
     inset: 0;
 
-    background-image: url("images/scp.jpg");
+    background-image:
+        url("images/scp.jpg");
 
     background-size: 90%;
+
     background-position: center;
+
     background-repeat: no-repeat;
+
     background-attachment: fixed;
+
     background-color: #191919;
 
     z-index: -10;
 
-    animation: backgroundEntrance 4s ease-out forwards;
+    animation:
+        backgroundEntrance 4s ease-out forwards;
+
 }
 
 
@@ -56,12 +82,15 @@ body::before {
    ========================================================= */
 
 .binary {
+
     position: fixed;
 
     color: red;
 
     font-family: monospace !important;
+
     font-size: 12px;
+
     line-height: 1.25;
 
     white-space: pre;
@@ -77,6 +106,7 @@ body::before {
 
     animation:
         binaryEntrance 2s ease-out 0.5s forwards;
+
 }
 
 
@@ -85,12 +115,15 @@ body::before {
    ========================================================= */
 
 .binary-top-right {
+
     top: 0;
+
     right: 0;
 
     width: 350px;
 
     text-align: right;
+
 }
 
 
@@ -99,12 +132,15 @@ body::before {
    ========================================================= */
 
 .binary-bottom-left {
+
     bottom: 0;
+
     left: 0;
 
     width: 300px;
 
     text-align: left;
+
 }
 
 
@@ -113,11 +149,13 @@ body::before {
    ========================================================= */
 
 .page-content {
+
     position: relative;
 
     z-index: 5;
 
     padding-top: 0;
+
 }
 
 
@@ -128,23 +166,32 @@ body::before {
 @keyframes backgroundEntrance {
 
     from {
+
         opacity: 0;
+
     }
 
     to {
+
         opacity: 1;
+
     }
 
 }
 
+
 @keyframes binaryEntrance {
 
     from {
+
         opacity: 0;
+
     }
 
     to {
+
         opacity: 0.65;
+
     }
 
 }
@@ -155,16 +202,22 @@ body::before {
    ========================================================= */
 
 .site-page {
+
     display: none;
 
     position: relative;
 
     margin: 0;
+
     padding: 0;
+
 }
 
+
 .site-page.active {
+
     display: block;
+
 }
 
 
@@ -173,48 +226,86 @@ body::before {
    ========================================================= */
 
 #database {
+
     position: relative;
 
     width: 100%;
 
     margin: 0;
+
     padding: 0;
 
-    z-index: 1;
+    z-index: 5;
+
 }
 
 
 /* =========================================================
-   DATABASE DROPDOWN SLAB
+   DATABASE BACKGROUND SLAB
    =========================================================
-   
-   IMPORTANT:
-   This is anchored to the viewport, NOT the database content.
 
-   Navbar = 60px high
-   Slab starts exactly at 60px.
+   THIS IS THE IMPORTANT PART.
+
+   The slab is NOT attached to the database content.
+
+   It is fixed directly underneath the navbar.
+
+   Navbar = 60px
+   Slab begins = 60px
+
+   It starts collapsed and drops downward
+   when DATABASE is opened.
    ========================================================= */
 
-#database::before {
-    content: "";
+.database-background {
 
     position: fixed;
 
     top: 60px;
+
     left: 0;
 
     width: 100%;
+
     height: calc(100vh - 60px);
 
-    background: rgb(17, 17, 17);
+    background:
+        rgb(17, 17, 17);
 
-    border-top: 1px solid rgb(45, 45, 45);
+    border-top:
+        1px solid rgb(45, 45, 45);
 
     box-sizing: border-box;
 
-    z-index: -1;
+    z-index: 1;
+
+    transform-origin: top center;
+
+    transform:
+        scaleY(0);
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition:
+        transform 0.55s cubic-bezier(.22, .61, .36, 1) 0.38s,
+        opacity 0.2s ease 0.38s;
+
+}
+
+
+/* =========================================================
+   OPEN DATABASE BACKGROUND
+   ========================================================= */
+
+body.database-mode .database-background {
+
+    transform:
+        scaleY(1);
 
     opacity: 1;
+
 }
 
 
@@ -223,25 +314,48 @@ body::before {
    ========================================================= */
 
 .database-page {
+
     position: relative;
 
-    z-index: 2;
+    z-index: 5;
 
     width: 900px;
+
     max-width: 90%;
 
     margin-left: auto;
+
     margin-right: auto;
 
-    /*
-     * This controls how far the actual
-     * database content sits below the navbar.
-     */
-    padding-top: 50px;
+    padding-top: 70px;
 
     padding-bottom: 100px;
 
     background: transparent;
+
+    opacity: 0;
+
+    transform:
+        translateY(-18px);
+
+    transition:
+        opacity 0.35s ease,
+        transform 0.45s ease;
+
+}
+
+
+/* =========================================================
+   DATABASE CONTENT ENTERS FIRST
+   ========================================================= */
+
+body.database-mode .database-page {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+
 }
 
 
@@ -250,47 +364,68 @@ body::before {
    ========================================================= */
 
 .database-header {
+
     padding: 20px 25px;
 
     margin-bottom: 25px;
 
     background: transparent;
 
-    border: 1px solid rgba(100, 100, 100, 0.7);
+    border:
+        1px solid rgba(100, 100, 100, 0.7);
 
-    border-left: 3px solid rgb(150, 0, 0);
+    border-left:
+        3px solid rgb(150, 0, 0);
 
     box-shadow: none;
+
 }
 
-.database-label {
-    color: rgb(150, 0, 0);
 
-    font-family: monospace !important;
+.database-label {
+
+    color:
+        rgb(150, 0, 0);
+
+    font-family:
+        monospace !important;
+
     font-size: 12px;
 
     letter-spacing: 3px;
 
     margin-bottom: 8px;
+
 }
 
+
 .database-header h1 {
-    color: rgb(210, 210, 210);
+
+    color:
+        rgb(210, 210, 210);
 
     font-size: 28px;
 
     letter-spacing: 3px;
 
-    margin: 0 0 8px 0;
+    margin:
+        0 0 8px 0;
+
 }
 
-.database-header p {
-    color: rgb(160, 160, 160);
 
-    font-family: monospace !important;
+.database-header p {
+
+    color:
+        rgb(160, 160, 160);
+
+    font-family:
+        monospace !important;
+
     font-size: 13px;
 
     margin: 0;
+
 }
 
 
@@ -299,13 +434,15 @@ body::before {
    ========================================================= */
 
 .database-folder {
+
     position: relative;
 
     width: 100%;
 
-    z-index: 2;
+    z-index: 5;
 
     background: transparent;
+
 }
 
 
@@ -314,19 +451,24 @@ body::before {
    ========================================================= */
 
 .redacted-overlay {
+
     position: absolute;
 
     top: 0;
+
     left: 0;
 
     width: 100%;
+
     height: 55px;
 
-    background: rgb(0, 0, 0);
+    background:
+        rgb(0, 0, 0);
 
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 
     z-index: 20;
@@ -334,24 +476,33 @@ body::before {
     transition:
         opacity 0.45s ease,
         transform 0.45s ease;
+
 }
+
 
 .redacted-overlay.hidden {
+
     opacity: 0;
 
-    transform: translateY(-15px);
+    transform:
+        translateY(-15px);
 
     pointer-events: none;
+
 }
 
+
 #redactedButton {
+
     background: none;
 
     border: none;
 
     color: white;
 
-    font-family: monospace !important;
+    font-family:
+        monospace !important;
+
     font-size: 14px;
 
     letter-spacing: 3px;
@@ -363,14 +514,19 @@ body::before {
     transition:
         color 0.25s ease,
         text-shadow 0.25s ease;
+
 }
 
+
 #redactedButton:hover {
-    color: rgb(220, 0, 0);
+
+    color:
+        rgb(220, 0, 0);
 
     text-shadow:
         0 0 5px rgb(150, 0, 0),
         0 0 10px rgb(100, 0, 0);
+
 }
 
 
@@ -379,6 +535,7 @@ body::before {
    ========================================================= */
 
 .database-tabs {
+
     display: flex;
 
     align-items: flex-end;
@@ -389,25 +546,32 @@ body::before {
 
     position: relative;
 
-    z-index: 3;
+    z-index: 10;
 
     background: transparent;
+
 }
 
+
 .database-tab {
+
     position: relative;
 
     padding: 12px 18px;
 
     background: transparent;
 
-    color: rgb(150, 150, 150);
+    color:
+        rgb(150, 150, 150);
 
-    border: 1px solid rgba(100, 100, 100, 0.7);
+    border:
+        1px solid rgba(100, 100, 100, 0.7);
 
     border-bottom: none;
 
-    font-family: monospace !important;
+    font-family:
+        monospace !important;
+
     font-size: 12px;
 
     letter-spacing: 1px;
@@ -417,28 +581,39 @@ body::before {
     transition:
         color 0.25s ease,
         background 0.25s ease,
-        border-color 0.25s ease,
-        transform 0.25s ease;
+        border-color 0.25s ease;
+
 }
+
 
 .database-tab:hover {
-    color: rgb(220, 220, 220);
+
+    color:
+        rgb(220, 220, 220);
 
     background: transparent;
 
-    border-color: rgb(120, 0, 0);
+    border-color:
+        rgb(120, 0, 0);
+
 }
 
+
 .database-tab.active {
-    color: rgb(230, 230, 230);
+
+    color:
+        rgb(230, 230, 230);
 
     background: transparent;
 
-    border-color: rgb(150, 0, 0);
+    border-color:
+        rgb(150, 0, 0);
 
-    border-top: 2px solid rgb(180, 0, 0);
+    border-top:
+        2px solid rgb(180, 0, 0);
 
-    z-index: 4;
+    z-index: 11;
+
 }
 
 
@@ -447,19 +622,23 @@ body::before {
    ========================================================= */
 
 .database-panel {
+
     position: relative;
 
-    z-index: 2;
+    z-index: 5;
 
     background: transparent;
 
-    border: 1px solid rgba(100, 100, 100, 0.7);
+    border:
+        1px solid rgba(100, 100, 100, 0.7);
 
-    border-left: 3px solid rgb(150, 0, 0);
+    border-left:
+        3px solid rgb(150, 0, 0);
 
     box-shadow: none;
 
     overflow: hidden;
+
 }
 
 
@@ -468,9 +647,10 @@ body::before {
    ========================================================= */
 
 .database-section {
+
     display: block;
 
-    padding: 30px;
+    padding: 0 30px;
 
     max-height: 0;
 
@@ -478,31 +658,34 @@ body::before {
 
     overflow: hidden;
 
-    padding-top: 0;
-    padding-bottom: 0;
-
-    transform: translateY(-20px);
+    transform:
+        translateY(-25px);
 
     background: transparent;
 
     transition:
-        max-height 0.55s ease,
+        max-height 0.55s cubic-bezier(.22, .61, .36, 1),
         opacity 0.35s ease,
-        transform 0.55s ease,
-        padding 0.55s ease;
+        transform 0.55s cubic-bezier(.22, .61, .36, 1),
+        padding 0.55s cubic-bezier(.22, .61, .36, 1);
+
 }
 
+
 .database-section.active {
+
     max-height: 1500px;
 
     opacity: 1;
 
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding:
+        30px;
 
-    transform: translateY(0);
+    transform:
+        translateY(0);
 
     background: transparent;
+
 }
 
 
@@ -511,40 +694,59 @@ body::before {
    ========================================================= */
 
 .section-label {
-    color: rgb(170, 0, 0);
 
-    font-family: monospace !important;
+    color:
+        rgb(170, 0, 0);
+
+    font-family:
+        monospace !important;
+
     font-size: 11px;
 
     letter-spacing: 3px;
 
     margin-bottom: 8px;
+
 }
 
-.database-section h2 {
-    color: rgb(220, 220, 220);
 
-    font-family: monospace !important;
+.database-section h2 {
+
+    color:
+        rgb(220, 220, 220);
+
+    font-family:
+        monospace !important;
+
     font-size: 21px;
 
     letter-spacing: 2px;
 
-    border-bottom: 1px solid rgba(120, 0, 0, 0.8);
+    border-bottom:
+        1px solid rgba(120, 0, 0, 0.8);
 
     padding-bottom: 10px;
 
-    margin: 0 0 12px 0;
+    margin:
+        0 0 12px 0;
+
 }
 
-.classified-line {
-    color: rgb(150, 150, 150);
 
-    font-family: monospace !important;
+.classified-line {
+
+    color:
+        rgb(150, 150, 150);
+
+    font-family:
+        monospace !important;
+
     font-size: 11px;
 
     letter-spacing: 1px;
 
     margin-bottom: 25px;
+
 }
 
 
@@ -553,16 +755,21 @@ body::before {
    ========================================================= */
 
 .information-grid {
+
     display: grid;
 
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns:
+        repeat(2, 1fr);
 
     gap: 12px;
 
     margin-bottom: 25px;
+
 }
 
+
 .information-box {
+
     display: flex;
 
     flex-direction: column;
@@ -575,39 +782,59 @@ body::before {
 
     background: transparent;
 
-    border: 1px solid rgba(100, 100, 100, 0.65);
+    border:
+        1px solid rgba(100, 100, 100, 0.65);
 
-    border-left: 2px solid rgb(100, 0, 0);
+    border-left:
+        2px solid rgb(100, 0, 0);
 
     transition:
         border-color 0.25s ease,
         background 0.25s ease;
+
 }
+
 
 .information-box:hover {
+
     background: transparent;
 
-    border-color: rgba(130, 130, 130, 0.8);
+    border-color:
+        rgba(130, 130, 130, 0.8);
 
-    border-left-color: rgb(180, 0, 0);
+    border-left-color:
+        rgb(180, 0, 0);
+
 }
 
-.information-label {
-    color: rgb(135, 135, 135);
 
-    font-family: monospace !important;
+.information-label {
+
+    color:
+        rgb(135, 135, 135);
+
+    font-family:
+        monospace !important;
+
     font-size: 10px;
 
     letter-spacing: 2px;
+
 }
 
-.information-value {
-    color: rgb(205, 205, 205);
 
-    font-family: monospace !important;
+.information-value {
+
+    color:
+        rgb(205, 205, 205);
+
+    font-family:
+        monospace !important;
+
     font-size: 12px;
 
     line-height: 1.5;
+
 }
 
 
@@ -616,51 +843,101 @@ body::before {
    ========================================================= */
 
 .database-text {
+
     padding-top: 5px;
 
     background: transparent;
+
 }
 
-.database-text h3 {
-    color: rgb(170, 0, 0);
 
-    font-family: monospace !important;
+.database-text h3 {
+
+    color:
+        rgb(170, 0, 0);
+
+    font-family:
+        monospace !important;
+
     font-size: 13px;
 
     letter-spacing: 2px;
 
-    margin: 0 0 10px 0;
+    margin:
+        0 0 10px 0;
+
 }
 
-.database-text p {
-    color: rgb(165, 165, 165);
 
-    font-family: monospace !important;
+.database-text p {
+
+    color:
+        rgb(165, 165, 165);
+
+    font-family:
+        monospace !important;
+
     font-size: 13px;
 
     line-height: 1.7;
 
     margin: 0;
+
 }
 
 
 /* =========================================================
-   DATABASE MOBILE
+   OTHER PAGES
+   ========================================================= */
+
+#home,
+#archives,
+#personnel,
+#diary {
+
+    position: relative;
+
+    z-index: 5;
+
+}
+
+
+/* =========================================================
+   DATABASE RESET VISUAL STATE
+   ========================================================= */
+
+#database:not(.active) .database-page {
+
+    opacity: 0;
+
+    transform:
+        translateY(-18px);
+
+}
+
+
+/* =========================================================
+   MOBILE
    ========================================================= */
 
 @media (max-width: 700px) {
 
+
     .database-page {
+
         width: auto;
 
         max-width: 94%;
 
-        padding-top: 35px;
+        padding-top: 70px;
 
         padding-bottom: 70px;
+
     }
 
+
     .database-tabs {
+
         display: flex;
 
         flex-wrap: wrap;
@@ -668,31 +945,48 @@ body::before {
         gap: 3px;
 
         padding-left: 5px;
+
     }
+
 
     .database-tab {
-        padding: 10px 11px;
+
+        padding:
+            10px 11px;
 
         font-size: 10px;
+
     }
+
 
     .database-section {
-        padding: 20px;
 
-        padding-top: 0;
-        padding-bottom: 0;
+        padding:
+            0 20px;
+
     }
+
 
     .database-section.active {
-        padding-top: 20px;
-        padding-bottom: 20px;
+
+        padding:
+            20px;
+
     }
+
 
     .information-grid {
-        grid-template-columns: 1fr;
+
+        grid-template-columns:
+            1fr;
+
     }
 
+
     .database-header h1 {
+
         font-size: 22px;
+
     }
+
 }
