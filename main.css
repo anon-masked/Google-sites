@@ -2,6 +2,16 @@
    PAGE
    ========================= */
 
+html {
+    overflow-y: scroll;
+    scrollbar-width: none;
+}
+
+html::-webkit-scrollbar {
+    width: 0;
+    display: none;
+}
+
 body {
     background-color: #111;
     margin: 0;
@@ -620,6 +630,6 @@ body::before {
     margin-left: auto !important;
     margin-right: auto !important;
 
-    padding-top: 100px;
+    padding-top: 50px;
     padding-bottom: 100px;
 }
