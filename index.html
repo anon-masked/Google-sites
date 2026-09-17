@@ -49,19 +49,19 @@
         </button>
 
 
-<div class="nav-links">
+        <div class="nav-links">
 
-    <a href="#" data-page="home">HOME</a>
+            <a href="#" data-page="home">HOME</a>
 
-    <a href="#" data-page="database">DATABASE</a>
+            <a href="#" data-page="database">DATABASE</a>
 
-    <a href="#" data-page="archives">ARCHIVES</a>
+            <a href="#" data-page="archives">ARCHIVES</a>
 
-    <a href="#" data-page="personnel">PERSONNEL</a>
+            <a href="#" data-page="personnel">PERSONNEL</a>
 
-    <a href="#" data-page="diary">DIARY ENTRIES</a>
+            <a href="#" data-page="diary">DIARY ENTRIES</a>
 
-</div>
+        </div>
 
 
         <div class="help-container">
@@ -111,196 +111,22 @@
 
                 </div>
 
+
                 <div class="intro-control">
 
-    <div class="audio-title">
-        INTRO PROTOCOL
-    </div>
-
-    <button id="refreshIntroButton" class="refresh-intro-button">
-        REPLAY INTRO
-    </button>
-
-</div>
-
-
-                
-            </div>
-
-        </div>
-
-    </nav>
-
-
-    <!-- =========================
-         BACKGROUND AUDIO
-         ========================= -->
-
-    <audio
-        id="backgroundMusic"
-        src="Sound effects/scp main ambience.mp3"
-        loop
-    ></audio>
-
-
-    <!-- =========================
-         BINARY CORNERS
-         ========================= -->
-
-    <div class="binary binary-top-right"></div>
-
-    <div class="binary binary-bottom-left"></div>
-
-
-    <!-- =========================
-         MAIN PAGE CONTENT
-         ========================= -->
-
-    <main class="page-content">
-
-    <!-- =========================
-         HOME
-         ========================= -->
-
-    <section id="home" class="site-page active">
-
-        <h1>HOME</h1>
-
-        <p>
-            HOME PAGE ACTIVE
-        </p>
-
-    </section>
-
-          <section id="database" class="site-page">
-
-        <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Main</title>
-
-    <!-- PAGE CSS -->
-    <link rel="stylesheet" href="main.css">
-
-    <!-- NAVBAR CSS -->
-    <link rel="stylesheet" href="navbar/navbar.css">
-
-    <!-- INTRO CSS -->
-    <link rel="stylesheet" href="intro/intro.css">
-
-</head>
-
-<body>
-
-    <!-- =========================
-         NAVIGATION BAR
-         ========================= -->
-
-    <nav class="navbar">
-
-        <button class="logo-button" id="logoButton">
-
-            <span class="logo-stage">
-
-                <img
-                    id="logoImage1"
-                    class="logo-image logo-active"
-                    src="images/mtf.png"
-                    alt="MTF Logo"
-                >
-
-                <img
-                    id="logoImage2"
-                    class="logo-image"
-                    src="images/rrh.png"
-                    alt="RRH Logo"
-                >
-
-            </span>
-
-        </button>
-
-
-<div class="nav-links">
-
-    <a href="#" data-page="home">HOME</a>
-
-    <a href="#" data-page="database">DATABASE</a>
-
-    <a href="#" data-page="archives">ARCHIVES</a>
-
-    <a href="#" data-page="personnel">PERSONNEL</a>
-
-    <a href="#" data-page="diary">DIARY ENTRIES</a>
-
-</div>
-
-
-        <div class="help-container">
-
-            <button class="help-button" id="helpButton">
-                HELP
-            </button>
-
-
-            <div class="help-dropdown" id="helpDropdown">
-
-                <div class="audio-title">
-                    AUDIO CONTROL
-                </div>
-
-
-                <div class="audio-controls">
+                    <div class="audio-title">
+                        INTRO PROTOCOL
+                    </div>
 
                     <button
-                        id="musicToggle"
-                        class="music-toggle"
+                        id="refreshIntroButton"
+                        class="refresh-intro-button"
                     >
-                        ▶
+                        REPLAY INTRO
                     </button>
 
-                    <span id="musicStatus">
-                        MUSIC
-                    </span>
-
                 </div>
 
-
-                <div class="volume-container">
-
-                    <span class="volume-label">
-                        VOL
-                    </span>
-
-                    <input
-                        type="range"
-                        id="volumeSlider"
-                        min="0"
-                        max="1"
-                        step="0.01"
-                        value="0.35"
-                    >
-
-                </div>
-
-                <div class="intro-control">
-
-    <div class="audio-title">
-        INTRO PROTOCOL
-    </div>
-
-    <button id="refreshIntroButton" class="refresh-intro-button">
-        REPLAY INTRO
-    </button>
-
-</div>
-
-
-                
             </div>
 
         </div>
@@ -334,622 +160,648 @@
 
     <main class="page-content">
 
-    <!-- =========================
-         HOME
-         ========================= -->
-
-    <section id="home" class="site-page active">
-
-        <h1>HOME</h1>
-
-        <p>
-            HOME PAGE ACTIVE
-        </p>
-
-    </section>
 
         <!-- =========================
-             DATABASE HEADER
+             HOME
              ========================= -->
 
-        <section class="database-header scp-panel">
-
-            <div class="database-label">
-                FOUNDATION DATABASE
-            </div>
+        <section
+            id="home"
+            class="site-page active"
+        >
 
             <h1>
-                PERSONAL DATABASE
+                HOME
             </h1>
 
             <p>
-                SCP-KENZO // CLASSIFIED PERSONNEL INFORMATION
+                HOME PAGE ACTIVE
             </p>
 
         </section>
 
 
         <!-- =========================
-             DATABASE FOLDER
+             DATABASE
              ========================= -->
 
-        <section class="database-folder">
+        <section
+            id="database"
+            class="site-page"
+        >
 
-            <div class="redacted-overlay" id="redactedOverlay">
-
-                <button id="redactedButton">
-                    [REDACTED]
-                </button>
-
-            </div>
-
-
-            <!-- =========================
-                 DATABASE TABS
-                 ========================= -->
-
-            <div class="database-tabs">
-
-                <button
-                    class="database-tab"
-                    data-section="db-personnel"
-                >
-                    PERSONNEL FILE
-                </button>
-
-
-                <button
-                    class="database-tab"
-                    data-section="db-technical"
-                >
-                    TECHNICAL PROFILE
-                </button>
-
-
-                <button
-                    class="database-tab"
-                    data-section="db-academic"
-                >
-                    ACADEMIC RECORD
-                </button>
-
-
-                <button
-                    class="database-tab"
-                    data-section="db-projects"
-                >
-                    PROJECT ARCHIVE
-                </button>
-
-
-                <button
-                    class="database-tab"
-                    data-section="db-creative"
-                >
-                    CREATIVE PROFILE
-                </button>
-
-            </div>
-
-
-            <!-- =========================
-                 DATABASE CONTENT
-                 ========================= -->
-
-            <div class="database-panel">
+            <div class="database-page">
 
 
                 <!-- =========================
-                     PERSONNEL
+                     DATABASE HEADER
                      ========================= -->
 
-                <section
-                    id="db-personnel"
-                    class="database-section"
-                >
+                <section class="database-header scp-panel">
 
-                    <div class="section-label">
-                        FILE // 001
+                    <div class="database-label">
+                        FOUNDATION DATABASE
                     </div>
 
-                    <h2>
-                        PERSONNEL FILE
-                    </h2>
+                    <h1>
+                        PERSONAL DATABASE
+                    </h1>
 
-                    <div class="classified-line">
-                        STATUS: ACTIVE
-                    </div>
-
-
-                    <div class="information-grid">
-
-                        <div class="information-box">
-
-                            <span class="information-label">
-                                DESIGNATION
-                            </span>
-
-                            <span class="information-value">
-                                SCP- Kenzo Joshua I. Delos Santos
-                            </span>
-
-                        </div>
-
-
-                        <div class="information-box">
-
-                            <span class="information-label">
-                                STATUS
-                            </span>
-
-                            <span class="information-value">
-                                Enrolled
-                            </span>
-
-                        </div>
-
-
-                        <div class="information-box">
-
-                            <span class="information-label">
-                                CLEARANCE
-                            </span>
-
-                            <span class="information-value">
-                                Year DIT 1-1
-                            </span>
-
-                        </div>
-
-
-                        <div class="information-box">
-
-                            <span class="information-label">
-                                DIVISION
-                            </span>
-
-                            <span class="information-value">
-                                INFORMATION TECHNOLOGY
-                            </span>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="database-text">
-
-                        <h3>
-                            PERSONNEL NOTES
-                        </h3>
-
-                        <p>
-                            Personnel file currently under active observation.
-                            Additional information may be added as required.
-                        </p>
-
-                    </div>
+                    <p>
+                        SCP-KENZO // CLASSIFIED PERSONNEL INFORMATION
+                    </p>
 
                 </section>
 
 
                 <!-- =========================
-                     TECHNICAL
+                     DATABASE FOLDER
                      ========================= -->
 
-                <section
-                    id="db-technical"
-                    class="database-section"
-                >
-
-                    <div class="section-label">
-                        FILE // 002
-                    </div>
-
-                    <h2>
-                        TECHNICAL PROFILE
-                    </h2>
-
-                    <div class="classified-line">
-                        SPECIALIZATION: INFORMATION TECHNOLOGY
-                    </div>
+                <section class="database-folder">
 
 
-                    <div class="information-grid">
+                    <!-- =========================
+                         REDACTED OVERLAY
+                         ========================= -->
 
-                        <div class="information-box">
+                    <div
+                        class="redacted-overlay"
+                        id="redactedOverlay"
+                    >
 
-                            <span class="information-label">
-                                PROGRAMMING
-                            </span>
-
-                            <span class="information-value">
-                                C++ / HTML / CSS / JAVASCRIPT
-                            </span>
-
-                        </div>
-
-
-                        <div class="information-box">
-
-                            <span class="information-label">
-                                3D SOFTWARE
-                            </span>
-
-                            <span class="information-value">
-                                BLENDER
-                            </span>
-
-                        </div>
-
-
-                        <div class="information-box">
-
-                            <span class="information-label">
-                                HARDWARE
-                            </span>
-
-                            <span class="information-value">
-                                PC / ARDUINO / ELECTRONICS
-                            </span>
-
-                        </div>
-
-
-                        <div class="information-box">
-
-                            <span class="information-label">
-                                TECHNICAL WORK
-                            </span>
-
-                            <span class="information-value">
-                                SYSTEMS / NETWORKING / TROUBLESHOOTING
-                            </span>
-
-                        </div>
+                        <button id="redactedButton">
+                            [REDACTED]
+                        </button>
 
                     </div>
 
 
-                    <div class="database-text">
+                    <!-- =========================
+                         DATABASE TABS
+                         ========================= -->
 
-                        <h3>
-                            TECHNICAL NOTES
-                        </h3>
+                    <div class="database-tabs">
 
-                        <p>
-                            Technical capabilities and projects may be documented
-                            within this section.
-                        </p>
+                        <button
+                            class="database-tab"
+                            data-section="db-personnel"
+                        >
+                            PERSONNEL FILE
+                        </button>
+
+
+                        <button
+                            class="database-tab"
+                            data-section="db-technical"
+                        >
+                            TECHNICAL PROFILE
+                        </button>
+
+
+                        <button
+                            class="database-tab"
+                            data-section="db-academic"
+                        >
+                            ACADEMIC RECORD
+                        </button>
+
+
+                        <button
+                            class="database-tab"
+                            data-section="db-projects"
+                        >
+                            PROJECT ARCHIVE
+                        </button>
+
+
+                        <button
+                            class="database-tab"
+                            data-section="db-creative"
+                        >
+                            CREATIVE PROFILE
+                        </button>
+
+                    </div>
+
+
+                    <!-- =========================
+                         DATABASE CONTENT
+                         ========================= -->
+
+                    <div class="database-panel">
+
+
+                        <!-- =========================
+                             PERSONNEL
+                             ========================= -->
+
+                        <section
+                            id="db-personnel"
+                            class="database-section"
+                        >
+
+                            <div class="section-label">
+                                FILE // 001
+                            </div>
+
+                            <h2>
+                                PERSONNEL FILE
+                            </h2>
+
+                            <div class="classified-line">
+                                STATUS: ACTIVE
+                            </div>
+
+
+                            <div class="information-grid">
+
+                                <div class="information-box">
+
+                                    <span class="information-label">
+                                        DESIGNATION
+                                    </span>
+
+                                    <span class="information-value">
+                                        SCP- Kenzo Joshua I. Delos Santos
+                                    </span>
+
+                                </div>
+
+
+                                <div class="information-box">
+
+                                    <span class="information-label">
+                                        STATUS
+                                    </span>
+
+                                    <span class="information-value">
+                                        Enrolled
+                                    </span>
+
+                                </div>
+
+
+                                <div class="information-box">
+
+                                    <span class="information-label">
+                                        CLEARANCE
+                                    </span>
+
+                                    <span class="information-value">
+                                        Year DIT 1-1
+                                    </span>
+
+                                </div>
+
+
+                                <div class="information-box">
+
+                                    <span class="information-label">
+                                        DIVISION
+                                    </span>
+
+                                    <span class="information-value">
+                                        INFORMATION TECHNOLOGY
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="database-text">
+
+                                <h3>
+                                    PERSONNEL NOTES
+                                </h3>
+
+                                <p>
+                                    Personnel file currently under active observation.
+                                    Additional information may be added as required.
+                                </p>
+
+                            </div>
+
+                        </section>
+
+
+                        <!-- =========================
+                             TECHNICAL
+                             ========================= -->
+
+                        <section
+                            id="db-technical"
+                            class="database-section"
+                        >
+
+                            <div class="section-label">
+                                FILE // 002
+                            </div>
+
+                            <h2>
+                                TECHNICAL PROFILE
+                            </h2>
+
+                            <div class="classified-line">
+                                SPECIALIZATION: INFORMATION TECHNOLOGY
+                            </div>
+
+
+                            <div class="information-grid">
+
+                                <div class="information-box">
+
+                                    <span class="information-label">
+                                        PROGRAMMING
+                                    </span>
+
+                                    <span class="information-value">
+                                        C++ / HTML / CSS / JAVASCRIPT
+                                    </span>
+
+                                </div>
+
+
+                                <div class="information-box">
+
+                                    <span class="information-label">
+                                        3D SOFTWARE
+                                    </span>
+
+                                    <span class="information-value">
+                                        BLENDER
+                                    </span>
+
+                                </div>
+
+
+                                <div class="information-box">
+
+                                    <span class="information-label">
+                                        HARDWARE
+                                    </span>
+
+                                    <span class="information-value">
+                                        PC / ARDUINO / ELECTRONICS
+                                    </span>
+
+                                </div>
+
+
+                                <div class="information-box">
+
+                                    <span class="information-label">
+                                        TECHNICAL WORK
+                                    </span>
+
+                                    <span class="information-value">
+                                        SYSTEMS / NETWORKING / TROUBLESHOOTING
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="database-text">
+
+                                <h3>
+                                    TECHNICAL NOTES
+                                </h3>
+
+                                <p>
+                                    Technical capabilities and projects may be documented
+                                    within this section.
+                                </p>
+
+                            </div>
+
+                        </section>
+
+
+                        <!-- =========================
+                             ACADEMIC
+                             ========================= -->
+
+                        <section
+                            id="db-academic"
+                            class="database-section"
+                        >
+
+                            <div class="section-label">
+                                FILE // 003
+                            </div>
+
+                            <h2>
+                                ACADEMIC RECORD
+                            </h2>
+
+                            <div class="classified-line">
+                                EDUCATIONAL STATUS: ACTIVE
+                            </div>
+
+
+                            <div class="information-grid">
+
+                                <div class="information-box">
+
+                                    <span class="information-label">
+                                        PROGRAM
+                                    </span>
+
+                                    <span class="information-value">
+                                        DIPLOMA IN INFORMATION TECHNOLOGY
+                                    </span>
+
+                                </div>
+
+
+                                <div class="information-box">
+
+                                    <span class="information-label">
+                                        LEVEL
+                                    </span>
+
+                                    <span class="information-value">
+                                        FIRST YEAR
+                                    </span>
+
+                                </div>
+
+
+                                <div class="information-box">
+
+                                    <span class="information-label">
+                                        SPECIALIZATION
+                                    </span>
+
+                                    <span class="information-value">
+                                        INFORMATION TECHNOLOGY
+                                    </span>
+
+                                </div>
+
+
+                                <div class="information-box">
+
+                                    <span class="information-label">
+                                        RECORD
+                                    </span>
+
+                                    <span class="information-value">
+                                        Senior High Graduate of High Honors
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="database-text">
+
+                                <h3>
+                                    ACADEMIC NOTES
+                                </h3>
+
+                                <p>
+                                    Academic activities, coursework, achievements,
+                                    examinations, and other educational records may
+                                    be stored here.
+                                </p>
+
+                            </div>
+
+                        </section>
+
+
+                        <!-- =========================
+                             PROJECTS
+                             ========================= -->
+
+                        <section
+                            id="db-projects"
+                            class="database-section"
+                        >
+
+                            <div class="section-label">
+                                FILE // 004
+                            </div>
+
+                            <h2>
+                                PROJECT ARCHIVE
+                            </h2>
+
+                            <div class="classified-line">
+                                PROJECT STATUS: ONGOING
+                            </div>
+
+
+                            <div class="information-grid">
+
+                                <div class="information-box">
+
+                                    <span class="information-label">
+                                        PROJECT 01
+                                    </span>
+
+                                    <span class="information-value">
+                                        SCP Video Resume WEBSITE
+                                    </span>
+
+                                </div>
+
+
+                                <div class="information-box">
+
+                                    <span class="information-label">
+                                        PROJECT 02
+                                    </span>
+
+                                    <span class="information-value">
+                                        ARDUINO / ELECTRONICS
+                                        <br>
+                                        CAPSTONE RESEARCH
+                                    </span>
+
+                                </div>
+
+
+                                <div class="information-box">
+
+                                    <span class="information-label">
+                                        PROJECT 03
+                                    </span>
+
+                                    <span class="information-value">
+                                        3D / BLENDER
+                                    </span>
+
+                                </div>
+
+
+                                <div class="information-box">
+
+                                    <span class="information-label">
+                                        PROJECT 04
+                                    </span>
+
+                                    <span class="information-value">
+                                        HOME DESKTOP
+                                    </span>
+
+                                </div>
+
+
+                                <div class="information-box">
+
+                                    <span class="information-label">
+                                        PROJECT 05
+                                    </span>
+
+                                    <span class="information-value">
+                                        TV BROADCASTING 3D STUDIO
+                                    </span>
+
+                                </div>
+
+
+                                <div class="information-box">
+
+                                    <span class="information-label">
+                                        PROJECT 06
+                                    </span>
+
+                                    <span class="information-value">
+                                        HIGHSCHOOL COMLAB SURVEILLANCE SYSTEM
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="database-text">
+
+                                <h3>
+                                    PROJECT NOTES
+                                </h3>
+
+                                <p>
+                                    Active and completed projects may be catalogued
+                                    within this archive.
+                                </p>
+
+                            </div>
+
+                        </section>
+
+
+                        <!-- =========================
+                             CREATIVE
+                             ========================= -->
+
+                        <section
+                            id="db-creative"
+                            class="database-section"
+                        >
+
+                            <div class="section-label">
+                                FILE // 005
+                            </div>
+
+                            <h2>
+                                CREATIVE PROFILE
+                            </h2>
+
+                            <div class="classified-line">
+                                CREATIVE OUTPUT: ACTIVE
+                            </div>
+
+
+                            <div class="information-grid">
+
+                                <div class="information-box">
+
+                                    <span class="information-label">
+                                        MUSIC
+                                    </span>
+
+                                    <span class="information-value">
+                                        ACTIVE
+                                    </span>
+
+                                </div>
+
+
+                                <div class="information-box">
+
+                                    <span class="information-label">
+                                        WRITING
+                                    </span>
+
+                                    <span class="information-value">
+                                        POETRY / CREATIVE WRITING
+                                    </span>
+
+                                </div>
+
+
+                                <div class="information-box">
+
+                                    <span class="information-label">
+                                        VOICE
+                                    </span>
+
+                                    <span class="information-value">
+                                        VOICE ACTING / PERFORMANCE
+                                    </span>
+
+                                </div>
+
+
+                                <div class="information-box">
+
+                                    <span class="information-label">
+                                        MEDIA
+                                    </span>
+
+                                    <span class="information-value">
+                                        VIDEO / 3D / DESIGN
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="database-text">
+
+                                <h3>
+                                    CREATIVE NOTES
+                                </h3>
+
+                                <p>
+                                    Creative works, media projects, performances,
+                                    writing, and other artistic material may be
+                                    documented here.
+                                </p>
+
+                            </div>
+
+                        </section>
+
 
                     </div>
 
                 </section>
-
-
-                <!-- =========================
-                     ACADEMIC
-                     ========================= -->
-
-                <section
-                    id="db-academic"
-                    class="database-section"
-                >
-
-                    <div class="section-label">
-                        FILE // 003
-                    </div>
-
-                    <h2>
-                        ACADEMIC RECORD
-                    </h2>
-
-                    <div class="classified-line">
-                        EDUCATIONAL STATUS: ACTIVE
-                    </div>
-
-
-                    <div class="information-grid">
-
-                        <div class="information-box">
-
-                            <span class="information-label">
-                                PROGRAM
-                            </span>
-
-                            <span class="information-value">
-                                DIPLOMA IN INFORMATION TECHNOLOGY
-                            </span>
-
-                        </div>
-
-
-                        <div class="information-box">
-
-                            <span class="information-label">
-                                LEVEL
-                            </span>
-
-                            <span class="information-value">
-                                FIRST YEAR
-                            </span>
-
-                        </div>
-
-
-                        <div class="information-box">
-
-                            <span class="information-label">
-                                SPECIALIZATION
-                            </span>
-
-                            <span class="information-value">
-                                INFORMATION TECHNOLOGY
-                            </span>
-
-                        </div>
-
-
-                        <div class="information-box">
-
-                            <span class="information-label">
-                                RECORD
-                            </span>
-
-                            <span class="information-value">
-                                Senior High Graduate of High Honors
-                            </span>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="database-text">
-
-                        <h3>
-                            ACADEMIC NOTES
-                        </h3>
-
-                        <p>
-                            Academic activities, coursework, achievements,
-                            examinations, and other educational records may
-                            be stored here.
-                        </p>
-
-                    </div>
-
-                </section>
-
-
-                <!-- =========================
-                     PROJECTS
-                     ========================= -->
-
-                <section
-                    id="db-projects"
-                    class="database-section"
-                >
-
-                    <div class="section-label">
-                        FILE // 004
-                    </div>
-
-                    <h2>
-                        PROJECT ARCHIVE
-                    </h2>
-
-                    <div class="classified-line">
-                        PROJECT STATUS: ONGOING
-                    </div>
-
-
-                    <div class="information-grid">
-
-                        <div class="information-box">
-
-                            <span class="information-label">
-                                PROJECT 01
-                            </span>
-
-                            <span class="information-value">
-                                SCP Video Resume WEBSITE
-                            </span>
-
-                        </div>
-
-
-                        <div class="information-box">
-
-                            <span class="information-label">
-                                PROJECT 02
-                            </span>
-
-                            <span class="information-value">
-                                ARDUINO / ELECTRONICS
-                                <br>
-                                CAPSTONE RESEARCH
-                            </span>
-
-                        </div>
-
-
-                        <div class="information-box">
-
-                            <span class="information-label">
-                                PROJECT 03
-                            </span>
-
-                            <span class="information-value">
-                                3D / BLENDER
-                            </span>
-
-                        </div>
-
-
-                        <div class="information-box">
-
-                            <span class="information-label">
-                                PROJECT 04
-                            </span>
-
-                            <span class="information-value">
-                                HOME DESKTOP
-                            </span>
-
-                        </div>
-
-
-                        <div class="information-box">
-
-                            <span class="information-label">
-                                PROJECT 05
-                            </span>
-
-                            <span class="information-value">
-                                TV BROADCASTING 3D STUDIO
-                            </span>
-
-                        </div>
-
-
-                        <div class="information-box">
-
-                            <span class="information-label">
-                                PROJECT 06
-                            </span>
-
-                            <span class="information-value">
-                                HIGHSCHOOL COMLAB SURVEILLANCE SYSTEM
-                            </span>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="database-text">
-
-                        <h3>
-                            PROJECT NOTES
-                        </h3>
-
-                        <p>
-                            Active and completed projects may be catalogued
-                            within this archive.
-                        </p>
-
-                    </div>
-
-                </section>
-
-
-                <!-- =========================
-                     CREATIVE
-                     ========================= -->
-
-                <section
-                    id="db-creative"
-                    class="database-section"
-                >
-
-                    <div class="section-label">
-                        FILE // 005
-                    </div>
-
-                    <h2>
-                        CREATIVE PROFILE
-                    </h2>
-
-                    <div class="classified-line">
-                        CREATIVE OUTPUT: ACTIVE
-                    </div>
-
-
-                    <div class="information-grid">
-
-                        <div class="information-box">
-
-                            <span class="information-label">
-                                MUSIC
-                            </span>
-
-                            <span class="information-value">
-                                ACTIVE
-                            </span>
-
-                        </div>
-
-
-                        <div class="information-box">
-
-                            <span class="information-label">
-                                WRITING
-                            </span>
-
-                            <span class="information-value">
-                                POETRY / CREATIVE WRITING
-                            </span>
-
-                        </div>
-
-
-                        <div class="information-box">
-
-                            <span class="information-label">
-                                VOICE
-                            </span>
-
-                            <span class="information-value">
-                                VOICE ACTING / PERFORMANCE
-                            </span>
-
-                        </div>
-
-
-                        <div class="information-box">
-
-                            <span class="information-label">
-                                MEDIA
-                            </span>
-
-                            <span class="information-value">
-                                VIDEO / 3D / DESIGN
-                            </span>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="database-text">
-
-                        <h3>
-                            CREATIVE NOTES
-                        </h3>
-
-                        <p>
-                            Creative works, media projects, performances,
-                            writing, and other artistic material may be
-                            documented here.
-                        </p>
-
-                    </div>
-
-                </section>
-
 
             </div>
 
         </section>
 
-    </div>
 
-</section>
-
-    </section>
-        
-</main>
+    </main>
 
 
     <!-- =========================
@@ -965,44 +817,14 @@
 
     <script src="navbar/navbar.js"></script>
 
-    <!-- =========================
-         INTRO JS
-         ========================= -->
-    
-    <script src="intro/intro.js"></script>
-
-
-    
-</body>
-
-</html>
-
-    </section>
-        
-</main>
-
-
-    <!-- =========================
-         PAGE JS
-         ========================= -->
-
-    <script src="main.js"></script>
-
-
-    <!-- =========================
-         NAVBAR JS
-         ========================= -->
-
-    <script src="navbar/navbar.js"></script>
 
     <!-- =========================
          INTRO JS
          ========================= -->
-    
+
     <script src="intro/intro.js"></script>
 
 
-    
 </body>
 
 </html>
