@@ -2,28 +2,18 @@
    PAGE
    ========================= */
 
-html {
-    scrollbar-width: none;
-}
-
-html::-webkit-scrollbar {
-    width: 0;
-    height: 0;
-    display: none;
-}
-
+html,
 body {
-    background-color: #111;
-    margin: 0;
     scrollbar-width: none;
+    -ms-overflow-style: none;
 }
 
+html::-webkit-scrollbar,
 body::-webkit-scrollbar {
-    width: 0;
-    height: 0;
-    display: none;
+    width: 0 !important;
+    height: 0 !important;
+    display: none !important;
 }
-
 
 /* =========================
    BACKGROUND
@@ -616,6 +606,7 @@ body::before {
 #database.site-page {
     width: 100%;
     padding-top: 0;
+    margin-top: -80px;
 }
 
 #database .database-page {
@@ -631,3 +622,7 @@ body::before {
     padding-top: 0;
     padding-bottom: 100px;
 }
+
+/* =========================
+   DATABASE VERTICAL POSITION
+   ========================= */
