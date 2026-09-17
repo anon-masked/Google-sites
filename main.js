@@ -142,9 +142,7 @@ const sitePages = document.querySelectorAll(".site-page");
 function showPage(pageName) {
 
     sitePages.forEach(page => {
-
         page.classList.remove("active");
-
     });
 
 
@@ -153,9 +151,7 @@ function showPage(pageName) {
 
 
     if (selectedPage) {
-
         selectedPage.classList.add("active");
-
     }
 
 
@@ -176,7 +172,6 @@ function showPage(pageName) {
     }
 
 }
-
 
 pageLinks.forEach(link => {
 
