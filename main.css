@@ -133,3 +133,15 @@ body::before {
     }
 
 }
+
+/* =========================================================
+   SINGLE PAGE SECTIONS
+   ========================================================= */
+
+.site-page {
+    display: none;
+}
+
+.site-page.active {
+    display: block;
+}
