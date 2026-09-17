@@ -8,17 +8,14 @@ function generateBinary(direction) {
 
     const rows = 24;
 
-
     for (let i = 0; i < rows; i++) {
 
         let width;
 
-
         /*
          * TOP RIGHT
-         *
-         * Wide at the top
-         * Narrow toward the bottom
+         * Wide at top
+         * Narrow toward bottom
          */
 
         if (direction === "top") {
@@ -28,12 +25,10 @@ function generateBinary(direction) {
 
         }
 
-
         /*
          * BOTTOM LEFT
-         *
-         * Narrow at the top
-         * Wide toward the bottom
+         * Narrow at top
+         * Wide toward bottom
          */
 
         else {
@@ -43,17 +38,13 @@ function generateBinary(direction) {
 
         }
 
-
         width +=
             Math.floor(Math.random() * 6);
-
 
         width =
             Math.max(width, 1);
 
-
         let line = "";
-
 
         for (let j = 0; j < width; j++) {
 
@@ -78,11 +69,9 @@ function generateBinary(direction) {
 
         }
 
-
         output += line + "\n";
 
     }
-
 
     return output;
 }
@@ -93,15 +82,10 @@ function generateBinary(direction) {
    ========================= */
 
 const topRight =
-    document.querySelector(
-        ".binary-top-right"
-    );
-
+    document.querySelector(".binary-top-right");
 
 const bottomLeft =
-    document.querySelector(
-        ".binary-bottom-left"
-    );
+    document.querySelector(".binary-bottom-left");
 
 
 /* =========================
@@ -110,14 +94,21 @@ const bottomLeft =
 
 function updateBinary() {
 
-    topRight.textContent =
-        generateBinary("top");
+    if (topRight) {
 
-    bottomLeft.textContent =
-        generateBinary("bottom");
+        topRight.textContent =
+            generateBinary("top");
+
+    }
+
+    if (bottomLeft) {
+
+        bottomLeft.textContent =
+            generateBinary("bottom");
+
+    }
 
 }
-
 
 updateBinary();
 
@@ -131,70 +122,21 @@ setInterval(
     250
 );
 
+
 /* =========================================================
    SINGLE PAGE NAVIGATION
    ========================================================= */
 
-const pageLinks = document.querySelectorAll("[data-page]");
-const sitePages = document.querySelectorAll(".site-page");
+const pageLinks =
+    document.querySelectorAll("[data-page]");
 
+const sitePages =
+    document.querySelectorAll(".site-page");
 
-function showPage(pageName) {
-
-    sitePages.forEach(page => {
-        page.classList.remove("active");
-    });
-
-
-    const selectedPage =
-        document.getElementById(pageName);
-
-
-    if (selectedPage) {
-        selectedPage.classList.add("active");
-    }
-
-
-    /* =========================
-       DATABASE BACKGROUND
-       ========================= */
-
-    if (pageName === "database") {
-
-        document.body.classList.add("database-mode");
-
-    }
-
-    else {
-
-        document.body.classList.remove("database-mode");
-
-    }
-
-}
-
-pageLinks.forEach(link => {
-
-    link.addEventListener("click", (event) => {
-
-        event.preventDefault();
-
-        const pageName = link.dataset.page;
-
-        showPage(pageName);
-
-    });
-
-});
 
 /* =========================================================
-   DATABASE
-   ========================================================= */
-
-
-/* =========================
    DATABASE ELEMENTS
-   ========================= */
+   ========================================================= */
 
 const databaseTabs =
     document.querySelectorAll(".database-tab");
@@ -209,9 +151,153 @@ const redactedButton =
     document.getElementById("redactedButton");
 
 
-/* =========================
+/* =========================================================
+   RESET DATABASE
+   ========================================================= */
+
+function resetDatabase() {
+
+    /*
+     * Close every database section
+     */
+
+    databaseSections.forEach(section => {
+
+        section.classList.remove("active");
+
+    });
+
+
+    /*
+     * Remove active state from every tab
+     */
+
+    databaseTabs.forEach(tab => {
+
+        tab.classList.remove("active");
+
+    });
+
+
+    /*
+     * Reset the REDACTED overlay
+     */
+
+    if (redactedOverlay) {
+
+        redactedOverlay.classList.remove("hidden");
+
+    }
+
+}
+
+
+/* =========================================================
+   PAGE SWITCHING
+   ========================================================= */
+
+function showPage(pageName) {
+
+    /*
+     * Remove active state from every page
+     */
+
+    sitePages.forEach(page => {
+
+        page.classList.remove("active");
+
+    });
+
+
+    /*
+     * Find requested page
+     */
+
+    const selectedPage =
+        document.getElementById(pageName);
+
+
+    /*
+     * Show requested page
+     */
+
+    if (selectedPage) {
+
+        selectedPage.classList.add("active");
+
+    }
+
+
+    /* =========================
+       DATABASE BACKGROUND
+       ========================= */
+
+    if (pageName === "database") {
+
+        /*
+         * Make sure database always
+         * starts CLOSED when entered.
+         */
+
+        resetDatabase();
+
+        document.body.classList.add(
+            "database-mode"
+        );
+
+    }
+
+    else {
+
+        /*
+         * Remove database background
+         */
+
+        document.body.classList.remove(
+            "database-mode"
+        );
+
+
+        /*
+         * IMPORTANT:
+         *
+         * When leaving Database,
+         * completely reset its state.
+         *
+         * So when we come back,
+         * nothing is already open.
+         */
+
+        resetDatabase();
+
+    }
+
+}
+
+
+/* =========================================================
+   NAVIGATION CLICK EVENTS
+   ========================================================= */
+
+pageLinks.forEach(link => {
+
+    link.addEventListener("click", (event) => {
+
+        event.preventDefault();
+
+        const pageName =
+            link.dataset.page;
+
+        showPage(pageName);
+
+    });
+
+});
+
+
+/* =========================================================
    REDACTED OVERLAY
-   ========================= */
+   ========================================================= */
 
 if (redactedButton && redactedOverlay) {
 
@@ -224,9 +310,9 @@ if (redactedButton && redactedOverlay) {
 }
 
 
-/* =========================
-   OPEN / CLOSE SECTION
-   ========================= */
+/* =========================================================
+   OPEN / CLOSE DATABASE SECTION
+   ========================================================= */
 
 function openDatabaseSection(sectionId) {
 
@@ -239,42 +325,65 @@ function openDatabaseSection(sectionId) {
         );
 
 
+    /*
+     * Safety check
+     */
+
+    if (!selectedSection) {
+
+        return;
+
+    }
+
+
     /* =========================
        IF ALREADY OPEN
        CLOSE IT
        ========================= */
 
     if (
-        selectedSection &&
         selectedSection.classList.contains("active")
     ) {
 
-        selectedSection.classList.remove("active");
+        selectedSection.classList.remove(
+            "active"
+        );
 
         if (selectedTab) {
 
-            selectedTab.classList.remove("active");
+            selectedTab.classList.remove(
+                "active"
+            );
 
         }
 
         return;
+
     }
 
 
     /* =========================
-       CLOSE ALL SECTIONS
+       CLOSE ALL OTHER SECTIONS
        ========================= */
 
     databaseSections.forEach(section => {
 
-        section.classList.remove("active");
+        section.classList.remove(
+            "active"
+        );
 
     });
 
 
+    /* =========================
+       CLOSE ALL OTHER TABS
+       ========================= */
+
     databaseTabs.forEach(tab => {
 
-        tab.classList.remove("active");
+        tab.classList.remove(
+            "active"
+        );
 
     });
 
@@ -283,25 +392,29 @@ function openDatabaseSection(sectionId) {
        OPEN SELECTED SECTION
        ========================= */
 
-    if (selectedSection) {
+    selectedSection.classList.add(
+        "active"
+    );
 
-        selectedSection.classList.add("active");
 
-    }
-
+    /* =========================
+       ACTIVATE SELECTED TAB
+       ========================= */
 
     if (selectedTab) {
 
-        selectedTab.classList.add("active");
+        selectedTab.classList.add(
+            "active"
+        );
 
     }
 
 }
 
 
-/* =========================
-   TAB CLICK EVENTS
-   ========================= */
+/* =========================================================
+   DATABASE TAB CLICK EVENTS
+   ========================================================= */
 
 databaseTabs.forEach(tab => {
 
@@ -314,3 +427,14 @@ databaseTabs.forEach(tab => {
     });
 
 });
+
+
+/* =========================================================
+   INITIAL DATABASE STATE
+   ========================================================= */
+
+/*
+ * Database starts completely closed.
+ */
+
+resetDatabase();
