@@ -148,11 +148,30 @@ function showPage(pageName) {
     });
 
 
-    const selectedPage = document.getElementById(pageName);
+    const selectedPage =
+        document.getElementById(pageName);
+
 
     if (selectedPage) {
 
         selectedPage.classList.add("active");
+
+    }
+
+
+    /* =========================
+       DATABASE BACKGROUND
+       ========================= */
+
+    if (pageName === "database") {
+
+        document.body.classList.add("database-mode");
+
+    }
+
+    else {
+
+        document.body.classList.remove("database-mode");
 
     }
 
