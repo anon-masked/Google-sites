@@ -473,3 +473,202 @@ body::before {
     }
 
 }
+
+/* =========================================================
+   SIMULATION SECTION
+   ========================================================= */
+
+.simulation-section {
+    margin-top: 35px;
+    margin-bottom: 40px;
+    padding-top: 25px;
+    border-top: 1px solid rgb(70, 0, 0);
+}
+
+.simulation-header {
+    margin-bottom: 18px;
+}
+
+.simulation-label {
+    display: block;
+    margin-bottom: 7px;
+
+    color: rgb(150, 0, 0);
+
+    font-family: monospace !important;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.simulation-header h3 {
+    margin: 0;
+
+    color: rgb(190, 190, 190);
+
+    font-family: monospace !important;
+    font-size: 16px;
+    letter-spacing: 2px;
+}
+
+.simulation-header p {
+    margin: 7px 0 0;
+
+    color: rgb(100, 100, 100);
+
+    font-family: monospace !important;
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   SIMULATION TABLE
+   ========================================================= */
+
+.simulation-table-wrapper {
+    width: 100%;
+
+    overflow-x: auto;
+
+    border: 1px solid rgb(55, 55, 55);
+
+    background: rgb(15, 15, 15);
+
+    box-sizing: border-box;
+}
+
+.simulation-table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    min-width: 500px;
+
+    font-family: monospace !important;
+}
+
+
+/* =========================
+   TABLE HEADER
+   ========================= */
+
+.simulation-table th {
+    padding: 11px 12px;
+
+    background: rgb(35, 35, 35);
+
+    border-bottom: 1px solid rgb(100, 0, 0);
+    border-right: 1px solid rgb(50, 50, 50);
+
+    color: rgb(160, 0, 0);
+
+    font-family: monospace !important;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+
+    text-align: left;
+}
+
+.simulation-table th:last-child {
+    border-right: none;
+}
+
+
+/* =========================
+   TABLE CELLS
+   ========================= */
+
+.simulation-table td {
+    padding: 10px 12px;
+
+    border-bottom: 1px solid rgb(40, 40, 40);
+    border-right: 1px solid rgb(40, 40, 40);
+
+    color: rgb(175, 175, 175);
+
+    font-family: monospace !important;
+    font-size: 11px;
+    line-height: 1.5;
+
+    vertical-align: top;
+}
+
+.simulation-table td:last-child {
+    border-right: none;
+}
+
+
+/* Remove border from final row */
+
+.simulation-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* =========================
+   STEP COLUMN
+   ========================= */
+
+.simulation-table th:first-child,
+.simulation-table td:first-child {
+    width: 70px;
+
+    text-align: center;
+
+    color: rgb(120, 0, 0);
+}
+
+
+/* =========================
+   RESULT COLUMN
+   ========================= */
+
+.simulation-table td:last-child {
+    color: rgb(200, 200, 200);
+}
+
+
+/* =========================
+   ROW HOVER
+   ========================= */
+
+.simulation-table tbody tr {
+    transition: background 0.2s ease;
+}
+
+.simulation-table tbody tr:hover {
+    background: rgba(100, 0, 0, 0.12);
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .simulation-section {
+        margin-top: 28px;
+        margin-bottom: 32px;
+        padding-top: 20px;
+    }
+
+    .simulation-header h3 {
+        font-size: 14px;
+    }
+
+    .simulation-header p {
+        font-size: 10px;
+    }
+
+    .simulation-table {
+        min-width: 450px;
+    }
+
+    .simulation-table th,
+    .simulation-table td {
+        padding: 9px 10px;
+        font-size: 10px;
+    }
+
+}
+
