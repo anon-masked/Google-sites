@@ -120,12 +120,12 @@ body::before {
 
     pointer-events: none;
 
-    overflow: hidden;
-
-    transition:
-        height 0.7s ease;
+    transition: height 0.7s ease;
 }
 
+body.database-mode .database-background {
+    height: calc(100vh - 60px);
+}
 
 /* =========================
    DATABASE MODE
@@ -677,4 +677,20 @@ body.database-mode .database-background {
     .database-header h1 {
         font-size: 22px;
     }
+}
+
+/* =========================
+   DATABASE POSITION
+   ========================= */
+
+#database.site-page {
+    position: relative;
+
+    top: -120px;
+
+    padding-top: 120px;
+}
+
+#database .database-page {
+    padding-top: 55px;
 }
