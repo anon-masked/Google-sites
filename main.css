@@ -1,11 +1,11 @@
-/* =========================
+/* =========================================================
    PAGE
-   ========================= */
+   ========================================================= */
 
 html,
 body {
     margin: 0;
-    background-color: #111;
+    padding: 0;
 
     scrollbar-width: none;
     -ms-overflow-style: none;
@@ -18,11 +18,18 @@ body::-webkit-scrollbar {
     display: none !important;
 }
 
-/* =========================
-   BACKGROUND
-   ========================= */
-   
-* { font-family: Verdana, Geneva, Tahoma, sans-serif !important; }
+* {
+    font-family: Verdana, Geneva, Tahoma, sans-serif !important;
+}
+
+body {
+    background-color: #111;
+}
+
+
+/* =========================================================
+   MAIN BACKGROUND IMAGE
+   ========================================================= */
 
 body::before {
     content: "";
@@ -38,23 +45,22 @@ body::before {
     background-attachment: fixed;
     background-color: #191919;
 
-    z-index: -1;
+    z-index: -10;
 
-    animation:
-        backgroundEntrance 4s ease-out forwards;
+    animation: backgroundEntrance 4s ease-out forwards;
 }
 
 
-/* =========================
+/* =========================================================
    BINARY
-   ========================= */
+   ========================================================= */
 
 .binary {
     position: fixed;
 
     color: red;
 
-    font-family: monospace;
+    font-family: monospace !important;
     font-size: 12px;
     line-height: 1.25;
 
@@ -74,9 +80,9 @@ body::before {
 }
 
 
-/* =========================
-   TOP RIGHT
-   ========================= */
+/* =========================================================
+   TOP RIGHT BINARY
+   ========================================================= */
 
 .binary-top-right {
     top: 0;
@@ -88,9 +94,9 @@ body::before {
 }
 
 
-/* =========================
-   BOTTOM LEFT
-   ========================= */
+/* =========================================================
+   BOTTOM LEFT BINARY
+   ========================================================= */
 
 .binary-bottom-left {
     bottom: 0;
@@ -101,54 +107,23 @@ body::before {
     text-align: left;
 }
 
-/* =========================
-   DATABASE BACKGROUND
-   ========================= */
 
-.database-background {
-    position: fixed;
-
-    top: 60px;
-    left: 0;
-
-    width: 100%;
-    height: 0;
-
-    background: rgb(17, 17, 17);
-
-    z-index: 0;
-
-    pointer-events: none;
-
-    transition: height 0.7s ease;
-}
-
-body.database-mode .database-background {
-    height: calc(100vh - 60px);
-}
-
-/* =========================
-   DATABASE MODE
-   ========================= */
-
-body.database-mode .database-background {
-    height: calc(100vh - 60px);
-}
-
-/* =========================
+/* =========================================================
    PAGE CONTENT
-   ========================= */
+   ========================================================= */
 
 .page-content {
     position: relative;
+
     z-index: 5;
+
     padding-top: 0;
 }
 
 
-/* =========================
+/* =========================================================
    ANIMATIONS
-   ========================= */
+   ========================================================= */
 
 @keyframes backgroundEntrance {
 
@@ -162,7 +137,6 @@ body.database-mode .database-background {
 
 }
 
-
 @keyframes binaryEntrance {
 
     from {
@@ -175,12 +149,16 @@ body.database-mode .database-background {
 
 }
 
+
 /* =========================================================
    SINGLE PAGE SECTIONS
    ========================================================= */
 
 .site-page {
     display: none;
+
+    position: relative;
+
     margin: 0;
     padding: 0;
 }
@@ -189,37 +167,97 @@ body.database-mode .database-background {
     display: block;
 }
 
+
 /* =========================================================
-   DATABASE
+   DATABASE PAGE
+   ========================================================= */
+
+#database {
+    position: relative;
+
+    width: 100%;
+
+    margin: 0;
+    padding: 0;
+
+    z-index: 1;
+}
+
+
+/* =========================================================
+   DATABASE DROPDOWN SLAB
+   =========================================================
+   
+   IMPORTANT:
+   This is anchored to the viewport, NOT the database content.
+
+   Navbar = 60px high
+   Slab starts exactly at 60px.
+   ========================================================= */
+
+#database::before {
+    content: "";
+
+    position: fixed;
+
+    top: 60px;
+    left: 0;
+
+    width: 100%;
+    height: calc(100vh - 60px);
+
+    background: rgb(17, 17, 17);
+
+    border-top: 1px solid rgb(45, 45, 45);
+
+    box-sizing: border-box;
+
+    z-index: -1;
+
+    opacity: 1;
+}
+
+
+/* =========================================================
+   DATABASE CONTENT CONTAINER
    ========================================================= */
 
 .database-page {
     position: relative;
-    z-index: 5;
+
+    z-index: 2;
 
     width: 900px;
     max-width: 90%;
 
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
 
-    padding-top: 0;
+    /*
+     * This controls how far the actual
+     * database content sits below the navbar.
+     */
+    padding-top: 50px;
+
     padding-bottom: 100px;
 
     background: transparent;
 }
 
 
-/* =========================
+/* =========================================================
    DATABASE HEADER
-   ========================= */
+   ========================================================= */
 
 .database-header {
     padding: 20px 25px;
+
     margin-bottom: 25px;
 
     background: transparent;
 
     border: 1px solid rgba(100, 100, 100, 0.7);
+
     border-left: 3px solid rgb(150, 0, 0);
 
     box-shadow: none;
@@ -240,6 +278,7 @@ body.database-mode .database-background {
     color: rgb(210, 210, 210);
 
     font-size: 28px;
+
     letter-spacing: 3px;
 
     margin: 0 0 8px 0;
@@ -255,9 +294,9 @@ body.database-mode .database-background {
 }
 
 
-/* =========================
+/* =========================================================
    DATABASE FOLDER
-   ========================= */
+   ========================================================= */
 
 .database-folder {
     position: relative;
@@ -270,9 +309,9 @@ body.database-mode .database-background {
 }
 
 
-/* =========================
+/* =========================================================
    REDACTED OVERLAY
-   ========================= */
+   ========================================================= */
 
 .redacted-overlay {
     position: absolute;
@@ -286,6 +325,7 @@ body.database-mode .database-background {
     background: rgb(0, 0, 0);
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 
@@ -306,6 +346,7 @@ body.database-mode .database-background {
 
 #redactedButton {
     background: none;
+
     border: none;
 
     color: white;
@@ -333,12 +374,13 @@ body.database-mode .database-background {
 }
 
 
-/* =========================
+/* =========================================================
    DATABASE TABS
-   ========================= */
+   ========================================================= */
 
 .database-tabs {
     display: flex;
+
     align-items: flex-end;
 
     gap: 5px;
@@ -346,6 +388,7 @@ body.database-mode .database-background {
     padding-left: 12px;
 
     position: relative;
+
     z-index: 3;
 
     background: transparent;
@@ -361,6 +404,7 @@ body.database-mode .database-background {
     color: rgb(150, 150, 150);
 
     border: 1px solid rgba(100, 100, 100, 0.7);
+
     border-bottom: none;
 
     font-family: monospace !important;
@@ -398,9 +442,9 @@ body.database-mode .database-background {
 }
 
 
-/* =========================
+/* =========================================================
    DATABASE PANEL
-   ========================= */
+   ========================================================= */
 
 .database-panel {
     position: relative;
@@ -410,6 +454,7 @@ body.database-mode .database-background {
     background: transparent;
 
     border: 1px solid rgba(100, 100, 100, 0.7);
+
     border-left: 3px solid rgb(150, 0, 0);
 
     box-shadow: none;
@@ -418,9 +463,9 @@ body.database-mode .database-background {
 }
 
 
-/* =========================
+/* =========================================================
    DATABASE SECTIONS
-   ========================= */
+   ========================================================= */
 
 .database-section {
     display: block;
@@ -461,9 +506,9 @@ body.database-mode .database-background {
 }
 
 
-/* =========================
+/* =========================================================
    SECTION HEADER
-   ========================= */
+   ========================================================= */
 
 .section-label {
     color: rgb(170, 0, 0);
@@ -503,9 +548,9 @@ body.database-mode .database-background {
 }
 
 
-/* =========================
+/* =========================================================
    INFORMATION GRID
-   ========================= */
+   ========================================================= */
 
 .information-grid {
     display: grid;
@@ -531,6 +576,7 @@ body.database-mode .database-background {
     background: transparent;
 
     border: 1px solid rgba(100, 100, 100, 0.65);
+
     border-left: 2px solid rgb(100, 0, 0);
 
     transition:
@@ -565,9 +611,9 @@ body.database-mode .database-background {
 }
 
 
-/* =========================
+/* =========================================================
    DATABASE TEXT
-   ========================= */
+   ========================================================= */
 
 .database-text {
     padding-top: 5px;
@@ -597,14 +643,19 @@ body.database-mode .database-background {
     margin: 0;
 }
 
-/* =========================
+
+/* =========================================================
    DATABASE MOBILE
-   ========================= */
+   ========================================================= */
 
 @media (max-width: 700px) {
 
     .database-page {
+        width: auto;
+
         max-width: 94%;
+
+        padding-top: 35px;
 
         padding-bottom: 70px;
     }
@@ -644,53 +695,4 @@ body.database-mode .database-background {
     .database-header h1 {
         font-size: 22px;
     }
-}
-
-/* =========================
-   DATABASE POSITION
-   ========================= */
-
-#database.site-page {
-    position: relative;
-
-    top: -120px;
-
-    padding-top: 120px;
-}
-
-#database .database-page {
-    padding-top: 55px;
-}
-
-/* =========================================================
-   PAGE BACKGROUND OVERLAY
-   ========================================================= */
-
-#pageBackgroundOverlay {
-    position: fixed;
-
-    top: 60px;
-    left: 0;
-
-    width: 100%;
-    height: 0;
-
-    background: rgb(17, 17, 17);
-
-    z-index: 1;
-
-    pointer-events: none;
-
-    overflow: hidden;
-
-    transition: height 0.7s ease;
-}
-
-
-/* =========================
-   DATABASE OPEN
-   ========================= */
-
-body.database-mode #pageBackgroundOverlay {
-    height: calc(100vh - 60px);
 }
