@@ -130,3 +130,45 @@ setInterval(
     updateBinary,
     250
 );
+
+/* =========================================================
+   SINGLE PAGE NAVIGATION
+   ========================================================= */
+
+const pageLinks = document.querySelectorAll("[data-page]");
+const sitePages = document.querySelectorAll(".site-page");
+
+
+function showPage(pageName) {
+
+    sitePages.forEach(page => {
+
+        page.classList.remove("active");
+
+    });
+
+
+    const selectedPage = document.getElementById(pageName);
+
+    if (selectedPage) {
+
+        selectedPage.classList.add("active");
+
+    }
+
+}
+
+
+pageLinks.forEach(link => {
+
+    link.addEventListener("click", (event) => {
+
+        event.preventDefault();
+
+        const pageName = link.dataset.page;
+
+        showPage(pageName);
+
+    });
+
+});
