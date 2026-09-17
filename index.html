@@ -2,39 +2,45 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>Main</title>
 
-    <style>
-    html,
-    body {
-        background-color: #111;
-        margin: 0;
-    }
-</style>
-    
+
     <!-- PAGE CSS -->
     <link rel="stylesheet" href="main.css">
 
+
     <!-- NAVBAR CSS -->
     <link rel="stylesheet" href="navbar/navbar.css">
+
 
     <!-- INTRO CSS -->
     <link rel="stylesheet" href="intro/intro.css">
 
 </head>
 
+
 <body>
 
-    <!-- ========================
+
+    <!-- =========================
          NAVIGATION BAR
          ========================= -->
 
     <nav class="navbar">
 
-        <button class="logo-button" id="logoButton">
+
+        <button
+            class="logo-button"
+            id="logoButton"
+        >
 
             <span class="logo-stage">
 
@@ -59,27 +65,43 @@
 
         <div class="nav-links">
 
-            <a href="#" data-page="home">HOME</a>
+            <a href="#" data-page="home">
+                HOME
+            </a>
 
-            <a href="#" data-page="database">DATABASE</a>
+            <a href="#" data-page="database">
+                DATABASE
+            </a>
 
-            <a href="#" data-page="archives">ARCHIVES</a>
+            <a href="#" data-page="archives">
+                ARCHIVES
+            </a>
 
-            <a href="#" data-page="personnel">PERSONNEL</a>
+            <a href="#" data-page="personnel">
+                PERSONNEL
+            </a>
 
-            <a href="#" data-page="diary">DIARY ENTRIES</a>
+            <a href="#" data-page="diary">
+                DIARY ENTRIES
+            </a>
 
         </div>
 
 
         <div class="help-container">
 
-            <button class="help-button" id="helpButton">
+            <button
+                class="help-button"
+                id="helpButton"
+            >
                 HELP
             </button>
 
 
-            <div class="help-dropdown" id="helpDropdown">
+            <div
+                class="help-dropdown"
+                id="helpDropdown"
+            >
 
                 <div class="audio-title">
                     AUDIO CONTROL
@@ -141,22 +163,14 @@
 
     </nav>
 
-<!-- =========================
-     PAGE BACKGROUND OVERLAY
-     ========================= -->
-
-<div id="pageBackgroundOverlay"></div>
 
 
-<!-- =========================
-     BACKGROUND AUDIO
-     ========================= -->
+    <!-- =========================
+         DATABASE BACKGROUND SLAB
+         ========================= -->
 
-<audio
-    id="backgroundMusic"
-    src="Sound effects/scp main ambience.mp3"
-    loop
-></audio>
+    <div class="database-background"></div>
+
 
 
     <!-- =========================
@@ -170,6 +184,7 @@
     ></audio>
 
 
+
     <!-- =========================
          BINARY CORNERS
          ========================= -->
@@ -178,7 +193,6 @@
 
     <div class="binary binary-bottom-left"></div>
 
-    <div class="database-background"></div>
 
 
     <!-- =========================
@@ -208,6 +222,7 @@
         </section>
 
 
+
         <!-- =========================
              DATABASE
              ========================= -->
@@ -224,7 +239,9 @@
                      DATABASE HEADER
                      ========================= -->
 
-                <section class="database-header scp-panel">
+                <section
+                    class="database-header scp-panel"
+                >
 
                     <div class="database-label">
                         FOUNDATION DATABASE
@@ -239,6 +256,7 @@
                     </p>
 
                 </section>
+
 
 
                 <!-- =========================
@@ -264,11 +282,13 @@
                     </div>
 
 
+
                     <!-- =========================
                          DATABASE TABS
                          ========================= -->
 
                     <div class="database-tabs">
+
 
                         <button
                             class="database-tab"
@@ -309,11 +329,13 @@
                             CREATIVE PROFILE
                         </button>
 
+
                     </div>
 
 
+
                     <!-- =========================
-                         DATABASE CONTENT
+                         DATABASE PANEL
                          ========================= -->
 
                     <div class="database-panel">
@@ -342,6 +364,7 @@
 
 
                             <div class="information-grid">
+
 
                                 <div class="information-box">
 
@@ -394,6 +417,7 @@
 
                                 </div>
 
+
                             </div>
 
 
@@ -411,6 +435,7 @@
                             </div>
 
                         </section>
+
 
 
                         <!-- =========================
@@ -436,6 +461,7 @@
 
 
                             <div class="information-grid">
+
 
                                 <div class="information-box">
 
@@ -488,6 +514,7 @@
 
                                 </div>
 
+
                             </div>
 
 
@@ -505,6 +532,7 @@
                             </div>
 
                         </section>
+
 
 
                         <!-- =========================
@@ -530,6 +558,7 @@
 
 
                             <div class="information-grid">
+
 
                                 <div class="information-box">
 
@@ -582,6 +611,7 @@
 
                                 </div>
 
+
                             </div>
 
 
@@ -600,6 +630,7 @@
                             </div>
 
                         </section>
+
 
 
                         <!-- =========================
@@ -625,6 +656,7 @@
 
 
                             <div class="information-grid">
+
 
                                 <div class="information-box">
 
@@ -705,6 +737,7 @@
 
                                 </div>
 
+
                             </div>
 
 
@@ -722,6 +755,7 @@
                             </div>
 
                         </section>
+
 
 
                         <!-- =========================
@@ -747,6 +781,7 @@
 
 
                             <div class="information-grid">
+
 
                                 <div class="information-box">
 
@@ -799,6 +834,7 @@
 
                                 </div>
 
+
                             </div>
 
 
@@ -828,7 +864,59 @@
         </section>
 
 
+
+        <!-- =========================
+             ARCHIVES PLACEHOLDER
+             ========================= -->
+
+        <section
+            id="archives"
+            class="site-page"
+        >
+
+            <h1>
+                ARCHIVES
+            </h1>
+
+        </section>
+
+
+
+        <!-- =========================
+             PERSONNEL PLACEHOLDER
+             ========================= -->
+
+        <section
+            id="personnel"
+            class="site-page"
+        >
+
+            <h1>
+                PERSONNEL
+            </h1>
+
+        </section>
+
+
+
+        <!-- =========================
+             DIARY PLACEHOLDER
+             ========================= -->
+
+        <section
+            id="diary"
+            class="site-page"
+        >
+
+            <h1>
+                DIARY ENTRIES
+            </h1>
+
+        </section>
+
+
     </main>
+
 
 
     <!-- =========================
