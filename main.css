@@ -4,6 +4,9 @@
 
 html,
 body {
+    margin: 0;
+    background-color: #111;
+
     scrollbar-width: none;
     -ms-overflow-style: none;
 }
@@ -98,6 +101,39 @@ body::before {
     text-align: left;
 }
 
+/* =========================
+   DATABASE BACKGROUND
+   ========================= */
+
+.database-background {
+    position: fixed;
+
+    top: 60px;
+    left: 0;
+
+    width: 100%;
+    height: 0;
+
+    background: rgb(17, 17, 17);
+
+    z-index: 0;
+
+    pointer-events: none;
+
+    overflow: hidden;
+
+    transition:
+        height 0.7s ease;
+}
+
+
+/* =========================
+   DATABASE MODE
+   ========================= */
+
+body.database-mode .database-background {
+    height: calc(100vh - 60px);
+}
 
 /* =========================
    PAGE CONTENT
@@ -159,7 +195,7 @@ body::before {
 
 .database-page {
     position: relative;
-    z-index: 1;
+    z-index: 5;
 
     width: 900px;
     max-width: 90%;
