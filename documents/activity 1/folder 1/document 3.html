@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Document 3</title>
+<!-- DOCUMENT 1 CSS -->
+<link href="document 3.css" rel="stylesheet"/>
+<!-- NAVBAR CSS -->
+<link href="../../../navbar/navbar.css" rel="stylesheet"/>
+</head>
+<body>
+<!-- =========================
+         NAVIGATION BAR
+         ========================= -->
+<nav class="navbar">
+<!-- LOGO -->
+<button class="logo-button" id="logoButton">
+<span class="logo-stage">
+<img alt="MTF Logo" class="logo-image logo-active" id="logoImage1" src="../../../images/mtf.png"/>
+<img alt="RRH Logo" class="logo-image" id="logoImage2" src="../../../images/rrh.png"/>
+</span>
+</button>
+<!-- NAVIGATION LINKS -->
+<div class="nav-links">
+<a href="../../../index.html">
+                HOME
+            </a>
+<a href="../../../Database.html">
+                DATABASE
+            </a>
+<a href="../../../archives.html">
+                ARCHIVES
+            </a>
+<a href="#">
+                PERSONNEL
+            </a>
+</div>
+<!-- HELP -->
+<div class="help-container">
+<button class="help-button" id="helpButton">
+                HELP
+            </button>
+<div class="help-dropdown" id="helpDropdown">
+<div class="audio-title">
+                    AUDIO CONTROL
+                </div>
+<div class="audio-controls">
+<button class="music-toggle" id="musicToggle">
+                        ▶
+                    </button>
+<span id="musicStatus">
+                        MUSIC
+                    </span>
+</div>
+<div class="volume-container">
+<span class="volume-label">
+                        VOL
+                    </span>
+<input id="volumeSlider" max="1" min="0" step="0.01" type="range" value="0.35"/>
+</div>
+</div>
+</div>
+</nav>
+<!-- =========================
+         BACKGROUND MUSIC
+         ========================= -->
+<audio id="backgroundMusic" loop="" src="../../../Sound effects/scp main ambience.mp3"></audio>
+<!-- =========================
+         CORNER BINARY
+         ========================= -->
+<div class="binary binary-top-left"></div>
+<div class="binary binary-top-right"></div>
+<!-- =========================
+         DOCUMENT 1 CONTENT
+         ========================= -->
+<main class="document-page">
+<!-- DOCUMENT HEADER -->
+<section class="document-header scp-panel">
+<div class="archive-label">
+                FOUNDATION DATABASE
+            </div>
+<h1>
+                SEQUENCE FLOWCHARTS
+            </h1>
+<p>
+                SCP - Kenzo was tasked by their Professor with creating Sequence flowcharts.
+            </p>
+</section>
+<!-- =========================
+             DOCUMENT BODY
+             ========================= -->
+<section class="document-body scp-panel">
+<h2>
+                DIT 1-1
+            </h2>
+<!-- =========================
+                 FLOWCHART 01
+                 ========================= -->
+<div class="flowchart-entry">
+<h2>01 // PRINT YOUR NAME</h2>
+<p class="assignment-text">Input a name and display it five times.</p>
+<img alt="Flowchart 1" class="flowchart-image" src="../../../images/activity 3/fc 3.1.png"/>
+</div>
+<!-- =========================
+     SIMULATION 01
+     ========================= -->
+<section class="simulation-section">
+<div class="simulation-header">
+<span class="simulation-label">SIMULATION 01</span>
+<h3>FLOWCHART SIMULATION</h3>
+<p>Sample execution using test values.</p>
+</div>
+<div class="simulation-table-wrapper">
+<table class="simulation-table">
+<thead>
+<tr>
+<th>STEP</th>
+<th>OPERATION</th>
+<th>VALUE / RESULT</th>
+</tr>
+</thead>
+<tbody><tr><td>1</td><td>Input Name</td><td>Kenzo</td></tr><tr><td>2</td><td>Print Name</td><td>Kenzo</td></tr><tr><td>3</td><td>Print Name</td><td>Kenzo</td></tr><tr><td>4</td><td>Print Name</td><td>Kenzo</td></tr><tr><td>5</td><td>Print Name</td><td>Kenzo</td></tr><tr><td>6</td><td>Print Name</td><td>Kenzo</td></tr><tr><td>7</td><td>Display Result</td><td>Kenzo printed 5 times</td></tr></tbody>
+</table>
+</div>
+</section>
+<!-- =========================
+                 FLOWCHART 02
+                 ========================= -->
+<div class="flowchart-entry">
+<h2>02 // NUMBERS FROM 1 TO 10</h2>
+<p class="assignment-text">Display the numbers from 1 to 10.</p>
+<img alt="Flowchart 2" class="flowchart-image" src="../../../images/activity 3/fc 3.2.png"/>
+</div>
+<!-- =========================
+     SIMULATION 02
+     ========================= -->
+<section class="simulation-section">
+<div class="simulation-header">
+<span class="simulation-label">SIMULATION 02</span>
+<h3>FLOWCHART SIMULATION</h3>
+<p>Sample execution using test values.</p>
+</div>
+<div class="simulation-table-wrapper">
+<table class="simulation-table">
+<thead>
+<tr>
+<th>STEP</th>
+<th>OPERATION</th>
+<th>VALUE / RESULT</th>
+</tr>
+</thead>
+<tbody><tr><td>1</td><td>Initialize Counter</td><td>i = 1</td></tr><tr><td>2</td><td>Check Condition</td><td>1 ≤ 10 → True</td></tr><tr><td>3</td><td>Print Number</td><td>1</td></tr><tr><td>4</td><td>Increment Counter</td><td>i = 2</td></tr><tr><td>5</td><td>Print Number</td><td>2</td></tr><tr><td>6</td><td>Increment Counter</td><td>i = 3</td></tr><tr><td>7</td><td>Print Number</td><td>3</td></tr><tr><td>8</td><td>Increment Counter</td><td>i = 4</td></tr><tr><td>9</td><td>Print Number</td><td>4</td></tr><tr><td>10</td><td>Increment Counter</td><td>i = 5</td></tr><tr><td>11</td><td>Print Number</td><td>5</td></tr><tr><td>12</td><td>Increment Counter</td><td>i = 6</td></tr><tr><td>13</td><td>Print Number</td><td>6</td></tr><tr><td>14</td><td>Increment Counter</td><td>i = 7</td></tr><tr><td>15</td><td>Print Number</td><td>7</td></tr><tr><td>16</td><td>Increment Counter</td><td>i = 8</td></tr><tr><td>17</td><td>Print Number</td><td>8</td></tr><tr><td>18</td><td>Increment Counter</td><td>i = 9</td></tr><tr><td>19</td><td>Print Number</td><td>9</td></tr><tr><td>20</td><td>Increment Counter</td><td>i = 10</td></tr><tr><td>21</td><td>Print Number</td><td>10</td></tr><tr><td>22</td><td>Increment Counter</td><td>i = 11</td></tr><tr><td>23</td><td>Check Condition</td><td>11 ≤ 10 → False</td></tr><tr><td>24</td><td>Display Result</td><td>1, 2, 3, 4, 5, 6, 7, 8, 9, 10</td></tr></tbody>
+</table>
+</div>
+</section>
+<!-- =========================
+                 FLOWCHART 03
+                 ========================= -->
+<div class="flowchart-entry">
+<h2>03 // EVEN NUMBERS</h2>
+<p class="assignment-text">Display all even numbers from 2 to 20.</p>
+<img alt="Flowchart 3" class="flowchart-image" src="../../../images/activity 3/fc 3.3.png"/>
+</div>
+<!-- =========================
+     SIMULATION 03
+     ========================= -->
+<section class="simulation-section">
+<div class="simulation-header">
+<span class="simulation-label">SIMULATION 03</span>
+<h3>FLOWCHART SIMULATION</h3>
+<p>Sample execution using test values.</p>
+</div>
+<div class="simulation-table-wrapper">
+<table class="simulation-table">
+<thead>
+<tr>
+<th>STEP</th>
+<th>OPERATION</th>
+<th>VALUE / RESULT</th>
+</tr>
+</thead>
+<tbody><tr><td>1</td><td>Initialize Counter</td><td>i = 2</td></tr><tr><td>2</td><td>Check Condition</td><td>2 ≤ 20 → True</td></tr><tr><td>3</td><td>Print Even Number</td><td>2</td></tr><tr><td>4</td><td>Increment Counter</td><td>i = 4</td></tr><tr><td>5</td><td>Print Even Number</td><td>4</td></tr><tr><td>6</td><td>Increment Counter</td><td>i = 6</td></tr><tr><td>7</td><td>Print Even Number</td><td>6</td></tr><tr><td>8</td><td>Increment Counter</td><td>i = 8</td></tr><tr><td>9</td><td>Print Even Number</td><td>8</td></tr><tr><td>10</td><td>Increment Counter</td><td>i = 10</td></tr><tr><td>11</td><td>Print Even Number</td><td>10</td></tr><tr><td>12</td><td>Increment Counter</td><td>i = 12</td></tr><tr><td>13</td><td>Print Even Number</td><td>12</td></tr><tr><td>14</td><td>Increment Counter</td><td>i = 14</td></tr><tr><td>15</td><td>Print Even Number</td><td>14</td></tr><tr><td>16</td><td>Increment Counter</td><td>i = 16</td></tr><tr><td>17</td><td>Print Even Number</td><td>16</td></tr><tr><td>18</td><td>Increment Counter</td><td>i = 18</td></tr><tr><td>19</td><td>Print Even Number</td><td>18</td></tr><tr><td>20</td><td>Increment Counter</td><td>i = 20</td></tr><tr><td>21</td><td>Print Even Number</td><td>20</td></tr><tr><td>22</td><td>Increment Counter</td><td>i = 22</td></tr><tr><td>23</td><td>Check Condition</td><td>22 ≤ 20 → False</td></tr><tr><td>24</td><td>Display Result</td><td>2, 4, 6, 8, 10, 12, 14, 16, 18, 20</td></tr></tbody>
+</table>
+</div>
+</section>
+<!-- =========================
+                 FLOWCHART 04
+                 ========================= -->
+<div class="flowchart-entry">
+<h2>04 // SUM OF NUMBERS</h2>
+<p class="assignment-text">Input a positive integer N. Compute and display the sum of all integers from 1 to N.</p>
+<img alt="Flowchart 4" class="flowchart-image" src="../../../images/activity 3/fc 3.4.png"/>
+</div>
+<!-- =========================
+     SIMULATION 04
+     ========================= -->
+<section class="simulation-section">
+<div class="simulation-header">
+<span class="simulation-label">SIMULATION 04</span>
+<h3>FLOWCHART SIMULATION</h3>
+<p>Sample execution using test values.</p>
+</div>
+<div class="simulation-table-wrapper">
+<table class="simulation-table">
+<thead>
+<tr>
+<th>STEP</th>
+<th>OPERATION</th>
+<th>VALUE / RESULT</th>
+</tr>
+</thead>
+<tbody><tr><td>1</td><td>Input N</td><td>N = 5</td></tr><tr><td>2</td><td>Initialize Sum</td><td>Sum = 0</td></tr><tr><td>3</td><td>Add 1</td><td>Sum = 0 + 1 = 1</td></tr><tr><td>4</td><td>Add 2</td><td>Sum = 1 + 2 = 3</td></tr><tr><td>5</td><td>Add 3</td><td>Sum = 3 + 3 = 6</td></tr><tr><td>6</td><td>Add 4</td><td>Sum = 6 + 4 = 10</td></tr><tr><td>7</td><td>Add 5</td><td>Sum = 10 + 5 = 15</td></tr><tr><td>8</td><td>Display Sum</td><td>15</td></tr></tbody>
+</table>
+</div>
+</section>
+<!-- =========================
+                 FLOWCHART 05
+                 ========================= -->
+<div class="flowchart-entry">
+<h2>05 // MULTIPLICATION TABLE</h2>
+<p class="assignment-text">Input a number and display its multiplication table from 1 to 10.</p>
+<img alt="Flowchart 5" class="flowchart-image" src="../../../images/activity 3/fc 3.5.png"/>
+</div>
+<!-- =========================
+     SIMULATION 05
+     ========================= -->
+<section class="simulation-section">
+<div class="simulation-header">
+<span class="simulation-label">SIMULATION 05</span>
+<h3>FLOWCHART SIMULATION</h3>
+<p>Sample execution using test values.</p>
+</div>
+<div class="simulation-table-wrapper">
+<table class="simulation-table">
+<thead>
+<tr>
+<th>STEP</th>
+<th>OPERATION</th>
+<th>VALUE / RESULT</th>
+</tr>
+</thead>
+<tbody><tr><td>1</td><td>Input Number</td><td>N = 7</td></tr><tr><td>2</td><td>Initialize Counter</td><td>i = 1</td></tr><tr><td>3</td><td>Compute Product</td><td>7 × 1 = 7</td></tr><tr><td>4</td><td>Compute Product</td><td>7 × 2 = 14</td></tr><tr><td>5</td><td>Compute Product</td><td>7 × 3 = 21</td></tr><tr><td>6</td><td>Compute Product</td><td>7 × 4 = 28</td></tr><tr><td>7</td><td>Compute Product</td><td>7 × 5 = 35</td></tr><tr><td>8</td><td>Compute Product</td><td>7 × 6 = 42</td></tr><tr><td>9</td><td>Compute Product</td><td>7 × 7 = 49</td></tr><tr><td>10</td><td>Compute Product</td><td>7 × 8 = 56</td></tr><tr><td>11</td><td>Compute Product</td><td>7 × 9 = 63</td></tr><tr><td>12</td><td>Compute Product</td><td>7 × 10 = 70</td></tr><tr><td>13</td><td>Display Table</td><td>7 × 1 through 7 × 10</td></tr></tbody>
+</table>
+</div>
+</section>
+<!-- =========================
+                 FLOWCHART 06
+                 ========================= -->
+<div class="flowchart-entry">
+<h2>06 // FACTORIAL OF A NUMBER</h2>
+<p class="assignment-text">Input a nonnegative integer N. Compute and display its factorial. N! = 1 × 2 × 3 × ··· × N</p>
+<img alt="Flowchart 6" class="flowchart-image" src="../../../images/activity 3/fc 3.6.png"/>
+</div>
+<!-- =========================
+     SIMULATION 06
+     ========================= -->
+<section class="simulation-section">
+<div class="simulation-header">
+<span class="simulation-label">SIMULATION 06</span>
+<h3>FLOWCHART SIMULATION</h3>
+<p>Sample execution using test values.</p>
+</div>
+<div class="simulation-table-wrapper">
+<table class="simulation-table">
+<thead>
+<tr>
+<th>STEP</th>
+<th>OPERATION</th>
+<th>VALUE / RESULT</th>
+</tr>
+</thead>
+<tbody><tr><td>1</td><td>Input N</td><td>N = 5</td></tr><tr><td>2</td><td>Initialize Factorial</td><td>Fact = 1</td></tr><tr><td>3</td><td>Multiply by 1</td><td>Fact = 1 × 1 = 1</td></tr><tr><td>4</td><td>Multiply by 2</td><td>Fact = 1 × 2 = 2</td></tr><tr><td>5</td><td>Multiply by 3</td><td>Fact = 2 × 3 = 6</td></tr><tr><td>6</td><td>Multiply by 4</td><td>Fact = 6 × 4 = 24</td></tr><tr><td>7</td><td>Multiply by 5</td><td>Fact = 24 × 5 = 120</td></tr><tr><td>8</td><td>Display Factorial</td><td>5! = 120</td></tr></tbody>
+</table>
+</div>
+</section>
+<!-- =========================
+                 FLOWCHART 07
+                 ========================= -->
+<div class="flowchart-entry">
+<h2>07 // GRADE AVERAGE</h2>
+<p class="assignment-text">Input five grades. Compute and display their total and average.</p>
+<img alt="Flowchart 7" class="flowchart-image" src="../../../images/activity 3/fc 3.7.png"/>
+</div>
+<!-- =========================
+     SIMULATION 07
+     ========================= -->
+<section class="simulation-section">
+<div class="simulation-header">
+<span class="simulation-label">SIMULATION 07</span>
+<h3>FLOWCHART SIMULATION</h3>
+<p>Sample execution using test values.</p>
+</div>
+<div class="simulation-table-wrapper">
+<table class="simulation-table">
+<thead>
+<tr>
+<th>STEP</th>
+<th>OPERATION</th>
+<th>VALUE / RESULT</th>
+</tr>
+</thead>
+<tbody><tr><td>1</td><td>Input Grades</td><td>80, 85, 90, 95, 100</td></tr><tr><td>2</td><td>Compute Total</td><td>80 + 85 + 90 + 95 + 100 = 450</td></tr><tr><td>3</td><td>Compute Average</td><td>450 ÷ 5 = 90</td></tr><tr><td>4</td><td>Display Total</td><td>450</td></tr><tr><td>5</td><td>Display Average</td><td>90</td></tr></tbody>
+</table>
+</div>
+</section>
+<!-- =========================
+                 FLOWCHART 08
+                 ========================= -->
+<div class="flowchart-entry">
+<h2>08 // COUNT POSITIVE AND NEGATIVE NUMBERS</h2>
+<p class="assignment-text">Input ten numbers. Count and display how many are positive, negative, and zero.</p>
+<img alt="Flowchart 8" class="flowchart-image" src="../../../images/activity 3/fc 3.8.png"/>
+</div>
+<!-- =========================
+     SIMULATION 08
+     ========================= -->
+<section class="simulation-section">
+<div class="simulation-header">
+<span class="simulation-label">SIMULATION 08</span>
+<h3>FLOWCHART SIMULATION</h3>
+<p>Sample execution using test values.</p>
+</div>
+<div class="simulation-table-wrapper">
+<table class="simulation-table">
+<thead>
+<tr>
+<th>STEP</th>
+<th>OPERATION</th>
+<th>VALUE / RESULT</th>
+</tr>
+</thead>
+<tbody><tr><td>1</td><td>Initialize Counters</td><td>Positive = 0, Negative = 0, Zero = 0</td></tr><tr><td>2</td><td>Input 10 Numbers</td><td>5, -2, 0, 8, -7, 3, 0, -1, 6, -4</td></tr><tr><td>3</td><td>Count 5</td><td>Positive = 1</td></tr><tr><td>4</td><td>Count -2</td><td>Negative = 1</td></tr><tr><td>5</td><td>Count 0</td><td>Zero = 1</td></tr><tr><td>6</td><td>Count 8</td><td>Positive = 2</td></tr><tr><td>7</td><td>Count -7</td><td>Negative = 2</td></tr><tr><td>8</td><td>Count 3</td><td>Positive = 3</td></tr><tr><td>9</td><td>Count 0</td><td>Zero = 2</td></tr><tr><td>10</td><td>Count -1</td><td>Negative = 3</td></tr><tr><td>11</td><td>Count 6</td><td>Positive = 4</td></tr><tr><td>12</td><td>Count -4</td><td>Negative = 4</td></tr><tr><td>13</td><td>Display Counts</td><td>Positive = 4, Negative = 4, Zero = 2</td></tr></tbody>
+</table>
+</div>
+</section>
+<!-- =========================
+                 FLOWCHART 09
+                 ========================= -->
+<div class="flowchart-entry">
+<h2>09 // PASSWORD VERIFICATION</h2>
+<p class="assignment-text">Ask the user to enter a password repeatedly until the correct password, PUP2026, is entered. Display “Access Granted” afterward.</p>
+<img alt="Flowchart 9" class="flowchart-image" src="../../../images/activity 3/fc 3.9.png"/>
+</div>
+<!-- =========================
+     SIMULATION 09
+     ========================= -->
+<section class="simulation-section">
+<div class="simulation-header">
+<span class="simulation-label">SIMULATION 09</span>
+<h3>FLOWCHART SIMULATION</h3>
+<p>Sample execution using test values.</p>
+</div>
+<div class="simulation-table-wrapper">
+<table class="simulation-table">
+<thead>
+<tr>
+<th>STEP</th>
+<th>OPERATION</th>
+<th>VALUE / RESULT</th>
+</tr>
+</thead>
+<tbody><tr><td>1</td><td>Set Correct Password</td><td>PUP2026</td></tr><tr><td>2</td><td>Input Password</td><td>HELLO</td></tr><tr><td>3</td><td>Check Password</td><td>Incorrect → try again</td></tr><tr><td>4</td><td>Input Password</td><td>PUP2025</td></tr><tr><td>5</td><td>Check Password</td><td>Incorrect → try again</td></tr><tr><td>6</td><td>Input Password</td><td>PUP2026</td></tr><tr><td>7</td><td>Check Password</td><td>Correct</td></tr><tr><td>8</td><td>Display Result</td><td>Access Granted</td></tr></tbody>
+</table>
+</div>
+</section>
+<!-- =========================
+                 FLOWCHART 10
+                 ========================= -->
+<div class="flowchart-entry">
+<h2>10 // NUMBER-GUESSING ACTIVITY</h2>
+<p class="assignment-text">Set the secret number to 25. Repeatedly ask the user to enter a number until it matches the secret number. Display whether each incorrect guess is too high or too low.</p>
+<img alt="Flowchart 10" class="flowchart-image" src="../../../images/activity 3/fc 3.10.png"/>
+</div>
+<!-- =========================
+     SIMULATION 10
+     ========================= -->
+<section class="simulation-section">
+<div class="simulation-header">
+<span class="simulation-label">SIMULATION 10</span>
+<h3>FLOWCHART SIMULATION</h3>
+<p>Sample execution using test values.</p>
+</div>
+<div class="simulation-table-wrapper">
+<table class="simulation-table">
+<thead>
+<tr>
+<th>STEP</th>
+<th>OPERATION</th>
+<th>VALUE / RESULT</th>
+</tr>
+</thead>
+<tbody><tr><td>1</td><td>Set Secret Number</td><td>25</td></tr><tr><td>2</td><td>Input Guess</td><td>10</td></tr><tr><td>3</td><td>Check Guess</td><td>10 &lt; 25 → Too Low</td></tr><tr><td>4</td><td>Input Guess</td><td>40</td></tr><tr><td>5</td><td>Check Guess</td><td>40 &gt; 25 → Too High</td></tr><tr><td>6</td><td>Input Guess</td><td>30</td></tr><tr><td>7</td><td>Check Guess</td><td>30 &gt; 25 → Too High</td></tr><tr><td>8</td><td>Input Guess</td><td>25</td></tr><tr><td>9</td><td>Check Guess</td><td>25 = 25 → Correct</td></tr><tr><td>10</td><td>Display Result</td><td>Secret number matched: 25</td></tr></tbody>
+</table>
+</div>
+</section>
+<!-- =========================
+         NAVBAR JAVASCRIPT
+         ========================= -->
+<script src="../../../navbar/navbar.js"></script>
+<script src="document 3.js"></script>
+</section></main></body>
+</html>
