@@ -1,1119 +1,525 @@
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document 2</title>
 
-
     <!-- DOCUMENT 2 CSS -->
-
-    <link
-        rel="stylesheet"
-        href="document 2.css"
-    >
-
+    <link rel="stylesheet" href="document 2.css">
 
     <!-- NAVBAR CSS -->
-
-    <link
-        rel="stylesheet"
-        href="../../../navbar/navbar.css"
-    >
-
+    <link rel="stylesheet" href="../../../navbar/navbar.css">
 </head>
-
 
 <body>
 
-
-    <!-- =========================
-         NAVIGATION BAR
-         ========================= -->
-
+    <!-- NAVIGATION BAR -->
     <nav class="navbar">
-
-
-        <!-- LOGO -->
-
-        <button
-            class="logo-button"
-            id="logoButton"
-        >
-
+        <button class="logo-button" id="logoButton">
             <span class="logo-stage">
-
-                <img
-                    id="logoImage1"
-                    class="logo-image logo-active"
-                    src="../../../images/mtf.png"
-                    alt="MTF Logo"
-                >
-
-                <img
-                    id="logoImage2"
-                    class="logo-image"
-                    src="../../../images/rrh.png"
-                    alt="RRH Logo"
-                >
-
+                <img id="logoImage1" class="logo-image logo-active"
+                     src="../../../images/mtf.png" alt="MTF Logo">
+                <img id="logoImage2" class="logo-image"
+                     src="../../../images/rrh.png" alt="RRH Logo">
             </span>
-
         </button>
 
-
-        <!-- NAVIGATION LINKS -->
-
         <div class="nav-links">
-
-            <a href="../../../index.html">
-                HOME
-            </a>
-
-            <a href="../../../Database.html">
-                DATABASE
-            </a>
-
-            <a href="https://anon-masked.github.io/Google-sites/index.html">
-                ARCHIVES
-            </a>
-
-            <a href="#">
-                PERSONNEL
-            </a>
-
+            <a href="../../../index.html">HOME</a>
+            <a href="../../../Database.html">DATABASE</a>
+            <a href="https://anon-masked.github.io/Google-sites/index.html">ARCHIVES</a>
+            <a href="#">PERSONNEL</a>
         </div>
-
-
-        <!-- HELP -->
 
         <div class="help-container">
+            <button class="help-button" id="helpButton">HELP</button>
 
-            <button
-                class="help-button"
-                id="helpButton"
-            >
-                HELP
-            </button>
-
-
-            <div
-                class="help-dropdown"
-                id="helpDropdown"
-            >
-
-                <div class="audio-title">
-                    AUDIO CONTROL
-                </div>
-
+            <div class="help-dropdown" id="helpDropdown">
+                <div class="audio-title">AUDIO CONTROL</div>
 
                 <div class="audio-controls">
-
-                    <button
-                        id="musicToggle"
-                        class="music-toggle"
-                    >
-                        ▶
-                    </button>
-
-
-                    <span id="musicStatus">
-                        MUSIC
-                    </span>
-
+                    <button id="musicToggle" class="music-toggle">▶</button>
+                    <span id="musicStatus">MUSIC</span>
                 </div>
-
 
                 <div class="volume-container">
-
-                    <span class="volume-label">
-                        VOL
-                    </span>
-
-
-                    <input
-                        type="range"
-                        id="volumeSlider"
-                        min="0"
-                        max="1"
-                        step="0.01"
-                        value="0.35"
-                    >
-
+                    <span class="volume-label">VOL</span>
+                    <input type="range" id="volumeSlider"
+                           min="0" max="1" step="0.01" value="0.35">
                 </div>
-
             </div>
-
         </div>
-
     </nav>
 
+    <!-- BACKGROUND MUSIC -->
+    <audio id="backgroundMusic"
+           src="../../../Sound effects/scp main ambience.mp3"
+           loop></audio>
 
-    <!-- =========================
-         BACKGROUND MUSIC
-         ========================= -->
-
-    <audio
-        id="backgroundMusic"
-        src="../../../Sound effects/scp main ambience.mp3"
-        loop
-    ></audio>
-
-
-    <!-- =========================
-         CORNER BINARY
-         ========================= -->
-
+    <!-- CORNER BINARY -->
     <div class="binary binary-top-left"></div>
-
     <div class="binary binary-top-right"></div>
 
-
-    <!-- =========================
-         DOCUMENT 2 CONTENT
-         ========================= -->
-
+    <!-- DOCUMENT CONTENT -->
     <main class="document-page">
 
-
-        <!-- DOCUMENT HEADER -->
-
         <section class="document-header scp-panel">
-
-            <div class="archive-label">
-                FOUNDATION DATABASE
-            </div>
-
-            <h1>
-                SELECTION PROBLEMS
-            </h1>
-
+            <div class="archive-label">FOUNDATION DATABASE</div>
+            <h1>SELECTION PROBLEMS</h1>
             <p>
                 SCP - Kenzo was tasked by their Professor
                 with solving selection problems.
             </p>
-
         </section>
 
-
-        <!-- =========================
-             DOCUMENT BODY
-             ========================= -->
-
         <section class="document-body scp-panel">
+            <h2>DIT 1-1</h2>
 
-            <h2>
-                DIT 1-1
-            </h2>
-
-
-            <!-- =========================
-                 EXERCISE 01
-                 ========================= -->
-
+            <!-- EXERCISE 01 -->
             <div class="flowchart-entry">
-
-                <h2>
-                    01 // GRADE STATUS
-                </h2>
-
+                <h2>01 // GRADE STATUS</h2>
                 <p class="assignment-text">
-                    Revise your Grade flowchart in Sequence
-                    constructs by identifying whether the
-                    average grade is Passed or Failed.
-                    If the average is greater than or equal
-                    to 75, display Passed; otherwise,
-                    display Failed.
+                    Revise your Grade flowchart in Sequence constructs by identifying whether the
+                    average grade is Passed or Failed. If the average is greater than or equal to 75,
+                    display Passed; otherwise, display Failed.
                 </p>
-
-                <img
-                    src="../../../images/activity 2/fc 2.0.png"
-                    alt="Selection Problem Exercise 1"
-                    class="flowchart-image"
-                >
-
+                <img src="../../../images/activity 2/fc 2.0.png"
+                     alt="Selection Problem Exercise 1"
+                     class="flowchart-image">
             </div>
 
             <!-- SIMULATION 01 -->
+            <div class="simulation-section">
+                <div class="simulation-header">
+                    <span class="simulation-label">SIMULATION 01</span>
+                    <h3>GRADE STATUS</h3>
+                    <p>Sample execution of the flowchart.</p>
+                </div>
 
-<div class="simulation-section">
+                <div class="simulation-table-wrapper">
+                    <table class="simulation-table">
+                        <thead>
+                            <tr>
+                                <th>STEP</th>
+                                <th>average</th>
+                                <th>average &gt;= 75</th>
+                                <th>remark</th>
+                                <th>DISPLAY</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Start</td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td>Input Average</td><td>90</td><td></td><td></td><td></td></tr>
+                            <tr><td>Check Average</td><td>90</td><td>TRUE</td><td></td><td></td></tr>
+                            <tr><td>Assign Remark</td><td>90</td><td>TRUE</td><td>Passed</td><td></td></tr>
+                            <tr><td>Display Remark</td><td>90</td><td>TRUE</td><td>Passed</td><td>PASSED</td></tr>
+                            <tr><td>End</td><td></td><td></td><td></td><td></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
 
-    <div class="simulation-header">
-
-        <span class="simulation-label">
-            SIMULATION 01
-        </span>
-
-        <h3>
-            GRADE STATUS
-        </h3>
-
-        <p>
-            Sample execution of the flowchart.
-        </p>
-
-    </div>
-
-    <div class="simulation-table-wrapper">
-
-        <table class="simulation-table">
-
-            <thead>
-                <tr>
-                    <th>STEP</th>
-                    <th>PROCESS</th>
-                    <th>RESULT</th>
-                </tr>
-            </thead>
-
-            <tbody>
-
-                <tr>
-                    <td>01</td>
-                    <td>Input Average Grade</td>
-                    <td>90</td>
-                </tr>
-
-                <tr>
-                    <td>02</td>
-                    <td>Check if Average &gt;= 75</td>
-                    <td>TRUE</td>
-                </tr>
-
-                <tr>
-                    <td>03</td>
-                    <td>Display Remark</td>
-                    <td>PASSED</td>
-                </tr>
-
-            </tbody>
-
-        </table>
-
-    </div>
-
-</div>
-            
-
-
-            <!-- =========================
-                 EXERCISE 02
-                 ========================= -->
-
+            <!-- EXERCISE 02 -->
             <div class="flowchart-entry">
-
-                <h2>
-                    02 // POSITIVE OR NEGATIVE
-                </h2>
-
+                <h2>02 // POSITIVE OR NEGATIVE</h2>
                 <p class="assignment-text">
-                    Create a flowchart that will input a number
-                    then identify whether the number is positive
-                    or negative.
+                    Create a flowchart that will input a number then identify whether the number
+                    is positive or negative.
                 </p>
-
-                <img
-                    src="../../../images/activity 2/fc 2.1.png"
-                    alt="Selection Problem Exercise 2"
-                    class="flowchart-image"
-                >
-
+                <img src="../../../images/activity 2/fc 2.1.png"
+                     alt="Selection Problem Exercise 2"
+                     class="flowchart-image">
             </div>
 
             <!-- SIMULATION 02 -->
+            <div class="simulation-section">
+                <div class="simulation-header">
+                    <span class="simulation-label">SIMULATION 02</span>
+                    <h3>POSITIVE OR NEGATIVE</h3>
+                    <p>Sample execution of the flowchart.</p>
+                </div>
 
-<div class="simulation-section">
+                <div class="simulation-table-wrapper">
+                    <table class="simulation-table">
+                        <thead>
+                            <tr>
+                                <th>STEP</th>
+                                <th>number</th>
+                                <th>number &gt; 0</th>
+                                <th>result</th>
+                                <th>DISPLAY</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Start</td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td>Input Number</td><td>-15</td><td></td><td></td><td></td></tr>
+                            <tr><td>Check Number</td><td>-15</td><td>FALSE</td><td></td><td></td></tr>
+                            <tr><td>Assign Result</td><td>-15</td><td>FALSE</td><td>Negative</td><td></td></tr>
+                            <tr><td>Display Result</td><td>-15</td><td>FALSE</td><td>Negative</td><td>NEGATIVE</td></tr>
+                            <tr><td>End</td><td></td><td></td><td></td><td></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
 
-    <div class="simulation-header">
-
-        <span class="simulation-label">
-            SIMULATION 02
-        </span>
-
-        <h3>
-            POSITIVE OR NEGATIVE
-        </h3>
-
-        <p>
-            Sample execution of the flowchart.
-        </p>
-
-    </div>
-
-    <div class="simulation-table-wrapper">
-
-        <table class="simulation-table">
-
-            <thead>
-                <tr>
-                    <th>STEP</th>
-                    <th>PROCESS</th>
-                    <th>RESULT</th>
-                </tr>
-            </thead>
-
-            <tbody>
-
-                <tr>
-                    <td>01</td>
-                    <td>Input Number</td>
-                    <td>-15</td>
-                </tr>
-
-                <tr>
-                    <td>02</td>
-                    <td>Check if Number &gt; 0</td>
-                    <td>FALSE</td>
-                </tr>
-
-                <tr>
-                    <td>03</td>
-                    <td>Display Result</td>
-                    <td>NEGATIVE</td>
-                </tr>
-
-            </tbody>
-
-        </table>
-
-    </div>
-
-</div>
-
-
-            <!-- =========================
-                 EXERCISE 03
-                 ========================= -->
-
+            <!-- EXERCISE 03 -->
             <div class="flowchart-entry">
-
-                <h2>
-                    03 // ODD OR EVEN
-                </h2>
-
+                <h2>03 // ODD OR EVEN</h2>
                 <p class="assignment-text">
-                    Create a flowchart that will input a number
-                    then identify whether it is an odd or
-                    even number.
+                    Create a flowchart that will input a number then identify whether it is an odd
+                    or even number.
                 </p>
-
-                <img
-                    src="../../../images/activity 2/fc 2.2.png"
-                    alt="Selection Problem Exercise 3"
-                    class="flowchart-image"
-                >
-
+                <img src="../../../images/activity 2/fc 2.2.png"
+                     alt="Selection Problem Exercise 3"
+                     class="flowchart-image">
             </div>
 
             <!-- SIMULATION 03 -->
+            <div class="simulation-section">
+                <div class="simulation-header">
+                    <span class="simulation-label">SIMULATION 03</span>
+                    <h3>ODD OR EVEN</h3>
+                    <p>Sample execution of the flowchart.</p>
+                </div>
 
-<div class="simulation-section">
-
-    <div class="simulation-header">
-
-        <span class="simulation-label">
-            SIMULATION 03
-        </span>
-
-        <h3>
-            ODD OR EVEN
-        </h3>
-
-        <p>
-            Sample execution of the flowchart.
-        </p>
-
-    </div>
-
-    <div class="simulation-table-wrapper">
-
-        <table class="simulation-table">
-
-            <thead>
-                <tr>
-                    <th>STEP</th>
-                    <th>PROCESS</th>
-                    <th>RESULT</th>
-                </tr>
-            </thead>
-
-            <tbody>
-
-                <tr>
-                    <td>01</td>
-                    <td>Input Number</td>
-                    <td>24</td>
-                </tr>
-
-                <tr>
-                    <td>02</td>
-                    <td>Compute Number MOD 2</td>
-                    <td>0</td>
-                </tr>
-
-                <tr>
-                    <td>03</td>
-                    <td>Display Result</td>
-                    <td>EVEN</td>
-                </tr>
-
-            </tbody>
-
-        </table>
-
-    </div>
-
-</div>
-
-
-            <!-- =========================
-                 EXERCISE 04
-                 ========================= -->
-
-            <div class="flowchart-entry">
-
-                <h2>
-                    04 // LARGEST OF TWO
-                </h2>
-
-                <p class="assignment-text">
-                    Create a flowchart that will input two
-                    numbers then identify which of the two
-                    is the largest.
-                </p>
-
-                <img
-                    src="../../../images/activity 2/fc 2.3.png"
-                    alt="Selection Problem Exercise 4"
-                    class="flowchart-image"
-                >
-
+                <div class="simulation-table-wrapper">
+                    <table class="simulation-table">
+                        <thead>
+                            <tr>
+                                <th>STEP</th>
+                                <th>number</th>
+                                <th>number % 2</th>
+                                <th>BRANCH</th>
+                                <th>DISPLAY</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Start</td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td>Input Number</td><td>24</td><td></td><td></td><td></td></tr>
+                            <tr><td>Check Remainder</td><td>24</td><td>0</td><td>TRUE</td><td></td></tr>
+                            <tr><td>Assign Result</td><td>24</td><td>0</td><td>YES</td><td>Even</td></tr>
+                            <tr><td>Display Result</td><td>24</td><td>0</td><td>YES</td><td>NUMBER IS EVEN</td></tr>
+                            <tr><td>End</td><td></td><td></td><td></td><td></td></tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
 
-            <!-- SIMULATION 04 -->
-
-<div class="simulation-section">
-
-    <div class="simulation-header">
-
-        <span class="simulation-label">
-            SIMULATION 04
-        </span>
-
-        <h3>
-            LARGEST OF TWO
-        </h3>
-
-        <p>
-            Sample execution of the flowchart.
-        </p>
-
-    </div>
-
-    <div class="simulation-table-wrapper">
-
-        <table class="simulation-table">
-
-            <thead>
-                <tr>
-                    <th>STEP</th>
-                    <th>PROCESS</th>
-                    <th>RESULT</th>
-                </tr>
-            </thead>
-
-            <tbody>
-
-                <tr>
-                    <td>01</td>
-                    <td>Input A</td>
-                    <td>25</td>
-                </tr>
-
-                <tr>
-                    <td>02</td>
-                    <td>Input B</td>
-                    <td>40</td>
-                </tr>
-
-                <tr>
-                    <td>03</td>
-                    <td>Compare A and B</td>
-                    <td>40 is larger</td>
-                </tr>
-
-                <tr>
-                    <td>04</td>
-                    <td>Display Largest</td>
-                    <td>40</td>
-                </tr>
-
-            </tbody>
-
-        </table>
-
-    </div>
-
-</div>
-
-
-            <!-- =========================
-                 EXERCISE 05
-                 ========================= -->
-
+            <!-- EXERCISE 04 -->
             <div class="flowchart-entry">
-
-                <h2>
-                    05 // SMALLEST OF THREE
-                </h2>
-
+                <h2>04 // LARGEST OF TWO</h2>
                 <p class="assignment-text">
-                    Create a flowchart that will input three
-                    numbers then identify the smallest.
+                    Create a flowchart that will input two numbers then identify which of the two
+                    is the largest.
                 </p>
+                <img src="../../../images/activity 2/fc 2.3.png"
+                     alt="Selection Problem Exercise 4"
+                     class="flowchart-image">
+            </div>
 
-                <img
-                    src="../../../images/activity 2/fc 2.4.png"
-                    alt="Selection Problem Exercise 5"
-                    class="flowchart-image"
-                >
+            <!-- SIMULATION 04: FOUR HEADERS, FOUR CELLS PER ROW -->
+            <div class="simulation-section">
+                <div class="simulation-header">
+                    <span class="simulation-label">SIMULATION 04</span>
+                    <h3>LARGEST OF TWO</h3>
+                    <p>Sample execution of the flowchart.</p>
+                </div>
 
+                <div class="simulation-table-wrapper">
+                    <table class="simulation-table">
+                        <thead>
+                            <tr>
+                                <th>STEP</th>
+                                <th>number 1</th>
+                                <th>number 2</th>
+                                <th>A &gt; B</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Start</td><td></td><td></td><td></td></tr>
+                            <tr><td>Input number 1</td><td>25</td><td></td><td></td></tr>
+                            <tr><td>Input number 2</td><td>25</td><td>40</td><td></td></tr>
+                            <tr><td>Is number 1 greater than number 2?</td><td>25</td><td>40</td><td>FALSE</td></tr>
+                            <tr><td>number 2 is the largest</td><td>25</td><td>40</td><td>FALSE</td></tr>
+                            <tr><td>End</td><td></td><td></td><td></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- EXERCISE 05 -->
+            <div class="flowchart-entry">
+                <h2>05 // SMALLEST OF THREE</h2>
+                <p class="assignment-text">
+                    Create a flowchart that will input three numbers then identify the smallest.
+                </p>
+                <img src="../../../images/activity 2/fc 2.4.png"
+                     alt="Selection Problem Exercise 5"
+                     class="flowchart-image">
             </div>
 
             <!-- SIMULATION 05 -->
+            <div class="simulation-section">
+                <div class="simulation-header">
+                    <span class="simulation-label">SIMULATION 05</span>
+                    <h3>SMALLEST OF THREE</h3>
+                    <p>Sample execution of the flowchart.</p>
+                </div>
 
-<div class="simulation-section">
+                <div class="simulation-table-wrapper">
+                    <table class="simulation-table">
+                        <thead>
+                            <tr>
+                                <th>STEP</th>
+                                <th>num1</th>
+                                <th>num2</th>
+                                <th>num3</th>
+                                <th>CONDITION</th>
+                                <th>BRANCH</th>
+                                <th>smallest</th>
+                                <th>DISPLAY</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Start</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td>Input num1</td><td>18</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td>Input num2</td><td>18</td><td>7</td><td></td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td>Input num3</td><td>18</td><td>7</td><td>12</td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td>Check num1 &lt; num2</td><td>18</td><td>7</td><td>12</td><td>FALSE</td><td>NO</td><td></td><td></td></tr>
+                            <tr><td>Check num2 &lt; num3</td><td>18</td><td>7</td><td>12</td><td>TRUE</td><td>YES</td><td>7</td><td></td></tr>
+                            <tr><td>Display Smallest</td><td>18</td><td>7</td><td>12</td><td>TRUE</td><td>YES</td><td>7</td><td>7</td></tr>
+                            <tr><td>End</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
 
-    <div class="simulation-header">
-
-        <span class="simulation-label">
-            SIMULATION 05
-        </span>
-
-        <h3>
-            SMALLEST OF THREE
-        </h3>
-
-        <p>
-            Sample execution of the flowchart.
-        </p>
-
-    </div>
-
-    <div class="simulation-table-wrapper">
-
-        <table class="simulation-table">
-
-            <thead>
-                <tr>
-                    <th>STEP</th>
-                    <th>PROCESS</th>
-                    <th>RESULT</th>
-                </tr>
-            </thead>
-
-            <tbody>
-
-                <tr>
-                    <td>01</td>
-                    <td>Input A</td>
-                    <td>18</td>
-                </tr>
-
-                <tr>
-                    <td>02</td>
-                    <td>Input B</td>
-                    <td>7</td>
-                </tr>
-
-                <tr>
-                    <td>03</td>
-                    <td>Input C</td>
-                    <td>12</td>
-                </tr>
-
-                <tr>
-                    <td>04</td>
-                    <td>Compare Values</td>
-                    <td>7 is smallest</td>
-                </tr>
-
-                <tr>
-                    <td>05</td>
-                    <td>Display Smallest</td>
-                    <td>7</td>
-                </tr>
-
-            </tbody>
-
-        </table>
-
-    </div>
-
-</div>
-
-
-
-            <!-- =========================
-                 EXERCISE 06
-                 ========================= -->
-
+            <!-- EXERCISE 06 -->
             <div class="flowchart-entry">
-
-                <h2>
-                    06 // EQUIVALENT GRADE
-                </h2>
-
+                <h2>06 // EQUIVALENT GRADE</h2>
                 <p class="assignment-text">
-                    Revise Exercise #1 in Selection Problems
-                    by determining the equivalent grade based
-                    on the computed average.
+                    Revise Exercise #1 in Selection Problems by determining the equivalent grade
+                    based on the computed average.
                 </p>
-
-                <img
-                    src="../../../images/activity 2/fc 2.5.png"
-                    alt="Selection Problem Exercise 6"
-                    class="flowchart-image"
-                >
-
+                <img src="../../../images/activity 2/fc 2.5.png"
+                     alt="Selection Problem Exercise 6"
+                     class="flowchart-image">
             </div>
 
             <!-- SIMULATION 06 -->
+            <div class="simulation-section">
+                <div class="simulation-header">
+                    <span class="simulation-label">SIMULATION 06</span>
+                    <h3>EQUIVALENT GRADE</h3>
+                    <p>Sample execution of the flowchart.</p>
+                </div>
 
-<div class="simulation-section">
+                <div class="simulation-table-wrapper">
+                    <table class="simulation-table">
+                        <thead>
+                            <tr>
+                                <th>STEP</th>
+                                <th>Average</th>
+                                <th>Grade Range / Condition</th>
+                                <th>Equivalent Grade</th>
+                                <th>DISPLAY</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Start</td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td>Input Preliminary, Midterm, and Final Grades</td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td>Compute Average</td><td>95</td><td></td><td></td><td></td></tr>
+                            <tr><td>Display Average</td><td>95</td><td></td><td></td><td>95</td></tr>
+                            <tr><td>Check Average &gt;= 97</td><td>95</td><td>FALSE</td><td></td><td></td></tr>
+                            <tr><td>Check Average &gt;= 94</td><td>95</td><td>TRUE</td><td>1.25</td><td></td></tr>
+                            <tr><td>Assign Equivalent Grade</td><td>95</td><td>94–96</td><td>1.25</td><td></td></tr>
+                            <tr><td>Display Equivalent Grade</td><td>95</td><td>94–96</td><td>1.25</td><td>1.25</td></tr>
+                            <tr><td>End</td><td></td><td></td><td></td><td></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
 
-    <div class="simulation-header">
-
-        <span class="simulation-label">
-            SIMULATION 06
-        </span>
-
-        <h3>
-            EQUIVALENT GRADE
-        </h3>
-
-        <p>
-            Sample execution of the flowchart.
-        </p>
-
-    </div>
-
-    <div class="simulation-table-wrapper">
-
-        <table class="simulation-table">
-
-            <thead>
-                <tr>
-                    <th>STEP</th>
-                    <th>PROCESS</th>
-                    <th>RESULT</th>
-                </tr>
-            </thead>
-
-            <tbody>
-
-                <tr>
-                    <td>01</td>
-                    <td>Input Average Grade</td>
-                    <td>95</td>
-                </tr>
-
-                <tr>
-                    <td>02</td>
-                    <td>Check Grade Range</td>
-                    <td>94-96</td>
-                </tr>
-
-                <tr>
-                    <td>03</td>
-                    <td>Determine Equivalent Grade</td>
-                    <td>1.25</td>
-                </tr>
-
-                <tr>
-                    <td>04</td>
-                    <td>Display Equivalent Grade</td>
-                    <td>1.25</td>
-                </tr>
-
-            </tbody>
-
-        </table>
-
-    </div>
-
-</div>
-
-            
-
-
-            <!-- =========================
-                 EXERCISE 07
-                 ========================= -->
-
+            <!-- EXERCISE 07 -->
             <div class="flowchart-entry">
-
-                <h2>
-                    07 // TEMPERATURE STATE
-                </h2>
-
+                <h2>07 // TEMPERATURE STATE</h2>
                 <p class="assignment-text">
-                    Create a flowchart to read temperature
-                    in centigrade and display a suitable
+                    Create a flowchart to read temperature in centigrade and display a suitable
                     message according to the temperature state.
                 </p>
-
-                <img
-                    src="../../../images/activity 2/fc 2.6.png"
-                    alt="Selection Problem Exercise 7"
-                    class="flowchart-image"
-                >
-
+                <img src="../../../images/activity 2/fc 2.6.png"
+                     alt="Selection Problem Exercise 7"
+                     class="flowchart-image">
             </div>
 
             <!-- SIMULATION 07 -->
+            <div class="simulation-section">
+                <div class="simulation-header">
+                    <span class="simulation-label">SIMULATION 07</span>
+                    <h3>TEMPERATURE STATE</h3>
+                    <p>Sample execution of the flowchart.</p>
+                </div>
 
-<div class="simulation-section">
+                <div class="simulation-table-wrapper">
+                    <table class="simulation-table">
+                        <thead>
+                            <tr>
+                                <th>STEP</th>
+                                <th>Temperature</th>
+                                <th>Temperature Range</th>
+                                <th>State</th>
+                                <th>DISPLAY</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Start</td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td>Input Temperature</td><td>35°C</td><td></td><td></td><td></td></tr>
+                            <tr><td>Check Temperature Range</td><td>35°C</td><td>30°C–40°C</td><td></td><td></td></tr>
+                            <tr><td>Assign State</td><td>35°C</td><td>30°C–40°C</td><td>Hot weather</td><td></td></tr>
+                            <tr><td>Display Weather State</td><td>35°C</td><td>30°C–40°C</td><td>Hot weather</td><td>HOT WEATHER</td></tr>
+                            <tr><td>End</td><td></td><td></td><td></td><td></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
 
-    <div class="simulation-header">
-
-        <span class="simulation-label">
-            SIMULATION 07
-        </span>
-
-        <h3>
-            TEMPERATURE STATE
-        </h3>
-
-        <p>
-            Sample execution of the flowchart.
-        </p>
-
-    </div>
-
-    <div class="simulation-table-wrapper">
-
-        <table class="simulation-table">
-
-            <thead>
-                <tr>
-                    <th>STEP</th>
-                    <th>PROCESS</th>
-                    <th>RESULT</th>
-                </tr>
-            </thead>
-
-            <tbody>
-
-                <tr>
-                    <td>01</td>
-                    <td>Input Temperature</td>
-                    <td>35°C</td>
-                </tr>
-
-                <tr>
-                    <td>02</td>
-                    <td>Check Temperature Range</td>
-                    <td>30-40</td>
-                </tr>
-
-                <tr>
-                    <td>03</td>
-                    <td>Display Weather State</td>
-                    <td>Hot weather</td>
-                </tr>
-
-            </tbody>
-
-        </table>
-
-    </div>
-
-</div>
-
-
-
-            <!-- =========================
-                 EXERCISE 08
-                 ========================= -->
-
+            <!-- EXERCISE 08 -->
             <div class="flowchart-entry">
-
-                <h2>
-                    08 // SALES COMMISSION
-                </h2>
-
+                <h2>08 // SALES COMMISSION</h2>
                 <p class="assignment-text">
-                    Revise your Sales problem in Sequence
-                    constructs by computing and displaying
-                    the sales commission based on the
-                    specified sales ranges.
+                    Revise your Sales problem in Sequence constructs by computing and displaying
+                    the sales commission based on the specified sales ranges.
                 </p>
-
-                <img
-                    src="../../../images/activity 2/fc 2.7.png"
-                    alt="Selection Problem Exercise 8"
-                    class="flowchart-image"
-                >
-
+                <img src="../../../images/activity 2/fc 2.7.png"
+                     alt="Selection Problem Exercise 8"
+                     class="flowchart-image">
             </div>
 
             <!-- SIMULATION 08 -->
+            <div class="simulation-section">
+                <div class="simulation-header">
+                    <span class="simulation-label">SIMULATION 08</span>
+                    <h3>SALES COMMISSION</h3>
+                    <p>Sample execution of the flowchart.</p>
+                </div>
 
-<div class="simulation-section">
+                <div class="simulation-table-wrapper">
+                    <table class="simulation-table">
+                        <thead>
+                            <tr>
+                                <th>STEP</th>
+                                <th>totalSales</th>
+                                <th>commissionRate</th>
+                                <th>commission</th>
+                                <th>DISPLAY</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Start</td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td>Input Sales Details</td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td>Compute Total Sales</td><td>18,000</td><td></td><td></td><td></td></tr>
+                            <tr><td>Check totalSales &lt;= 15,000</td><td>18,000</td><td>FALSE</td><td></td><td></td></tr>
+                            <tr><td>Check totalSales &lt;= 20,000</td><td>18,000</td><td>TRUE</td><td>20%</td><td></td></tr>
+                            <tr><td>Compute Commission</td><td>18,000</td><td>20%</td><td>3,600</td><td></td></tr>
+                            <tr><td>Display Commission</td><td>18,000</td><td>20%</td><td>3,600</td><td>3,600</td></tr>
+                            <tr><td>End</td><td></td><td></td><td></td><td></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
 
-    <div class="simulation-header">
-
-        <span class="simulation-label">
-            SIMULATION 08
-        </span>
-
-        <h3>
-            SALES COMMISSION
-        </h3>
-
-        <p>
-            Sample execution of the flowchart.
-        </p>
-
-    </div>
-
-    <div class="simulation-table-wrapper">
-
-        <table class="simulation-table">
-
-            <thead>
-                <tr>
-                    <th>STEP</th>
-                    <th>PROCESS</th>
-                    <th>RESULT</th>
-                </tr>
-            </thead>
-
-            <tbody>
-
-                <tr>
-                    <td>01</td>
-                    <td>Input Total Sales</td>
-                    <td>18,000</td>
-                </tr>
-
-                <tr>
-                    <td>02</td>
-                    <td>Determine Commission Rate</td>
-                    <td>20%</td>
-                </tr>
-
-                <tr>
-                    <td>03</td>
-                    <td>Compute Commission</td>
-                    <td>18,000 × 0.20</td>
-                </tr>
-
-                <tr>
-                    <td>04</td>
-                    <td>Display Commission</td>
-                    <td>3,600</td>
-                </tr>
-
-            </tbody>
-
-        </table>
-
-    </div>
-
-</div>
-
-
-
-            <!-- =========================
-                 EXERCISE 09
-                 ========================= -->
-
+            <!-- EXERCISE 09 -->
             <div class="flowchart-entry">
-
-                <h2>
-                    09 // DAY NUMBER
-                </h2>
-
+                <h2>09 // DAY NUMBER</h2>
                 <p class="assignment-text">
-                    Create a flowchart to read any day number
-                    in integer form and display the day name
-                    in word format.
+                    Create a flowchart to read any day number in integer form and display the day
+                    name in word format.
                 </p>
-
-                <img
-                    src="../../../images/activity 2/fc 2.8.png"
-                    alt="Selection Problem Exercise 9"
-                    class="flowchart-image"
-                >
-
+                <img src="../../../images/activity 2/fc 2.8.png"
+                     alt="Selection Problem Exercise 9"
+                     class="flowchart-image">
             </div>
 
             <!-- SIMULATION 09 -->
+            <div class="simulation-section">
+                <div class="simulation-header">
+                    <span class="simulation-label">SIMULATION 09</span>
+                    <h3>DAY NUMBER</h3>
+                    <p>Sample execution of the flowchart.</p>
+                </div>
 
-<div class="simulation-section">
+                <div class="simulation-table-wrapper">
+                    <table class="simulation-table">
+                        <thead>
+                            <tr>
+                                <th>STEP</th>
+                                <th>dayNumber</th>
+                                <th>matchedDay</th>
+                                <th>DISPLAY</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Start</td><td></td><td></td><td></td></tr>
+                            <tr><td>Input Day Number</td><td>3</td><td></td><td></td></tr>
+                            <tr><td>Check Valid Day (1–7)</td><td>3</td><td>TRUE</td><td></td></tr>
+                            <tr><td>Match Day Number</td><td>3</td><td>Wednesday</td><td></td></tr>
+                            <tr><td>Display Day Name</td><td>3</td><td>Wednesday</td><td>WEDNESDAY</td></tr>
+                            <tr><td>End</td><td></td><td></td><td></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
 
-    <div class="simulation-header">
-
-        <span class="simulation-label">
-            SIMULATION 09
-        </span>
-
-        <h3>
-            DAY NUMBER
-        </h3>
-
-        <p>
-            Sample execution of the flowchart.
-        </p>
-
-    </div>
-
-    <div class="simulation-table-wrapper">
-
-        <table class="simulation-table">
-
-            <thead>
-                <tr>
-                    <th>STEP</th>
-                    <th>PROCESS</th>
-                    <th>RESULT</th>
-                </tr>
-            </thead>
-
-            <tbody>
-
-                <tr>
-                    <td>01</td>
-                    <td>Input Day Number</td>
-                    <td>3</td>
-                </tr>
-
-                <tr>
-                    <td>02</td>
-                    <td>Match Day Number</td>
-                    <td>3 = Wednesday</td>
-                </tr>
-
-                <tr>
-                    <td>03</td>
-                    <td>Display Day Name</td>
-                    <td>WEDNESDAY</td>
-                </tr>
-
-            </tbody>
-
-        </table>
-
-    </div>
-
-</div>
-
-
-            <!-- =========================
-                 EXERCISE 10
-                 ========================= -->
-
+            <!-- EXERCISE 10 -->
             <div class="flowchart-entry">
-
-                <h2>
-                    10 // VOWEL OR CONSONANT
-                </h2>
-
+                <h2>10 // VOWEL OR CONSONANT</h2>
                 <p class="assignment-text">
-                    Write a flowchart to check whether an
-                    alphabet is a vowel or a consonant.
+                    Write a flowchart to check whether an alphabet is a vowel or a consonant.
                 </p>
-
-                <img
-                    src="../../../images/activity 2/fc 2.9.png"
-                    alt="Selection Problem Exercise 10"
-                    class="flowchart-image"
-                >
-
+                <img src="../../../images/activity 2/fc 2.9.png"
+                     alt="Selection Problem Exercise 10"
+                     class="flowchart-image">
             </div>
 
             <!-- SIMULATION 10 -->
+            <div class="simulation-section">
+                <div class="simulation-header">
+                    <span class="simulation-label">SIMULATION 10</span>
+                    <h3>VOWEL OR CONSONANT</h3>
+                    <p>Sample execution of the flowchart.</p>
+                </div>
 
-<div class="simulation-section">
-
-    <div class="simulation-header">
-
-        <span class="simulation-label">
-            SIMULATION 10
-        </span>
-
-        <h3>
-            VOWEL OR CONSONANT
-        </h3>
-
-        <p>
-            Sample execution of the flowchart.
-        </p>
-
-    </div>
-
-    <div class="simulation-table-wrapper">
-
-        <table class="simulation-table">
-
-            <thead>
-                <tr>
-                    <th>STEP</th>
-                    <th>PROCESS</th>
-                    <th>RESULT</th>
-                </tr>
-            </thead>
-
-            <tbody>
-
-                <tr>
-                    <td>01</td>
-                    <td>Input Alphabet</td>
-                    <td>A</td>
-                </tr>
-
-                <tr>
-                    <td>02</td>
-                    <td>Check Alphabet</td>
-                    <td>A is a vowel</td>
-                </tr>
-
-                <tr>
-                    <td>03</td>
-                    <td>Display Result</td>
-                    <td>VOWEL</td>
-                </tr>
-
-            </tbody>
-
-        </table>
-
-    </div>
-
-</div>
-
+                <div class="simulation-table-wrapper">
+                    <table class="simulation-table">
+                        <thead>
+                            <tr>
+                                <th>STEP</th>
+                                <th>letter</th>
+                                <th>isVowel</th>
+                                <th>result</th>
+                                <th>DISPLAY</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Start</td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td>Input Letter</td><td>A</td><td></td><td></td><td></td></tr>
+                            <tr><td>Check Vowel</td><td>A</td><td>TRUE</td><td></td><td></td></tr>
+                            <tr><td>Assign Result</td><td>A</td><td>TRUE</td><td>Vowel</td><td></td></tr>
+                            <tr><td>Display Result</td><td>A</td><td>TRUE</td><td>Vowel</td><td>VOWEL</td></tr>
+                            <tr><td>End</td><td></td><td></td><td></td><td></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
 
         </section>
-
     </main>
 
-
-    <!-- =========================
-         NAVBAR JAVASCRIPT
-         ========================= -->
-
+    <!-- NAVBAR JAVASCRIPT -->
     <script src="../../../navbar/navbar.js"></script>
     <script src="document 2.js"></script>
 
 </body>
-
 </html>
