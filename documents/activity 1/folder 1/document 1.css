@@ -610,7 +610,7 @@ body::before {
 
 .simulation-table th:first-child,
 .simulation-table td:first-child {
-    width: 70px;
+    width: 120px;
 
     text-align: center;
 
